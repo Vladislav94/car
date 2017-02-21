@@ -1,0 +1,56 @@
+<!-- Footer -->
+<footer id="footer" class="footer">
+  <section class="container footer-section">
+    <div class="footer-inner">
+      <div class="footer-r">
+        <form action="search" class="f-search">
+          <div class="inp-wrap footer-inp">
+            <input type="text" class="inp-field" placeholder="Поиск">
+          </div>
+        </form>
+
+        <form action="delivery" class="f-mail">
+          <p class="footer-text">Подписаться на рассылку:</p>
+          <div class="inp-wrap footer-inp f-mail-inp">
+            <input type="text" class="inp-field" placeholder="Ваш e-mail">
+            <buttom class="f-mail__btn">ОК</buttom>
+          </div>
+        </form>
+
+        <div class="footer-socials">
+          <a href="/" class="footer-social google"></a>
+          <a href="/" class="footer-social tw"></a>
+          <a href="/" class="footer-social vk"></a>
+          <a href="/" class="footer-social fb"></a>
+        </div>
+      </div>
+      <div class="footer-l">
+        <ul class="f-info-list">
+          {% for infoL in ['О нас', 'Контакты', 'О сайте', 'Сотрудничестфо'] %}
+          <li class="f-info-item">
+            <a href="/" class="f-info-link"><$ infoL $></a>
+          </li>
+          {% endfor %}
+        </ul
+
+        <div class="f-services">
+          <ul class="f-services-list">
+            {% for servicesL in ['СТО', 'АЗС', 'Автомагазин', 'Мойка', 'Шиномонтаж'] %}
+            <li class="f-services-item">
+              <a href="'/'" class="f-services-link"><$ servicesL $></a>
+            </li>
+            {% endfor %}
+          </ul>
+          <ul class="f-services-list">
+          {% for servicesL in ['Частный мастер', 'Автосалон', 'Детейлинг', 'События'] %}
+          <li class="f-services-item">
+            <a href="'/'" class="f-services-link"><$ servicesL $></a>
+          </li>
+          {% endfor %}
+        </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>
+<!-- Footer end -->

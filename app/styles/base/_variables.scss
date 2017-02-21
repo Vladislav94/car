@@ -1,0 +1,72 @@
+// Mix
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin gradient($from, $to) {
+  background: $from;
+  background: linear-gradient(to bottom,  $from 0%, $to 100%);
+}
+
+@mixin placeholder($color) {
+  &::-webkit-input-placeholder {color:$color; transition: $trans;}
+  &::-moz-placeholder          {color:$color; transition: $trans;}
+  &:-moz-placeholder           {color:$color; transition: $trans;}
+  &:-ms-input-placeholder      {color:$color; transition: $trans;}
+}
+
+
+// colors
+$white: #fff;
+$black: #000;
+
+
+// Red
+$rede1: #E16B59;
+$red9b: #9B3525;
+$redd2: #D25845;
+$redff: #FFAB9A;
+$redfa: #FAC4BB;
+$redd7: #D77263;
+$red80: #80433B;
+
+// Blue
+$blue6e: #6e96c6;
+
+// Green
+$green87: #87AE2E;
+$green00: #00A90C;
+$green4e: #4E723A;
+$green76: #76a25e;
+
+// Yellow
+$yele7: #E79D21;
+
+// Gray
+$grayc0: #C0C0C0;
+$gray61: #616161;
+$graye2: #e2e2e2;
+$graydc: #DCDCDC;
+$gray29: #292929;
+$grayba: #bababa;
+$gray1c: #1c1c1c;
+$gray33: #333;
+$grayce: #cecece;
+$gray53: #535353;
+$graya5: #a5a5a5;
+$gray1a: #1a1a1a;
+$gray6a: #6a6a6a;
+$gray76: #76a25e;
+$gray6: #666;
+$gray9: #999;
+
+
+// trans
+$trans: .2s linear;
+
+// Fonts
+$bold: 'ProximaNova-Bold';

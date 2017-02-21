@@ -1,0 +1,67 @@
+<section class="c-section container">
+  <div class="c-head">
+    <ul class="c-filter">
+      <li><a href="/" class="c-filter-link">Все</a></li>
+      <li>
+        <a href="/" class="c-filter-link">Комментарии знакомых:</a>
+        <div class="c-filter-icons">
+          {% for item in range(2,5) %}
+          <div class="c-filter-fr">
+            <span class="c-filter-name">Серафима Иванова</span>
+            <span class="c-filter-avatar">
+              <img src="images/avatars/item<$ item $>.jpg" alt="">
+            </span>
+          </div>
+          {% endfor %}
+        </div>
+        <span class="c-filter-count">+13</span>
+      </li>
+    </ul>
+    <div class="c-title">Комментарии (204)</div>
+  </div>
+  <form action="comment" class="c-add">
+    <div class="inp-wrap">
+      <textarea class="c-add-textarea inp-field" placeholder="Все данные о качестве топлива
+      на AUTOporter получены исключительно путем сбора проб инициативной группой
+      автомобилистов нашего проекта и заказа проведения соответствующих исследований
+      в независимой лаборатории."></textarea>
+    </div>
+  </form>
+
+  <article class="c-comments">
+    <figure class="c-comment">
+      <i class="c-comment-stat"></i>
+      <div class="c-comment-left">
+        <span class="c-comment-avatar"></span>
+      </div>
+      <figcaption class="c-comment-body">
+        <div class="c-comment-top">
+          <span class="c-comment-name">SoKrAt_19rus</span>
+          <time class="c-comment-date">12 августа 2016</time>
+        </div>
+        <p>Все данные о качестве топлива на AUTOporter получены исключительно
+           путем сбора проб инициативной группой автомобилистов нашего проекта
+           и заказа проведения соответствующих исследований в независимой лаборатории.
+           <br>Публикуя эти данные на сайте, мы не претендуем на 100 процентную
+           репрезентативность, поскольку получить такую в сложном вопросе качества
+           украинского топлива не может даже государство - наша задача создать первый
+           в истории украинского интернета прецедент Народного контроля за качеством
+           товаров и услуг.</p>
+        <ul class="c-comment-btns">
+          <li><a href="#" class="c-comment-btn">Ответить</a></li>
+          <li><a href="#" class="c-comment-btn">Ссылка</a></li>
+          <li><a href="#" class="c-comment-btn">Пожаловаться</a></li>
+          <li>
+            <a href="#" class="c-comment-btn">Поделиться ></a>
+            <div class="c-shares">
+              <a href="/" class="c-share g"></a>
+              <a href="/" class="c-share tw"></a>
+              <a href="/" class="c-share vk"></a>
+              <a href="/" class="c-share fb"></a>
+            </div>
+          </li>
+        </ul>
+      </figcaption>
+    </figure>
+  </article>
+</section>

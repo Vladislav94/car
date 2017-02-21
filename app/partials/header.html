@@ -1,0 +1,102 @@
+<!-- Header -->
+<header id="header" class="header">
+  <section class="container header-inner">
+    <div class="header-l fl">
+
+      <!-- Nav -->
+      <nav class="header-nav fl dd-wrap" ng-controller="dropdown" ng-class="{ 'dd-open': ddVisible }">
+        <button class="header-nav__btn dd-show" ng-click="show();">
+          <span></span>
+        </button>
+
+        <div class="header-nav__inner dd">
+          <div class="header-nav__top media">
+            <span class="header-nav__close media-middle" ng-click="show();"></span>
+            <div class="header-nav__logo media-middle">
+              <img src="images/nav-logo.png" alt="">
+            </div>
+          </div>
+
+          <ul class="header-list">
+            {% for headList in [
+              ['service', 'СТО', '1204'],
+              ['azs', 'АЗС', '763'],
+              ['bag', 'Автомагазины', '641'],
+              ['aw', 'Автомойки', '2701'],
+              ['tire', 'Шиномонтаж', '1975'],
+              ['repairer', 'Частный мастер', '4072'],
+              ['ncar', 'Автосалон', '247'],
+              ['detail', 'Детейлинг', '12034'],
+              ['event', 'События', '2 / 71']
+            ] %}
+            <li class="header-list__item">
+              <a href="/" class="header-list__link media">
+                <div class="media-middle header-list-l">
+                  <span class="header-list__icon" style="background-image: url(images/icons/icon-<$headList[0]$>.png)"></span>
+                </div>
+
+                <p class="header-list__name media-middle"><$ headList[1]  $></p>
+
+                <div class="header-list-r media-middle">
+                  <span class="header-list__count">{% if loop.last %}
+                  <span>2</span> / 71{% else %}<$ headList[2] $>{% endif %}</span>
+                </div>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </nav>
+      <!-- Nav end -->
+
+      <a href="/" class="header-logo fl"><img src="images/logo.png" alt=""></a>
+
+      <div class="reg-select select-wrap fl" ng-controller="dropdown" ng-class="{ 'dd-open': ddVisible }">
+        <div class="reg-select__show dd-show" ng-click="show();select = true">Киев</div>
+        <div class="reg-select__dd select-list scroll">
+          <ul class="">
+            <li class="active select-item">Киев</li>
+            {% for item in range(0,10) %}
+            <li class="select-item">Киев <$ loop.index $></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      {% if auth == true %}
+      <form action="auth" class="header-auth__form fl">
+        <a href="/" class="header-auth header-reg">Регистрация</a>
+        <a href="/" class="header-auth header-enter">Войти</a>
+      </form>
+      {% else %}
+      <div class="header-user fl dd-wrap" ng-controller="dropdown" ng-class="{ 'dd-open': ddVisible }">
+        <figure class="user-fig media dd-show" ng-click="show();">
+          <span class="user-l media-middle">
+            <span class="user-avatar" style="background-image: url(images/avatars/item1.jpg)">
+              <span class="user-mess">2</span>
+            </span>
+          </span>
+          <figcaption class="user-name media-middle">MPS_ne_edet</figcaption>
+        </figure>
+
+        <div class="user-dd dd">
+
+
+          <ul class="user-list">
+            {% for userL in ['Избранное', 'Настройки', 'Бонусы'] %}
+            <li class="user-list__item">
+              <a href="/" class="user-list__link"><$ userL $></a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    <div class="header-r fr">
+      <a href="/" class="header-app"><img src="images/apps/apple.png" alt=""></a>
+      <a href="/" class="header-app"><img src="images/apps/google.png" alt=""></a>
+    </div>
+  </section>
+</header>
+<!-- Header end -->
