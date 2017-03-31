@@ -19,12 +19,14 @@
     <!-- endbuild -->
 
   </head>
-  <body ng-app="car">
+  <body>
     <div id="wrap">
       {% include 'header.html' %}
 
       {% block content %}
       {% endblock %}
+
+      {% include 'blocks/f-text.html' %}
 
       {% include 'footer.html' %}
 

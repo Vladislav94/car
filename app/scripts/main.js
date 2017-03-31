@@ -1,59 +1,64 @@
-var $module = angular.module('car', []);
-
 
 $(document).ready(function() {
-  // select list
-  // var $selectWrap = $('.select-wrap');
 
-  // $selectWrap.on('click', '.select-item', function(e) {
-  //   var $thisText = $(this).html(),
-  //       $thisWrap = $(this).closest('.select-wrap'),
-  //       $selectBtn = $thisWrap.find('.select-show');
-  //
-  //   $(this).addClass('active').siblings().removeClass('active');
-  //
-  //   $thisWrap.removeClass('select-open');
-  //   $selectBtn.html($thisText);
-  // });
-  //
-  // $selectWrap.on('click', '.select-show', function() {
-  //   var $selectBtn = $(this).closest('.select-wrap');
-  //
-  //   $selectBtn.toggleClass('select-open');
-  // });
-  //
-  // $selectWrap.on('click', function() {
-  //   var $this = $(this);
-  //
-  //   $selectWrap.not($this).removeClass('select-open');
-  // });
+  (function() {
 
-  // dropdown
-  // var $ddWrap = $('.dd-wrap');
+    // dropdown
+    let $ddWrap = $('.dd-wrap');
 
-  // $ddWrap.on('click', '.dd-show', function() {
-  //   var $this = $(this),
-  //       $par = $this.closest('.dd-wrap'),
-  //       $dd = $par.find('.dd');
-  //
-  //   $('.dd-open').not($par).removeClass('dd-open');
-  //   $par.toggleClass('dd-open');
-  // });
+    $ddWrap.on('click', '.dd-show', function() {
+      let $this = $(this),
+          $par = $this.closest('.dd-wrap'),
+          $dd = $par.find('.dd');
 
-  // $('body').on('click', function(e) {
-  //   if ($(e.target).closest('.select-wrap').length != 1) {
-  //     $('.select-open').removeClass('select-open');
-  //   }
-  //
-  //   if ($(e.target).closest('.dd-wrap').length != 1) {
-  //     $('.dd-open').removeClass('dd-open');
-  //   }
-  //
-  // });
+      $('.dd-open').not($par).removeClass('dd-open');
+      $par.toggleClass('dd-open');
+    });
 
-  // Scroll
-  $('.scroll').mCustomScrollbar();
+    $ddWrap.on('click', '.select-item', function(e) {
+      var $thisText = $(this).html(),
+          $thisWrap = $(this).closest('.dd-wrap'),
+          $ddBtn = $thisWrap.find('.dd-show');
+
+      $(this).addClass('active').siblings().removeClass('active');
+
+      $thisWrap.removeClass('dd-open');
+      $ddBtn.html($thisText);
+    });
+
+    $('body').on('click', function(e) {
+      isTarget(e ,'.dd-wrap', function() {
+        $('.dd-open').removeClass('dd-open');
+      });
+    });
+
+    function isTarget(ev, classN, callback) {
+
+      if ($(ev.target).closest(classN).length != 1) {
+        callback();
+      }
+    }
+
+    // Scroll
+    $('.scroll').mCustomScrollbar();
+
+    // Slider
+    $('.slider').slick({
+
+    })
+
+    // $.scrollSpeed(100, 300, 'easeOutCubic');
 
 
-  $.scrollSpeed(100, 300, 'easeOutCubic');
+    // lightBox init
+    $('.swipebox').swipebox( {
+      beforeOpen: function() {
+        $('body').addClass('lb-open');
+      },
+
+      afterClose: function() {
+        $('body').removeClass('lb-open');
+      }
+    } );
+  })();
 });

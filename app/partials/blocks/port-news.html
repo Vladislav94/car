@@ -1,0 +1,41 @@
+{% set news = [
+  {
+    img: '5',
+    title: 'Это важно знать'
+  },
+  {
+    img: '7',
+    title: 'Купить авто: продажа авто б/у в Украине на авторынке'
+  },
+  {
+    img: '8',
+    title: 'Свежие автомобильные новости мира и Украины. Обзор автомобилей'
+  }
+] %}
+<!-- Portal News  -->
+<div class="port-news">
+  <div class="container">
+
+    <div class="h-title port-news__title"><i class="icon icon-news"></i><span>Новости портала</span></div>
+
+    <div class="port-news__list">
+      {% for item in news %}
+      <figure class="port-news__item">
+        <div class="port-news__left">
+          <a href="/" class="img-box box200 box-white" style="background-image: url(images/tire-fitting/item<$ item.img $>.jpg)"></a>
+        </div>
+        <figcaption class="port-news__body">
+          <time class="port-news__date">13 января .2015</time>
+          <a href="/" class="port-news__name"><$ item.title $></a>
+          <p class="port-news__text">Все данные о качестве топлива на AUTOporter получены исключительно путем сбора проб инициативной группой автомобилистов нашего проекта и заказа проведения соответствующих исследований в независимой лаборатории.</p>
+          <a href="/" class="port-news__link">подробнее</a>
+          <p class="port-news__text">“Публикуя эти данные на сайте, мы не претендуем на 100 процентную репрезентативность...</p>
+        </figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+
+    <a href="/" class="btn btn-gray port-news__more">Больше новостей</a>
+  </div>
+</div>
+<!-- Portal News end -->

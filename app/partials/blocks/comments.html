@@ -1,14 +1,14 @@
-<section class="c-section container">
+<section class="c-section">
   <div class="c-head">
     <ul class="c-filter">
       <li><a href="/" class="c-filter-link">Все</a></li>
-      <li>
+      <li class="active">
         <a href="/" class="c-filter-link">Комментарии знакомых:</a>
         <div class="c-filter-icons">
           {% for item in range(2,5) %}
           <div class="c-filter-fr">
             <span class="c-filter-name">Серафима Иванова</span>
-            <span class="c-filter-avatar">
+            <span class="avatar-box c-filter-avatar gray">
               <img src="images/avatars/item<$ item $>.jpg" alt="">
             </span>
           </div>
@@ -21,47 +21,182 @@
   </div>
   <form action="comment" class="c-add">
     <div class="inp-wrap">
-      <textarea class="c-add-textarea inp-field" placeholder="Все данные о качестве топлива
-      на AUTOporter получены исключительно путем сбора проб инициативной группой
-      автомобилистов нашего проекта и заказа проведения соответствующих исследований
-      в независимой лаборатории."></textarea>
+      <textarea class="c-add-textarea inp-field" placeholder="Все данные о качестве топлива на AUTOporter получены исключительно путем сбора проб инициативной группой автомобилистов нашего проекта и заказа проведения соответствующих исследований в независимой лаборатории."></textarea>
     </div>
   </form>
 
   <article class="c-comments">
-    <figure class="c-comment">
-      <i class="c-comment-stat"></i>
-      <div class="c-comment-left">
-        <span class="c-comment-avatar"></span>
-      </div>
-      <figcaption class="c-comment-body">
-        <div class="c-comment-top">
-          <span class="c-comment-name">SoKrAt_19rus</span>
-          <time class="c-comment-date">12 августа 2016</time>
+    <div class="c-comment">
+      <figure class="c-comment-inner">
+        <i class="c-comment-stat icon-like"></i>
+        <div class="c-comment-left">
+          <span class="avatar-box gray"></span>
         </div>
-        <p>Все данные о качестве топлива на AUTOporter получены исключительно
-           путем сбора проб инициативной группой автомобилистов нашего проекта
-           и заказа проведения соответствующих исследований в независимой лаборатории.
-           <br>Публикуя эти данные на сайте, мы не претендуем на 100 процентную
-           репрезентативность, поскольку получить такую в сложном вопросе качества
-           украинского топлива не может даже государство - наша задача создать первый
-           в истории украинского интернета прецедент Народного контроля за качеством
-           товаров и услуг.</p>
-        <ul class="c-comment-btns">
-          <li><a href="#" class="c-comment-btn">Ответить</a></li>
-          <li><a href="#" class="c-comment-btn">Ссылка</a></li>
-          <li><a href="#" class="c-comment-btn">Пожаловаться</a></li>
-          <li>
-            <a href="#" class="c-comment-btn">Поделиться ></a>
-            <div class="c-shares">
-              <a href="/" class="c-share g"></a>
-              <a href="/" class="c-share tw"></a>
-              <a href="/" class="c-share vk"></a>
-              <a href="/" class="c-share fb"></a>
+        <figcaption class="c-comment-body">
+          <div class="c-comment-top">
+            <span class="c-comment-name">SoKrAt_19rus</span>
+            <time class="c-comment-date">12 августа 2016</time>
+          </div>
+          <p>Все данные о качестве топлива на AUTOporter получены исключительно
+             путем сбора проб инициативной группой автомобилистов нашего проекта
+             и заказа проведения соответствующих исследований в независимой лаборатории.
+             <br>
+             <br>
+             Публикуя эти данные на сайте, мы не претендуем на 100 процентную
+             репрезентативность, поскольку получить такую в сложном вопросе качества
+             украинского топлива не может даже государство - наша задача создать первый
+             в истории украинского интернета прецедент Народного контроля за качеством
+             товаров и услуг.</p>
+          <ul class="c-comment-btns">
+            <li><a href="#" class="c-comment-btn">Ответить</a></li>
+            <li><a href="#" class="c-comment-btn">Ссылка</a></li>
+            <li><a href="#" class="c-comment-btn">Пожаловаться</a></li>
+            <li class="c-share-item active">
+              <a href="#" class="c-comment-btn">Поделиться ></a>
+              <div class="c-shares">
+                <a href="/" class="c-share g"></a>
+                <a href="/" class="c-share tw"></a>
+                <a href="/" class="c-share vk"></a>
+                <a href="/" class="c-share fb"></a>
+              </div>
+            </li>
+          </ul>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="c-comment">
+      <figure class="c-comment-inner friend">
+        <span class="c-comment-label">Ваш знакомый</span>
+        <i class="c-comment-stat icon-dislike"></i>
+        <div class="c-comment-left">
+          <span class="avatar-box green"><img src="images/avatars/item1.jpg" alt=""></span>
+        </div>
+        <figcaption class="c-comment-body">
+          <div class="c-comment-top">
+            <span class="c-comment-name">MPS_ne_edet</span>
+            <time class="c-comment-date">31 июля 2016</time>
+          </div>
+          <p>AUTOporter получены исключительно путем сбора проб инициативной группой автомобилистов нашего проекта и заказа проведения соответствующих исследований в независимой лаборатории.</p>
+          <ul class="c-comment-btns">
+            <li><a href="#" class="c-comment-btn">Ответить</a></li>
+            <li><a href="#" class="c-comment-btn">Ссылка</a></li>
+            <li><a href="#" class="c-comment-btn">Пожаловаться</a></li>
+            <li class="c-share-item active">
+              <a href="#" class="c-comment-btn">Поделиться ></a>
+              <div class="c-shares">
+                <a href="/" class="c-share g"></a>
+                <a href="/" class="c-share tw"></a>
+                <a href="/" class="c-share vk"></a>
+                <a href="/" class="c-share fb"></a>
+              </div>
+            </li>
+          </ul>
+        </figcaption>
+      </figure>
+
+      <div class="c-comment">
+        <figure class="c-comment-inner">
+          <i class="c-comment-stat icon-pface"></i>
+          <div class="c-comment-left">
+            <span class="avatar-box gray"><img src="images/avatars/item5.jpg" alt=""></span>
+          </div>
+          <figcaption class="c-comment-body">
+            <div class="c-comment-top">
+              <span class="c-comment-name">STI_the_BEST</span>
+              <time class="c-comment-date">11 августа 2016</time>
             </div>
-          </li>
-        </ul>
-      </figcaption>
-    </figure>
+            <p>Tем сбора проб инициативной группой автомобилистов нашего проекта...</p>
+            <ul class="c-comment-btns">
+              <li><a href="#" class="c-comment-btn">Ответить</a></li>
+              <li><a href="#" class="c-comment-btn">Ссылка</a></li>
+              <li><a href="#" class="c-comment-btn">Пожаловаться</a></li>
+              <li class="c-share-item active">
+                <a href="#" class="c-comment-btn">Поделиться ></a>
+                <div class="c-shares">
+                  <a href="/" class="c-share g"></a>
+                  <a href="/" class="c-share tw"></a>
+                  <a href="/" class="c-share vk"></a>
+                  <a href="/" class="c-share fb"></a>
+                </div>
+              </li>
+            </ul>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="c-comment">
+        <figure class="c-comment-inner c-company">
+          <span class="c-comment-label">Комментарий компании</span>
+          <i class="c-comment-stat icon-like"></i>
+          <div class="c-comment-left">
+            <span class="avatar-box"><img src="images/avatars/item6.jpg" alt=""></span>
+          </div>
+          <figcaption class="c-comment-body">
+            <div class="c-comment-top">
+              <span class="c-comment-name">Дядя Вядик</span>
+              <time class="c-comment-date">11 августа 2016</time>
+            </div>
+            <p>А хранить "запаски" в непосредственной близости от толчка не пробовали? А хотя бы глянуть на наличие бумаги на ролике, заходя в туалет и зная, что запасной рулон где-то далеко? Вот мужики - ничего без нас не могут. У нас другая проблема теперь - судя по рекламе. Мужикам влом донести отработанный рулончик до мусорки.
+              <br><br>И их стали делать водорастворимыми, чтобы можно было бросать в унитаз. Не знаю как у кого, а у меня во всех туалетах стоят ведра для мусора. Это же элементарно. И следить за их наполняемостьюнесложно - каждый раз, идя в туалет, посмотреть, а не пора ли.
+              <br><br>А куда вы деваете пакеты из супермаркета?</p>
+            <ul class="c-comment-btns">
+              <li><a href="#" class="c-comment-btn">Ответить</a></li>
+              <li><a href="#" class="c-comment-btn">Ссылка</a></li>
+              <li><a href="#" class="c-comment-btn">Пожаловаться</a></li>
+              <li class="c-share-item active">
+                <a href="#" class="c-comment-btn">Поделиться ></a>
+                <div class="c-shares">
+                  <a href="/" class="c-share g"></a>
+                  <a href="/" class="c-share tw"></a>
+                  <a href="/" class="c-share vk"></a>
+                  <a href="/" class="c-share fb"></a>
+                </div>
+              </li>
+            </ul>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="c-comment">
+      <figure class="c-comment-inner">
+        <i class="c-comment-stat icon-like"></i>
+        <div class="c-comment-left">
+          <span class="avatar-box gray"></span>
+        </div>
+        <figcaption class="c-comment-body">
+          <div class="c-comment-top">
+            <span class="c-comment-name">КоСяК_Вованович</span>
+            <time class="c-comment-date">13 мая 2016</time>
+          </div>
+          <p>Все данные о качестве топлива на AUTOporter получены исключительно путем сбора проб инициативной группой автомобилистов нашего проекта и заказа проведения соответствующих исследований в независимой лаборатории.
+             <br><br>Публикуя эти данные на сайте, мы не претендуем на 100 процентную репрезентативность, поскольку получить такую в сложном вопросе качества украинского топлива не может даже государство - наша задача создать первый в истории украинского интернета прецедент Народного контроля за качеством товаров и услуг.</p>
+
+          <ul class="c-gallery">
+            {% for gallery in range(0,4) %}
+              <li class="c-gallery__item">
+                <a href="images/tire-fitting/item1.jpg" class="img-box box150 swipebox" rel='comment-gallery' style="background-image: url(images/tire-fitting/item1.jpg)">
+
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+          <ul class="c-comment-btns">
+            <li><a href="#" class="c-comment-btn">Ответить</a></li>
+            <li><a href="#" class="c-comment-btn">Ссылка</a></li>
+            <li><a href="#" class="c-comment-btn">Пожаловаться</a></li>
+            <li class="c-share-item active">
+              <a href="#" class="c-comment-btn">Поделиться ></a>
+              <div class="c-shares">
+                <a href="/" class="c-share g"></a>
+                <a href="/" class="c-share tw"></a>
+                <a href="/" class="c-share vk"></a>
+                <a href="/" class="c-share fb"></a>
+              </div>
+            </li>
+          </ul>
+        </figcaption>
+      </figure>
+    </div>
   </article>
 </section>

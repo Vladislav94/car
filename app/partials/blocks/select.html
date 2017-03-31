@@ -1,0 +1,12 @@
+
+<div class="select dd-wrap <$ selectOpts.selectClass $>">
+  <div class="select-show dd-show"><$ selectOpts.title $></div>
+  <div class="select-dd dd scroll">
+    <ul class="select-list">
+      <li class="active select-item">Киев</li>
+      {% for item in selectOpts.list %}
+      <li class="select-item"><$ item $></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

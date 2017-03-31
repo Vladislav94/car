@@ -1,0 +1,70 @@
+.ftext {
+
+  &-wrap {
+    padding-top: 15px;
+    padding-bottom: 60px;
+    color: $gray6;
+    font-size: 14px;
+    line-height: 1.39;
+    margin-top: 15px;
+
+    &.gray {
+      background: $graye2;
+    }
+
+    span {
+      font-size: 11px;
+      padding: 0 15px;
+    }
+  }
+
+  &-cont {
+    padding: 0;
+
+    &__in {
+      @extend %clearfix;
+    }
+  }
+
+  &-col {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 15px;
+    text-align: justify;
+
+    h3 {
+      font-size: 18px;
+      font-family: $cbold;
+      margin: .92em 0;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 1.12em 0;
+
+      & + h3 {
+        margin-top: 1.8em;
+      }
+    }
+
+    i {
+      font-family: $italic;
+    }
+
+    ul {
+      font-family: $bold;
+      margin: 1.1em 0;
+    }
+
+    a {
+      color: $redc9;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+}

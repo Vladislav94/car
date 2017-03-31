@@ -4,14 +4,14 @@
     <div class="header-l fl">
 
       <!-- Nav -->
-      <nav class="header-nav fl dd-wrap" ng-controller="dropdown" ng-class="{ 'dd-open': ddVisible }">
-        <button class="header-nav__btn dd-show" ng-click="show();">
+      <nav class="header-nav fl dd-wrap">
+        <button class="header-nav__btn dd-show">
           <span></span>
         </button>
 
-        <div class="header-nav__inner dd">
+        <div class="header-nav__dd dd">
           <div class="header-nav__top media">
-            <span class="header-nav__close media-middle" ng-click="show();"></span>
+            <span class="header-nav__close media-middle dd-show"></span>
             <div class="header-nav__logo media-middle">
               <img src="images/nav-logo.png" alt="">
             </div>
@@ -51,17 +51,12 @@
 
       <a href="/" class="header-logo fl"><img src="images/logo.png" alt=""></a>
 
-      <div class="reg-select select-wrap fl" ng-controller="dropdown" ng-class="{ 'dd-open': ddVisible }">
-        <div class="reg-select__show dd-show" ng-click="show();select = true">Киев</div>
-        <div class="reg-select__dd select-list scroll">
-          <ul class="">
-            <li class="active select-item">Киев</li>
-            {% for item in range(0,10) %}
-            <li class="select-item">Киев <$ loop.index $></li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
+      {% set selectOpts = {
+        title: 'Киев',
+        selectClass: ' header-select select-red',
+        list: ['Киев 1', 'Киев 2', 'Киев 3', 'Киев 3', 'Киев 4', 'Киев 5', 'Киев 6']
+      } %}
+      {% include 'blocks/select.html' %}
 
       {% if auth == true %}
       <form action="auth" class="header-auth__form fl">
@@ -69,10 +64,11 @@
         <a href="/" class="header-auth header-enter">Войти</a>
       </form>
       {% else %}
-      <div class="header-user fl dd-wrap" ng-controller="dropdown" ng-class="{ 'dd-open': ddVisible }">
-        <figure class="user-fig media dd-show" ng-click="show();">
+      <div class="header-user fl dd-wrap">
+        <figure class="user-fig media dd-show">
           <span class="user-l media-middle">
-            <span class="user-avatar" style="background-image: url(images/avatars/item1.jpg)">
+            <span class="avatar-box avatar-box__l">
+              <img src="images/avatars/item1.jpg" alt="">
               <span class="user-mess">2</span>
             </span>
           </span>

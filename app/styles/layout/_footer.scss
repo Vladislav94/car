@@ -6,8 +6,7 @@
   &-section {
     background: $gray1c;
     position: relative;
-    padding-bottom: 25px;
-    padding-top: 1px;
+    padding: 1px 0 25px;
 
     &:before {
       content: '';
@@ -91,6 +90,7 @@
       width: 125px;
       padding-top: 13px;
       position: relative;
+      float: left;
     }
 
     &-item {

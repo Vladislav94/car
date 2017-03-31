@@ -1,0 +1,22 @@
+.collector-wrap {
+}
+
+.coll {
+
+  &-section {
+    position: relative;
+    z-index: 1;
+    padding: 10px 9px 0;
+  }
+
+  &-add {
+    float: right;
+    width: 200px;
+    padding: 13px 0;
+
+    .btn {
+      width: 100%;
+    }
+  }
+
+}

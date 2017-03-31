@@ -1,0 +1,179 @@
+.c-list {
+
+  &-wrap {
+    margin: 15px 0;
+
+    .coms-box {
+      margin: 10px 5px;
+    }
+  }
+
+  &-title {
+    text-align: center;
+  }
+
+  &-body {
+    @extend %clearfix;
+    margin: 0 -5px;
+  }
+}
+
+.coms {
+
+  &-box {
+    width: 244px;
+    float: left;
+    box-shadow: 0 0 8px 0 rgba($black, .3);
+    border-radius: 2px;
+    background: $white;
+
+    &__head {
+      height: 64px;
+      text-align: center;
+      font-size: 24px;
+      color: $white;
+      display: flex;
+      padding: 5px 0;
+      box-sizing: border-box;
+
+      .box-blue & {
+        background: $blue6e;
+      }
+
+      .box-green & {
+        background: $green93;
+      }
+
+      .box-orange & {
+        background: $oranbc;
+      }
+
+      .box-gray & {
+        background: $gray61;
+      }
+    }
+  }
+
+  &-head__text {
+    margin: auto;
+    padding-left: 46px;
+    padding-right: 12px;
+    position: relative;
+    text-align: left;
+
+    .icon {
+      position: absolute;
+      left: 23px;
+      top: 11px;
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  &-box {
+    line-height: 1.1;
+    padding-bottom: 25px;
+
+    &__body {
+      padding: 0 11px;
+    }
+
+    &__list {
+      counter-reset: list;
+      margin: 20px 0;
+    }
+
+    &__item {
+      position: relative;
+      border-bottom: 1px solid $graye2;
+    }
+
+    &__link {
+      display: block;
+      padding: 6px 0 3px 38px;
+      margin: -1px -2px;
+      transition: background $trans;
+
+      &:hover {
+        background: $graye2;
+        border-radius: 2px;
+      }
+
+      &:before {
+        content: counter(list);
+        counter-increment: list;
+        position: absolute;
+        left: 0;
+        width: 35px;
+        text-align: center;
+        font-size: 16px;
+        box-sizing: border-box;
+        padding: 6px 3px 6px 0;
+        color: $gray61;
+        font-family: $thinI;
+      }
+    }
+
+    &__name {
+      font-size: 14px;
+      text-decoration: underline;
+      transition: color $trans;
+
+      .box-blue & {
+        color: $blue57;
+      }
+
+      .box-green & {
+        color: $green93;
+      }
+
+      .box-orange & {
+        color: $oranbc;
+      }
+
+      .box-gray & {
+        color: $gray61;
+      }
+
+      .coms-box__link:hover & {
+        text-decoration: none;
+        color: $gray61;
+      }
+    }
+
+    &__city {
+      font-size: 12px;
+      color: $gray9a;
+      text-decoration: underline;
+    }
+
+    &__show {
+      border-radius: 2px;
+      font-size: 14px;
+      width: 134px;
+      margin: 25px auto 0;
+
+      &:hover {
+
+        .box-blue & {
+          background: $blue6e;
+          border-color: $blue6e;
+        }
+
+        .box-green & {
+          background: $green93;
+          border-color: $green93;
+        }
+
+        .box-orange & {
+          background: $oranbc;
+          border-color: $oranbc;
+        }
+
+        .box-gray & {
+          background: $gray61;
+          border-color: $gray61;
+        }
+      }
+    }
+  }
+}

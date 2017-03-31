@@ -5,15 +5,15 @@
   position: relative;
   z-index: 2;
 
+  &-inner {
+    @extend %clearfix;
+  }
+
   &:before {
     content: '';
     display: block;
     background: $red9b;
     height: 10px;
-  }
-
-  &-inner {
-    padding: 0 10px;
   }
 
   &-l {
@@ -22,6 +22,7 @@
 
   &-nav {
     position: relative;
+    z-index: 2;
 
     &__btn {
       display: block;
@@ -79,15 +80,29 @@
       }
     }
 
-    &__inner {
+    &__dd {
       position: absolute;
       z-index: 1;
       left: 0;
       top: -4px;
-      width: 270px;
+      width: 48px;
+      height: 56px;
+      overflow: hidden;
       background: $white;
       border-radius: 2px;
       box-shadow: 0 0 8px rgba($black, .3);
+      transform: scale(1);
+      transition-property: width, height, visibility;
+      opacity: 1;
+
+      .dd-open & {
+        height: 446px;
+        width: 270px;
+      }
+    }
+
+    &__top {
+      width: 270px;
     }
 
     &__close {
@@ -112,6 +127,7 @@
     }
 
     &__logo {
+      padding-top: 6px;
       padding-left: 7px;
     }
   }
@@ -119,6 +135,7 @@
   &-list {
     margin: 20px 0 12px;
     line-height: 1.2;
+    width: 270px;
 
     &__item {
       padding: 0 1px;
@@ -252,69 +269,13 @@
     }
   }
 
-}
-
-.reg {
-
   &-select {
-    font-size: 14px;
-    color: $white;
+    float: left;
+    width: 140px;
     margin: 12px 10px 11px;
-
-    &__show {
-      position: relative;
-      border-radius: 3px;
-      background: $redd2;
-      padding: 5px 25px 5px 12px;
-      cursor: pointer;
-      transition: $trans;
-      width: 140px;
-      box-sizing: border-box;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
-
-
-      .select-open & {
-        border-radius: 3px 3px 0 0;
-
-        &:after {
-          transform: rotateX(-180deg);
-        }
-      }
-
-      &:after {
-        content: '';
-        @include sprite($ic-select-arr);
-        display: block;
-        position: absolute;
-        right: 10px;
-        top: 11px;
-        transition: $trans;
-      }
-    }
-
-    &__dd {
-      background: $redd2;
-      width: 100%;
-      border-radius: 0 0 3px 3px;
-      max-height: 190px;
-      padding: 5px 0;
-
-      li {
-        padding: 7px 12px 6px 12px;
-        cursor: pointer;
-        transition: $trans;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-
-        &:hover {
-          background-color: darken($redd2, 7%);
-        }
-      }
-    }
+    font-size: 14px;
   }
+
 }
 
 .user {
@@ -350,18 +311,6 @@
 
   &-l {
     width: 38px;
-  }
-
-  &-avatar {
-    width: 38px;
-    height: 38px;
-    display: block;
-    border-radius: 50%;
-    background-position: center top;
-    background-size: cover;
-    border: 2px solid $white;
-    box-sizing: border-box;
-    position: relative;
   }
 
   &-mess {

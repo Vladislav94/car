@@ -1,0 +1,83 @@
+.port {
+
+  &-news {
+    background: $graye2;
+    padding: 10px 0 25px;
+    margin: 15px 0;
+
+    &__title {
+      margin: em(18, 32) 0;
+    }
+
+    &__list {
+      margin: 25px 0;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: row;
+      flex-flow: row;
+      color: $gray6;
+      border-top: 1px solid $white;
+      padding: 20px 0 10px;
+      transition: background $trans;
+
+      &:hover {
+        background-color: $grayf5;
+      }
+
+      &:last-child {
+        border-bottom: 1px solid $white;
+      }
+    }
+
+    &__left {
+      padding: 5px 10px;
+
+    }
+
+    &__body {
+      padding: 0 10px 0 15px;
+    }
+
+    &__date {
+      font-size: 12px;
+      font-family: $lightI;
+      color: $gray81;
+      display: block;
+    }
+
+    &__name {
+      font-size: 18px;
+      text-transform: uppercase;
+      font-family: $cbold;
+      margin:  em(7, 18) 0;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &__text {
+      font-size: 14px;
+      line-height: 1.4;
+      margin: em(3, 14) 0 em(14, 14);
+    }
+
+    &__link {
+      font-size: 14px;
+      line-height: 1.4;
+      color: $black;
+      text-decoration: underline;
+      float: right;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &__more {
+      margin: 25px auto 0;
+    }
+  }
+}

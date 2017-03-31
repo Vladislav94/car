@@ -1,7 +1,188 @@
 {% set auth = false %}
+{% set bgClass = '' %}
 {% extends 'layout.html' %}
 {% block content %}
 <div id="map"></div>
+<div class="t-strip">
 
-{% include 'blocks/comments.html' %}
+  <div class="container">
+    <div class="c-list-wrap">
+      <div class="l-title c-list-title">Лучшие компании Украины по версии WBA</div>
+
+      <div class="c-list-body">
+        {% include 'blocks/company-list.html' %}
+      </div>
+    </div>
+
+    <div class="pop-wrap">
+      <div class="l-title pop-wrap__title">Популярные запросы</div>
+
+      <div class="pop-wrap__list">
+        {% for item in [['Полировка полок', '121'], ['Замена масла КПП', '77'], ['Вулканизация', '385'], ['Тонировка', '51'], ['Ремонт турбин', '9'], ['Тонировка', '51'], ['Ремонт турбин', '9'], ['Полировка полок', '121'], ['Замена масла КПП', '77'], ['Вулканизация', '385'], ['Замена масла КПП', '77'], ['Вулканизация', '385'], ['Тонировка', '51'], ['Ремонт турбин', '9']] %}
+        <div class="pop-wrap__item">
+          <a href="/" class="btn btn-white pop-wrap__btn"><span class="pop-wrap__text"><$ item[0] $></span> <span class="pop-wrap__count"><$ item[1] $></span></a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="c-fuel">
+
+      <div class="с-fuel-head">
+        {% set selectOpts = {
+          title: 'Киев',
+          selectClass: ' select-wgray c-fuel-select',
+          list: ['Киев', 'Киев', 'Киев', 'Киев', 'Киев', 'Киев', 'Киев']
+        } %}
+        {% include 'blocks/select.html' %}
+
+        <div class="h-title c-fuel-title"><i class="icon icon-flask"></i><span>Проверка качества топлива</span></div>
+      </div>
+
+      <article class="fuel-artic">
+        <div class="fuel-artic__left">
+          <div class="fuel-artic__img" style="background-image: url(images/fuel-img/item1.jpg)">
+
+          </div>
+        </div>
+
+        <div class="fuel-artic__body">
+          <div class="fuel-artic__head">
+            <time class="fuel-artic__date">19.01.2016</time>
+            <a href="/" class="fuel-artic__vid"></a>
+          </div>
+          <a href="/" class="fuel-artic__title">98-й бензин. Тест 17-и АЗС Харькова.</a>
+          <p class="fuel-artic__text">Исключитель но путем сбора проб инициативной группой автомобилистов над шего проекта и заказа проведения соответствующих исследований. Заказа и проведения соответствующих исследований группой автомобилистов нашего проекта и заказа проведения заказа проведения соот ветствующих и сследциативной группой автомобилистов.</p>
+          <a href="/" class="fuel-artic__link"></a>
+        </div>
+      </article>
+
+      {% set cities = [{
+        name: 'Киев',
+        empty: 0,
+        list: [
+          {
+            icon: 'gb',
+            iconText: '',
+            title: '',
+            text: '',
+            date: ''
+          },
+          {
+            icon: '',
+            iconText: '',
+            title: '',
+            text: '',
+            date: ''
+          },
+          {
+            icon: '',
+            iconText: '',
+            title: '',
+            text: '',
+            date: ''
+          },
+          {
+            icon: '',
+            iconText: '',
+            title: '',
+            text: '',
+            date: ''
+          }
+        ]
+      },
+      {
+        name: 'Днепр',
+        empty: 1,
+        list: [
+          {
+            icon: '',
+            iconText: '',
+            title: '',
+            text: '',
+            date: ''
+          },
+          {
+            icon: '',
+            iconText: '',
+            title: '',
+            text: '',
+            date: ''
+          },
+          {
+            icon: '',
+            iconText: '',
+            title: '',
+            text: '',
+            date: ''
+          },
+          {
+            icon: '',
+            iconText: '',
+            title: '',
+            text: '',
+            date: ''
+          }
+        ]
+      },
+      {
+        name: 'Киев',
+        empty: 0,
+        list: [
+          {
+            icon: '',
+            iconText: '',
+            title: '',
+            text: '',
+            date: ''
+          },
+          {
+            icon: '',
+            iconText: '',
+            title: '',
+            text: '',
+            date: ''
+          },
+          {
+            icon: '',
+            iconText: '',
+            title: '',
+            text: '',
+            date: ''
+          },
+          {
+            icon: '',
+            iconText: '',
+            title: '',
+            text: '',
+            date: ''
+          }
+        ]
+      }] %}
+
+      <div class="cf-cities">
+        <div class="cf-city-box">
+          <div class="cf-city-name"></div>
+
+          <ul class="cf-city-list">
+            <li class="cf-city-item">
+              <div class="cf-city-icon">
+                <i class="icon"></i>
+              </div>
+              <div class="cf-city-body">
+                <div class="cf-city-name"></div>
+                <p class="cf-city-text"></p>
+              </div>
+              <time class="cf-city-date"></time>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include 'blocks/port-news.html' %}
+</div>
 {% endblock %}

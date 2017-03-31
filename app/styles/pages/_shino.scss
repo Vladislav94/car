@@ -1,0 +1,511 @@
+.s {
+
+  &-title {
+    font-size: 27px;
+    color: $gray61;
+    width: auto;
+
+    &-l {
+      width: 48px;
+      padding: 12px 0;
+    }
+
+    &-ic {
+      height: 56px;
+      background-color: $white;
+      border-radius: 3px;
+      display: block;
+      position: relative;
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0px 0px 8px 0px rgba($black, .3);
+
+      .icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &-text {
+      padding: 0 15px;
+    }
+  }
+
+  &-items {
+    margin-top: 35px;
+  }
+
+  &-item {
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid $graye2;
+    padding: 10px 0 9px 5px;
+    color: $gray81;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: background $trans;
+
+    &:hover {
+      background: $grayf5;
+    }
+
+    &-body {
+      display: table-cell;
+      vertical-align: top;
+      padding-right: 30px;
+    }
+
+    &-img {
+      display: table-cell;
+      width: 200px;
+      vertical-align: top;
+    }
+
+    &-info {
+      padding-right: 140px;
+    }
+
+    &-name {
+      font-size: 18px;
+      color: $gray70;
+      display: inline-block;
+      border-bottom: 1px solid $grayc9;
+      line-height: 1;
+      position: relative;
+      transition: $trans;
+
+      .s-item:hover & {
+        color: $redc9;
+        border-bottom-color: $redc9;
+
+        &:hover {
+          border-bottom-color: transparent;
+        }
+      }
+    }
+
+
+
+    &-icon {
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: -5px;
+      width: 15px;
+      margin-right: 6px;
+      text-align: center;
+
+      .great & {
+        width: 20px;
+      }
+    }
+
+    &-events {
+      font-size: 10px;
+      font-family: $bold;
+      color: $white;
+      border-radius: 10px;
+      min-width: 19px;
+      text-align: center;
+      background: $redc9;
+      display: block;
+      padding: 5px 3px 4px 2px;
+      position: absolute;
+      left: 100%;
+      margin-left: 3px;
+      top: -6px;
+      box-sizing: border-box;
+    }
+
+    &-rating {
+      display: inline-block;
+      margin-top: 3px;
+
+      .r-stars {
+        margin-top: 2px;
+      }
+    }
+
+    &-add {
+      margin-top: 20px;
+      color: $gray81;
+
+      &.great {
+        font-size: 22px;
+      }
+    }
+  }
+
+  &-phone {
+    margin-top: 13px;
+    color: $gray81;
+
+    &.great {
+      font-size: 16px;
+      margin-top: 20px;
+    }
+  }
+
+  &-clock {
+    margin-top: 13px;
+    font-size: 12px;
+    color: $gray81;
+
+    &.great {
+      font-size: 14px;
+      margin-top: 20px;
+    }
+  }
+
+  &-dom {
+    font-size: 14px;
+    margin-top: 15px;
+
+    &.great {
+      margin-top: 25px;
+    }
+
+    a {
+      color: $redc9;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-body-right {
+    float: right;
+    text-align: right;
+  }
+
+  &-comm {
+    margin-top: 20px;
+
+    &-icon {
+      margin-bottom: -1px;
+    }
+
+    &-count {
+      font-size: 13px;
+      min-width: 37px;
+      display: inline-block;
+      position: relative;
+    }
+
+    &-new {
+      font-size: 10px;
+      font-family: $bold;
+      color: $white;
+      border-radius: 10px;
+      min-width: 19px;
+      text-align: center;
+      background: $green50;
+      display: block;
+      padding: 4px 2px 3px 2px;
+      position: absolute;
+      left: 100%;
+      margin-left: -9px;
+      top: -10px;
+      box-sizing: border-box;
+    }
+  }
+
+  &-more {
+    font-size: 12px;
+    color: $redc9;
+    display: inline-block;
+    margin-top: 42px;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &-sub-title {
+    color: $gray61;
+    margin: em(15px, 16px) 0;
+    font-size: 16px;
+    font-family: $lightI;
+    padding: 0 2px;
+  }
+
+  &-date-last {
+    font-size: 12px;
+    color: $gray81;
+    font-family: $lightI;
+    float: right;
+    margin-top: 1px;
+  }
+
+  &-btn {
+
+    height: 46px;
+    display: table;
+    width: 100%;
+    font-size: 16px;
+    color: $gray81;
+    border-radius: 3px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+    margin: 4px 0;
+
+    &-text {
+      display: table-cell;
+      vertical-align: middle;
+      padding-left: 14px;
+    }
+
+    &-icon {
+      display: table-cell;
+      vertical-align: middle;
+      width: 56px;
+
+      .icon {
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+
+  &-on {
+    margin: 25px 0 15px;
+
+    &-item {
+      height: 56px;
+
+      .s-btn-text {
+        padding: 0 14px 0 0;
+      }
+    }
+  }
+
+  &-single {
+    margin-bottom: 50px;
+    border-bottom: 1px solid $graye2;
+    padding-bottom: 15px;
+
+    &-title {
+      margin-left: -10px;
+
+      .s-title-l {
+        padding: 0;
+      }
+    }
+
+    &-info {
+      margin-top: 30px;
+    }
+
+    &-rating {
+      margin: 15px 0 35px;
+      padding-right: 10px;
+    }
+  }
+
+  &-carousel {
+    margin: 35px 0;
+  }
+
+  &-event {
+
+    &s {
+
+      &-title {
+        color: $redc9;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          @include sprite($icon-date-r);
+          vertical-align: middle;
+          margin-top: -8px;
+          margin-right: 13px;
+        }
+      }
+    }
+
+    color: $white;
+    line-height: 1.4;
+
+    &-date {
+      color: $yellff;
+      font-family: $bold;
+    }
+
+    &-text {
+      margin: em(18, 16) 0;
+    }
+
+    &-link {
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-adm {
+      color: $redfd;
+      font-size: 14px;
+      font-family: $sBoldI;
+      display: block;
+    }
+
+    &-top {
+      background: $redc9;
+      padding: 25px;
+
+      .s-event-date {
+        font-size: 20px;
+      }
+
+      .s-event-title {
+        font-size: 24px;
+      }
+
+      .s-event-text {
+        font-size: 16px;
+      }
+    }
+
+    &-low {
+      background: $redd0;
+      padding: 15px 25px 15px 45px;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 25px;
+        top: 28px;
+        width: 5px;
+        height: 5px;
+        border-radius: 5px;
+        background: $white;
+      }
+
+      .s-event-date {
+        font-size: 14px;
+      }
+
+      .s-event-title {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &-sb {
+
+    &-btns {
+      margin: 20px 0;
+    }
+  }
+
+  &-services {
+    margin: 22px 0 15px;
+
+    &-title {
+      margin: em(12, 16) 0;
+    }
+  }
+
+  &-service {
+
+    &-item {
+      font-size: 14px;
+      margin: em(7, 14) 0;
+      padding-left: 28px;
+      position: relative;
+      line-height: 1.3;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 6px;
+        top: 8px;
+        transform: translate(-50%, -50%);
+      }
+
+      &.plus {
+        font-family: $lightI;
+        color: $gray98;
+
+        &:before {
+          content: '+';
+          top: 9px;
+        }
+      }
+
+      &.tick {
+
+        &:before {
+          @include sprite($ic-tick-gray);
+        }
+      }
+    }
+  }
+}
+
+.se {
+
+  &-dis {
+    background: $grayba;
+    color: $white;
+    padding: 20px;
+
+    &-title {
+      text-align: center;
+      font-size: 20px;
+      overflow: hidden;
+      position: relative;
+      margin: em(5, 20) 0;
+
+      &:before {
+        content: '';
+        position: absolute;
+        height: 1px;
+        background: $white;
+        top: 12px;
+        right: 0;
+        left: 0;
+      }
+
+      span {
+        position: relative;
+        padding: 0 15px;
+        display: inline-block;
+        background: $grayba;
+      }
+    }
+
+    &-list {
+      margin-top: 15px;
+    }
+
+    &-item {
+      font-size: 18px;
+      padding-left: 25px;
+      position: relative;
+      margin: em(10, 18) 0;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 9px;
+        width: 5px;
+        height: 5px;
+        border-radius: 5px;
+        background: $white;
+      }
+    }
+
+    &-link {
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

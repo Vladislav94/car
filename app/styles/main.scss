@@ -3,13 +3,26 @@
 @import "base/reset";
 @import "base/sprite";
 @import "base/icons";
+@import "base/fonts";
 @import "base/base";
-
-// layout
-@import "layout/header";
-@import "layout/footer";
-@import "layout/comments";
 
 // Plugins
 @import "plugins/scroll";
 @import "plugins/map";
+@import "plugins/slider";
+@import "plugins/lightbox";
+
+// layout
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sb";
+@import "layout/comments";
+@import "layout/ftext";
+@import "layout/close-obj";
+@import "layout/company-list";
+@import "layout/port-news";
+
+// Pages
+@import "pages/main";
+@import "pages/collector";
+@import "pages/shino";

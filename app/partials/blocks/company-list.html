@@ -1,0 +1,205 @@
+{% set companys = [
+  {
+    wrapClass: ' box-blue',
+    titleText: 'СТО',
+    titleIcon: ' icon-wservice',
+    list: [{
+      title: 'СТО “My little pony”',
+      city: 'Киев'
+    },
+    {
+      title: '“АвтоДоктор”',
+      city: 'Харьков'
+    },
+    {
+      title: 'СТО “Зайчик”',
+      city: 'Львов'
+    },
+    {
+      title: 'Star Wars: The Old Republic',
+      city: 'Одесса'
+    },
+    {
+      title: '“Автоцентр”',
+      city: 'Киев'
+    },
+    {
+      title: 'СТО “Радуга”',
+      city: 'Киев'
+    },
+    {
+      title: '“АвтоДоктор”',
+      city: 'Киев'
+    },
+    {
+      title: 'СТО “Зайчик”',
+      city: 'Бердичев'
+    },
+    {
+      title: 'ПроСТО',
+      city: 'Каменецк-Подольский'
+    },
+    {
+      title: '“Автоцентр”',
+      city: 'Ровно'
+    }]
+
+  },
+  {
+    wrapClass: ' box-green',
+    titleText: 'АЗС',
+    titleIcon: ' icon-azs-w',
+    list: [{
+      title: 'СТО “Зайчик”',
+      city: 'Киев'
+    },
+    {
+      title: 'Star Wars: The Old Republic',
+      city: 'Харьков'
+    },
+    {
+      title: '“Автоцентр”',
+      city: 'Львов'
+    },
+    {
+      title: 'СТО “Радуга”',
+      city: 'Одесса'
+    },
+    {
+      title: '“Автоцентр”',
+      city: 'Киев'
+    },
+    {
+      title: '“АвтоДоктор”',
+      city: 'Киев'
+    },
+    {
+      title: 'СТО “My little pony”',
+      city: 'Киев'
+    },
+    {
+      title: '“АвтоДоктор”',
+      city: 'Бердичев'
+    },
+    {
+      title: 'СТО “Зайчик”',
+      city: 'Каменецк-Подольский'
+    },
+    {
+      title: 'ПроСТО',
+      city: 'Ровно'
+    }]
+  },
+  {
+    wrapClass: ' box-orange',
+    titleText: 'Автомойки',
+    titleIcon: ' icon-aw-w',
+    list: [{
+      title: '“Автоцентр”',
+      city: 'Киев'
+    },
+    {
+      title: 'СТО “Радуга”',
+      city: 'Харьков'
+    },
+    {
+      title: '“АвтоДоктор”',
+      city: 'Львов'
+    },
+    {
+      title: 'СТО “Зайчик”',
+      city: 'Одесса'
+    },
+    {
+      title: 'ПроСТО',
+      city: 'Киев'
+    },
+    {
+      title: '“Автоцентр”',
+      city: 'Киев'
+    },
+    {
+      title: 'СТО “My little pony”',
+      city: 'Киев'
+    },
+    {
+      title: '“АвтоДоктор”',
+      city: 'Бердичев'
+    },
+    {
+      title: 'СТО “Зайчик”',
+      city: 'Каменецк-Подольский'
+    },
+    {
+      title: 'Star Wars: The Old Republic',
+      city: 'Ровно'
+    }]
+  },
+  {
+    wrapClass: ' box-gray',
+    titleText: 'Шиномонтаж',
+    titleIcon: ' icon-tire-w',
+    list: [{
+      title: '“Автоцентр”',
+      city: 'Киев'
+    },
+    {
+      title: 'СТО “Радуга”',
+      city: 'Харьков'
+    },
+    {
+      title: '“АвтоДоктор”',
+      city: 'Львов'
+    },
+    {
+      title: 'СТО “Зайчик”',
+      city: 'Одесса'
+    },
+    {
+      title: 'ПроСТО',
+      city: 'Киев'
+    },
+    {
+      title: '“Автоцентр”',
+      city: 'Киев'
+    },
+    {
+      title: 'СТО “My little pony”',
+      city: 'Киев'
+    },
+    {
+      title: '“АвтоДоктор”',
+      city: 'Бердичев'
+    },
+    {
+      title: 'СТО “Зайчик”',
+      city: 'Каменецк-Подольский'
+    },
+    {
+      title: 'Star Wars: The Old Republic',
+      city: 'Ровно'
+    }]
+  }
+  ] %}
+
+{% for item in companys %}
+<div class="coms-box<$ item.wrapClass $>">
+  <div class="coms-box__head">
+    <span class="coms-head__text"><i class="icon<$ item.titleIcon $>"></i><$ item.titleText $></span>
+  </div>
+
+  <div class="coms-box__body">
+    <ul class="coms-box__list">
+    {% for item in item.list %}
+    <li class="coms-box__item">
+      <a href="/" class="coms-box__link">
+        <p class="coms-box__name"><span><$ item.title $></span></p>
+        <span class="coms-box__city"><$ item.city $></span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  </div>
+  <a href="/" class="btn btn-white coms-box__show">Показать все</a>
+</div>
+{% endfor %}

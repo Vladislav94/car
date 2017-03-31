@@ -1,0 +1,160 @@
+{% set auth = false %}
+{% set bgClass = 'gray' %}
+{% extends 'layout.html' %}
+{% block content %}
+<div id="map"></div>
+
+<div class="t-strip s-single-wrap">
+  <section class="container s-section">
+
+    {% set breadcrumbs = ['AUTOporter', 'Шиномонтаж в Киеве', 'Шиномонтаж “Дядя Вадик”'] %}
+    {% include 'blocks/breadcrumbs.html' %}
+
+    <div class="content-wrap s-single">
+      <div class="content">
+        <div class="s-single-title">
+          <h1 class="media s-title">
+            <div class="media-top s-title-l">
+              <span class="avatar-box avatar-box__t">
+                <img src="images/avatars/item1.png" alt="">
+              </span>
+            </div>
+            <div class="s-title-text media-middle">Шиномонтаж “Дядя Вадик”</div>
+          </h1>
+        </div>
+        <div class="s-single-info">
+          <div class="s-date-last">Последние изменения: 27.09.2015</div>
+          <div class="s-sub-title">Контактная информация:</div>
+
+          <div class="s-item-add great"><span class="s-item-icon"><i class="icon-marker-gg icon"></i></span> г. Киев, ул. Генераторная, 9</div>
+          <div class="s-phone great"><span class="s-item-icon"><i class="icon-phone-g icon"></i></span> (067) 574 77 77,  (050) 574 77 78</div>
+          <div class="s-clock great"><span class="s-item-icon"><i class="icon-clock-g icon"></i></span> Работает: 09:00 - 19:00 (Пн-Вс)</div>
+          <div class="s-dom great"><span class="s-item-icon"><i class="icon-globe icon"></i></span> <a href="/">http://mpsneedet.kiev.ua</a></div>
+        </div>
+
+        <div class="s-carousel">
+          <div class="s-sub-title">Фотографии компании (37):</div>
+          <div class="img-carousel__wrap">
+            <div class="img-carousel slider" data-slick='{"slidesToShow": 3, "infinite": false}'>
+              {% for item in range(0,6) %}
+              <div class="slide">
+                <a href="images/tire-fitting/item<$ loop.index $>.jpg" title="Картинка <$ loop.index $>" rel="slider-gallery" class="img-box box230 swipebox" style="background-image: url(images/tire-fitting/item<$ loop.index $>.jpg)"></a>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <div class="s-events">
+          <div class="s-events-title m-title">События (2)</div>
+          <article class="s-event s-event-top">
+            <time class="s-event-date">С 15 января по 31 января</time>
+            <div class="s-event-title"><a href="/" class="s-event-link">Для всех владельцев Ауди скидка 15%</a></div>
+            <p class="s-event-text">9-ый Международный салон грузовых и коммерческих автомобилей TIR 2016
+            Публикуя эти данные на сайте, мы не претендуем на 100 процентную репрезентативность, поскольку получить такую в сложном вопросе качества украинского топлива не может даже государство - наша зта прецедент Народного.</p>
+            <span class="s-event-adm">Администрация</span>
+          </article>
+
+          <article class="s-event s-event-low">
+            <time class="s-event-date">С 10 января по 10 февраля</time>
+            <div class="s-event-title"><a href="/" class="s-event-link">Наша задача создать первый в истории украинского</a></div>
+          </article>
+
+          <div class="se-dis">
+
+            <div class="se-dis-title"><span>Не активные</span></div>
+
+            <ul class="se-dis-list">
+              {% for item in ['Репрезентативность, поскольку получить такую в сложном вопросе качества украинского топлива не может даже государство', 'Наша задача создать первый в истории украинского интернета прецедент', 'Народного контроля за качеством товаров и услуг.'] %}
+              <li class="se-dis-item"><a href="/" class="se-dis-link"><$ item $></a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+
+        <div class="n-know-block n-know-high">
+          <div class="n-know-title">Это важно знать</div>
+          <p class="n-know-text">Все данные о качестве топлива на AUTOporter получены исключительно путем сбора проб инициативной группой автомобилистов нашего проекта и заказа проведения соответствующих исследований в независимой лаборатории. 100 процентную репрезентативность, поскольку получитого топлива не может даже государство - наша задача создать первый в истории украинского интернета прецедент Народного контроля за качеством товаров и услуг.</p>
+          <p class="n-know-text">Получить такую в сложном вопросе качеств интернета прецедент Народного контроля за качеством товаров и услуг. </p>
+        </div>
+      </div>
+
+      <div class="sb sb-r">
+
+        {% set starSettings = {
+            voted: 1324,
+            active: 4,
+            wrapClass: ' rating-middle s-single-rating',
+            starClass: ' rating-star__w'
+          }
+        %}
+        {% include 'blocks/stars.html' %}
+
+        <div class="s-sb-btns">
+          <a href="#" class="s-btn">
+            <span class="s-btn-text">Проложить маршрут</span>
+            <span class="s-btn-icon"><span class="icon-rout icon"></span></span>
+          </a>
+          <a href="#" class="s-btn">
+            <span class="s-btn-text">Добавить в Избранное</span>
+            <span class="s-btn-icon"><span class="icon-favor icon"></span></span>
+          </a>
+        </div>
+
+        <div class="s-on">
+          <div class="s-sub-title s-on-title">На территории:</div>
+          <div class="s-btn s-on-item">
+            <span class="s-btn-icon"><span class="ic-aw-or icon"></span></span>
+            <span class="s-btn-text">Автомойка</span>
+          </div>
+          <div class="s-btn s-on-item">
+            <span class="s-btn-icon"><span class="ic-azs-gr icon"></span></span>
+            <span class="s-btn-text">АЗС</span>
+          </div>
+        </div>
+
+        <div class="s-services">
+          <div class="s-sub-title s-services-title">Предлагаемые услуги:</div>
+
+          <ul class="s-services-list">
+            {% set serList = ['Балансировка', 'Шиномонтаж', 'Ремонт шин', 'Прокат дисков', 'Закачка шин газом', 'Сварка аргоном', 'Утренники', 'Елка', 'Аниматоры', 'Сладкий стол'] %}
+            {% for service in serList %}
+              <li class="s-service-item {% if loop.index < 7 %}tick{% else %}plus{% endif %}"><$ service $></li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="sb-sep"></div>
+
+        <div class="s-services">
+          <div class="s-sub-title s-services-title">Способы оплаты:</div>
+
+          <ul class="s-services-list">
+            {% set serList = ['Наличные', 'Безнал', 'Кредитная карта'] %}
+            {% for service in serList %}
+              <li class="s-service-item tick"><$ service $></li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="s-services">
+          <div class="s-sub-title s-services-title">Сервис:</div>
+
+          <ul class="s-services-list">
+            {% set serList = ['Администратор', 'Wi-Fi', 'Комната отдыха', 'Кафе', 'Кофе-машина', 'Туалет'] %}
+            {% for service in serList %}
+              <li class="s-service-item tick"><$ service $></li>
+            {% endfor %}
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+    {% include 'blocks/comments.html' %}
+
+    {% include 'blocks/close-obj.html' %}
+  </section>
+</div>
+
+{% endblock %}

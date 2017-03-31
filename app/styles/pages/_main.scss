@@ -1,0 +1,167 @@
+.pop {
+
+  &-wrap {
+    margin: 35px 0;
+
+    &__title {
+      text-align: center;
+    }
+
+    &__list {
+      text-align: center;
+      margin: 25px -5px;
+    }
+
+    &__item {
+      display: inline-block;
+      margin: 5px 3px;
+    }
+
+    &__btn {
+      width: auto;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+      padding: 9px 14px 8px;
+
+      &:hover {
+        background: $redc9;
+        border-color: $redc9;
+      }
+    }
+
+    &__count {
+      margin-left: 15px;
+    }
+  }
+}
+
+.c {
+
+  &-fuel {
+    padding: 0 10px;
+
+    &-head {
+
+    }
+
+    &-title {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+
+    &-select {
+      width: 204px;
+      float: right;
+      margin: 2px 0;
+    }
+  }
+}
+
+.fuel {
+
+  &-artic {
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid $grayae;
+    display: flex;
+    flex-flow: row;
+    margin: 34px 0 30px;
+
+    &__left {
+      width: 326px;
+    }
+
+    &__body {
+      flex: 1;
+      padding: 0 8px 0 18px;
+    }
+
+    &__img {
+      width: 326px;
+      height: 228px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &__head {
+      margin-left: -18px;
+    }
+
+    &__date {
+      font-size: 16px;
+      font-family: $bold;
+      color: $white;
+      background: $green23;
+      display: inline-block;
+      width: 120px;
+      text-align: center;
+      box-sizing: border-box;
+      padding: 5px 10px;
+      border-radius: 0 3px 3px 0;
+    }
+
+    &__vid {
+      display: inline-block;
+      background: $green23;
+      border-radius: 3px;
+      padding: 7px 9px;
+      vertical-align: top;
+      margin-left: 3px;
+      transition: background $trans;
+
+      &:hover {
+        background: darken($green23, 8%);
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        @include sprite($icon-wvideo);
+      }
+    }
+
+    &__title {
+      font-size: 22px;
+      color: $green23;
+      margin-top: em(20, 22);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &__text {
+      margin-top: em(13, 16);
+      font-size: 16px;
+      line-height: 1.4;
+      color: $gray6;
+    }
+
+    &__link {
+      display: block;
+      padding: 2px;
+      margin-left: auto;
+      width: 22px;
+      margin-top: -3px;
+
+      &:hover {
+
+        &:after {
+          left: 2px;
+        }
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        position: relative;
+        transition: $trans;
+        @include sprite($icon-arrs);
+      }
+    }
+  }
+
+}

@@ -1,0 +1,187 @@
+{% set auth = false %}
+{% set bgClass = 'gray' %}
+{% extends 'layout.html' %}
+{% block content %}
+<div id="map"></div>
+
+<div class="t-strip collector-wrap">
+  <section class="container coll-section">
+    <div class="content-wrap">
+      <aside class="sb">
+        <div class="m-filter">
+          <div class="m-filter-coinc"><span>1027</span> совпадений</div>
+
+            {% set selectOpts = {
+              title: 'Киев',
+              selectClass: ' select-worange m-filter-select',
+              list: ['Киев', 'Киев', 'Киев', 'Киев', 'Киев', 'Киев', 'Киев']
+            } %}
+            {% include 'blocks/select.html' %}
+
+            {% set filterArr = [
+              {
+                name: 'Предлагаемые услуги',
+                checks: ['Балансировка', 'Шиномонтаж', 'Ремонт шин', 'Прокат дисков', 'Закачка шин газом', 'Сварка аргоном']
+              },
+              {
+                name: 'Способы оплаты',
+                checks: ['Наличные', 'Безнал', 'Кредитная карта']
+              },
+              {
+                name: 'Сервис',
+                checks: ['Администратор', 'Wi-Fi', 'Комната отдыха', 'Кафе', 'Кофе-машина', 'Туалет']
+              }
+            ] %}
+
+            {% for titles in filterArr %}
+            {% set id = loop.index %}
+            <div class="m-filter-block">
+              <div class="m-filter-title"><$ titles.name $></div>
+
+              {% for item in titles.checks %}
+              <div class="m-filter-check checkbox-wrap"><input type="checkbox" id="<$ id $>_<$ loop.index $>"><label for="<$ id $>_<$ loop.index $>" class="checkbox-label"><$ item $></label></div>
+              {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="n-know-block">
+          <div class="n-know-title">Это важно знать</div>
+          <p class="n-know-text">Все данные о качестве топлива на AUTOporter получены исключително путем сбора.</p>
+          <div class="n-know-text">Автомоби получены исключи тельно путем истории украинского интенета прецедент Народного контроля за качеством товаров и услуг.</div>
+          <a href="/" class="n-know-link">AUTOporter</a>
+        </div>
+      </aside>
+
+      <div class="content">
+        <div class="coll-add">
+          <a href="#" class="btn btn-red btn-shad">Добавить объект</a>
+        </div>
+        <h1 class="media s-title">
+          <div class="media-top s-title-l">
+            <span class="s-title-ic">
+              <i class="icon-tireb icon"></i>
+            </span>
+          </div>
+
+          <div class="s-title-text media-middle">Все шиномонтажи Украины</div>
+        </h1>
+
+        <div class="s-items">
+          {% set items = [
+            {
+              name: '“Дядя Вадик”',
+              events: '2',
+              star: 4,
+              starVoted: 1324,
+              comments: ['317', '2'],
+              img: ['item1', '+17']
+            },{
+              name: 'Две атмосферы',
+              events: '',
+              star: 5,
+              starVoted: 106,
+              comments: ['7', ''],
+              img: ['item2', '+3']
+            },{
+              name: 'RTF',
+              events: '22',
+              star: 3,
+              starVoted: 471,
+              comments: ['317', ''],
+              img: ['item3', '+7']
+            },{
+              name: 'Шины и диски',
+              events: '',
+              star: 5,
+              starVoted: 249,
+              comments: ['24', ''],
+              img: ['item4', '+11']
+            },{
+              name: 'Шины и диски',
+              events: '',
+              star: 5,
+              starVoted: 249,
+              comments: ['24', ''],
+              img: ['item5', '']
+            },{
+              name: '“Дядя Вадик”',
+              events: '',
+              star: 4,
+              starVoted: 1324,
+              comments: ['317', ''],
+              img: ['stub', '']
+            },{
+              name: 'Две атмосферы',
+              events: '',
+              star: 5,
+              starVoted: 106,
+              comments: ['7', ''],
+              img: ['item1', '+15']
+            },{
+              name: 'RTF',
+              events: '22',
+              star: 3,
+              starVoted: 471,
+              comments: ['317', ''],
+              img: ['item3', '+2']
+            },{
+              name: 'Шины и диски',
+              events: '',
+              star: 5,
+              starVoted: 249,
+              comments: ['24', ''],
+              img: ['item4', '']
+            },{
+              name: 'Шины и диски',
+              events: '',
+              star: 5,
+              starVoted: 249,
+              comments: ['24', ''],
+              img: ['item2', '+1']
+            }
+          ] %}
+          {% for collItem in items %}
+
+          {% set starSettings = {
+              voted: collItem.starVoted,
+              active: collItem.star,
+              wrapClass: ' rating-low s-item-rating',
+              starClass: ' rating-star__g'
+            }
+          %}
+
+          <figure class="s-item">
+            <figcaption class="s-item-body">
+
+              <div class="s-body-right">
+                {% include 'blocks/stars.html' %}
+                <div class="s-comm">
+                  <i class="s-comm-icon ic-comments-low icon"></i>
+                  <span class="s-comm-count"><$ collItem['comments'][0] $>{% if collItem['comments'][1] > 0 %}<span class="s-comm-new" data-tooltip="Новые коментарии"><$ collItem['comments'][1] $></span>{% endif %}</span>
+                </div>
+                <a href="/s-single.html" class="s-more">Подробнее</a>
+              </div>
+
+              <div class="s-item-info">
+                <a href="/s-single.html" class="s-item-name"><$ collItem.name  $>{% if collItem.events > 0 %}<span class="s-item-events" data-tooltip="Новые события"><$ collItem.events $></span>{% endif %}</a>
+                <div class="s-item-add"><span class="s-item-icon"><i class="icon-marker-g icon"></i></span> г. Киев, ул. Генераторная, 9</div>
+                <div class="s-phone"><span class="s-item-icon"><i class="icon-phone icon"></i></span> (067) 574 77 77,  (050) 574 77 78</div>
+
+                <div class="s-clock"><span class="s-item-icon"><i class="icon-clock icon"></i></span> Работает: 09:00 - 19:00 (Пн-Вс)</div>
+              </div>
+            </figcaption>
+            <div class="s-item-img">
+              <a href="/s-single.html" class="img-box box200" style="background-image: url(images/tire-fitting/<$ collItem.img[0] $>.{% if collItem.img[0] == 'stub' %}png{% else %}jpg{% endif %})">
+                {% if collItem.img[1] > 0 %}<span><$ collItem.img[1] $></span>{% endif %}
+              </a>
+            </div>
+          </figure>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% endblock %}
