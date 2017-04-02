@@ -7,7 +7,7 @@
 
   <div class="container">
     <div class="c-list-wrap">
-      <div class="l-title c-list-title">Лучшие компании Украины по версии WBA</div>
+  <div class="l-title c-list-title">Лучшие компании Украины по версии WBA</div>
 
       <div class="c-list-body">
         {% include 'blocks/company-list.html' %}
@@ -65,31 +65,31 @@
         list: [
           {
             icon: 'gb',
-            iconText: '',
-            title: '',
-            text: '',
-            date: ''
+            iconText: 'дт',
+            title: 'тест 95+ бензина',
+            text: 'Протестированно 17 АЗС',
+            date: '19.01.2016'
           },
           {
-            icon: '',
-            iconText: '',
-            title: '',
-            text: '',
-            date: ''
+            icon: 'gd',
+            iconText: '98',
+            title: 'тест 98 бензина',
+            text: 'Протестированно 15 АЗС',
+            date: '31.01.2016'
           },
           {
-            icon: '',
-            iconText: '',
-            title: '',
-            text: '',
-            date: ''
+            icon: 'go',
+            iconText: '100',
+            title: 'тест 100 бензина',
+            text: 'Протестированно 17 АЗС',
+            date: '8.02.2016'
           },
           {
-            icon: '',
-            iconText: '',
-            title: '',
-            text: '',
-            date: ''
+            icon: 'gr',
+            iconText: '92',
+            title: 'тест 92 бензина',
+            text: 'Протестированно 17 АЗС',
+            date: '8.02.2016'
           }
         ]
       },
@@ -98,87 +98,90 @@
         empty: 1,
         list: [
           {
-            icon: '',
-            iconText: '',
-            title: '',
-            text: '',
-            date: ''
+            icon: 'go',
+            iconText: '100',
+            title: 'тест 100 бензина',
+            text: 'Протестированно 17 АЗС',
+            date: '8.02.2016'
           },
           {
-            icon: '',
-            iconText: '',
-            title: '',
-            text: '',
-            date: ''
+            icon: 'gg',
+            iconText: '95',
+            title: 'тест 95+ бензина',
+            text: 'Протестированно 17 АЗС',
+            date: '19.01.2016'
           },
           {
-            icon: '',
-            iconText: '',
-            title: '',
-            text: '',
-            date: ''
-          },
-          {
-            icon: '',
-            iconText: '',
-            title: '',
-            text: '',
+            icon: 'gb',
+            iconText: 'дт',
+            title: 'тест 95+ бензина',
+            text: 'Протестированно 17 АЗС',
             date: ''
           }
         ]
       },
       {
-        name: 'Киев',
+        name: 'Харьков',
         empty: 0,
         list: [
           {
-            icon: '',
-            iconText: '',
-            title: '',
-            text: '',
-            date: ''
+            icon: 'gb',
+            iconText: 'дт',
+            title: 'тест 95+ бензина',
+            text: 'Протестированно 17 АЗС',
+            date: '19.01.2016'
           },
           {
-            icon: '',
-            iconText: '',
-            title: '',
-            text: '',
-            date: ''
+            icon: 'gd',
+            iconText: '98',
+            title: 'тест 98 бензина',
+            text: 'Протестированно 15 АЗС',
+            date: '31.01.2016'
           },
           {
-            icon: '',
-            iconText: '',
-            title: '',
-            text: '',
-            date: ''
+            icon: 'gr',
+            iconText: '92',
+            title: 'тест 92 бензина',
+            text: 'Протестированно 17 АЗС',
+            date: '31.01.2016'
           },
           {
-            icon: '',
-            iconText: '',
-            title: '',
-            text: '',
-            date: ''
+            icon: 'gt',
+            iconText: '95',
+            title: 'тест 95 бензина',
+            text: 'Протестированно 17 АЗС',
+            date: '8.02.2016'
           }
         ]
       }] %}
 
       <div class="cf-cities">
+        {% for city in cities %}
         <div class="cf-city-box">
-          <div class="cf-city-name"></div>
+          <div class="cf-city-name"><a href="/" class="m-link"><$ city.name $></a></div>
 
           <ul class="cf-city-list">
+            {% for item in city.list %}
             <li class="cf-city-item">
-              <div class="cf-city-icon">
-                <i class="icon"></i>
-              </div>
-              <div class="cf-city-body">
-                <div class="cf-city-name"></div>
-                <p class="cf-city-text"></p>
-              </div>
-              <time class="cf-city-date"></time>
+              <a href="/" class="cf-city-link">
+                <div class="cf-city-icon">
+                  <i class="icon icon-azs-<$ item.icon $>"><$ item.iconText $></i>
+                </div>
+                <div class="cf-city-body">
+                  <div class="cf-city-name"><$ item.title $></div>
+                  <p class="cf-city-text"><$ item.text $></p>
+                </div>
+                <time class="cf-city-date"><$ item.date $></time>
+              </a>
             </li>
+            {% endfor %}
+            {% for empty in range(0,city.empty) %}
+            <li class="cf-city-item empty">
+            </li>
+            {% endfor %}
           </ul>
         </div>
+        {% endfor %}
       </div>
     </div>
   </div>

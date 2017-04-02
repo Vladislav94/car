@@ -10,9 +10,9 @@
         </button>
 
         <div class="header-nav__dd dd">
-          <div class="header-nav__top media">
-            <span class="header-nav__close media-middle dd-show"></span>
-            <div class="header-nav__logo media-middle">
+          <div class="header-nav__top">
+            <span class="header-nav__close dd-show"></span>
+            <div class="header-nav__logo">
               <img src="images/nav-logo.png" alt="">
             </div>
           </div>
@@ -30,14 +30,14 @@
               ['event', 'События', '2 / 71']
             ] %}
             <li class="header-list__item">
-              <a href="/" class="header-list__link media">
+              <a href="/" class="header-list__link">
                 <div class="media-middle header-list-l">
                   <span class="header-list__icon" style="background-image: url(images/icons/icon-<$headList[0]$>.png)"></span>
                 </div>
 
-                <p class="header-list__name media-middle"><$ headList[1]  $></p>
+                <p class="header-list__name"><$ headList[1]  $></p>
 
-                <div class="header-list-r media-middle">
+                <div class="header-list-r">
                   <span class="header-list__count">{% if loop.last %}
                   <span>2</span> / 71{% else %}<$ headList[2] $>{% endif %}</span>
                 </div>
@@ -65,14 +65,14 @@
       </form>
       {% else %}
       <div class="header-user fl dd-wrap">
-        <figure class="user-fig media dd-show">
-          <span class="user-l media-middle">
+        <figure class="user-fig dd-show">
+          <span class="user-l">
+            <span class="user-mess">2</span>
             <span class="avatar-box avatar-box__l">
               <img src="images/avatars/item1.jpg" alt="">
-              <span class="user-mess">2</span>
             </span>
           </span>
-          <figcaption class="user-name media-middle">MPS_ne_edet</figcaption>
+          <figcaption class="user-name">MPS_ne_edet</figcaption>
         </figure>
 
         <div class="user-dd dd">
