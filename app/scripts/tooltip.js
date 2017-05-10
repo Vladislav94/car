@@ -25,38 +25,54 @@ $(document).ready(function() {
 
 
   function showTooltip(text, elem) {
-    var $tooltipElem = $('<div class="tooltip">'+text+'</div>'),
+    let $tooltipElem = $('<div class="tooltip">'+text+'</div>'),
         windowW = $(window).width(),
         windowH = $(window).height(),
         posTop = elem.offset().top - $(document).scrollTop(),
         posLeft = elem.offset().left - $(document).scrollLeft(),
+        toolPos = elem.data('tool-pos'),
         elemW = elem.outerWidth(),
         elemH = elem.outerHeight();
 
+
     $('body').append($tooltipElem);
 
-    var tooltipW = $tooltipElem.outerWidth(),
+    let tooltipW = $tooltipElem.outerWidth(),
         tooltipH = $tooltipElem.outerHeight(),
         left = posLeft + elemW/2,
-        top = posTop - elemH,
+        top = posTop - tooltipH,
         newTop,
         newLeft;
 
-    if (left+tooltipW > windowW) {
-      newLeft = left-tooltipW;
-      $tooltipElem.addClass('left');
-      posTool(newLeft, top);
+    if (toolPos == 'cursor') {
+
+      elem.on('mousemove', function(e) {
+        let [scrollT, scrollL,leftM, topM] = [$(document).scrollTop(), $(document).scrollLeft(), e.pageX, e.pageY-tooltipH];
+        checkPos(leftM, topM-scrollT);
+      });
+
+      return $tooltipElem;
+    } else {
+      checkPos(left, top);
     }
 
-    if(top-tooltipH < 0) {
-      newTop = posTop+tooltipH;
-      $tooltipElem.addClass('bottom');
-      posTool(newLeft || left, newTop);
-    }
-    
-    if (top-tooltipH > 0) {
-      $tooltipElem.addClass('top');
-      posTool(newLeft || left, top);
+    function checkPos(l, t) {
+      if (l+tooltipW > windowW) {
+        newLeft = l-tooltipW;
+        $tooltipElem.addClass('left').removeClass('right');
+        posTool(newLeft, t);
+      }
+
+      if(t-tooltipH < 0) {
+        newTop = posTop+elemH;
+        $tooltipElem.addClass('bottom').removeClass('top');
+        posTool(newLeft || l, newTop);
+      }
+
+      if (t-tooltipH > 0) {
+        $tooltipElem.addClass('top').removeClass('bottom');
+        posTool(newLeft || l, t);
+      }
     }
 
     return $tooltipElem;

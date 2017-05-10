@@ -1,7 +1,9 @@
 .c {
 
   &-section {
-    margin: 10px 0;
+    margin: 20px 0;
+    padding-top: 45px;
+    border-top: 1px solid $graye2;
   }
 
   &-head {
@@ -147,10 +149,13 @@
 
   &-add {
 
+    .text-wrap {
+      border-radius: 3px;
+      border-color: $graydc;
+    }
+
     &-textarea {
       height: 170px;
-      border-radius: 3px;
-      border: 1px solid $graydc;
       color: $gray9;
       line-height: 1.5;
       padding: 15px 20px;

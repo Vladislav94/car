@@ -1,17 +1,24 @@
 .s {
 
+  &-section {
+    margin-bottom: 90px;
+  }
+
   &-title {
     font-size: 27px;
     color: $gray61;
     width: auto;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
 
     &-l {
-      width: 48px;
       padding: 12px 0;
     }
 
     &-ic {
       height: 56px;
+      width: 48px;
       background-color: $white;
       border-radius: 3px;
       display: block;
@@ -29,6 +36,10 @@
 
     &-text {
       padding: 0 15px;
+
+      span {
+        color: $gray9;
+      }
     }
   }
 
@@ -37,8 +48,7 @@
   }
 
   &-item {
-    display: table;
-    width: 100%;
+    display: flex;
     border-bottom: 1px solid $graye2;
     padding: 10px 0 9px 5px;
     color: $gray81;
@@ -51,41 +61,70 @@
     }
 
     &-body {
-      display: table-cell;
-      vertical-align: top;
       padding-right: 30px;
+      flex-grow: 1;
+      display: flex;
+      min-width: 0;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .s-item-low & {
+        min-width: 0;
+        flex-basis: 50%;
+      }
     }
 
     &-img {
-      display: table-cell;
       width: 200px;
-      vertical-align: top;
+
+      .s-item-low & {
+        width: 140px;
+        text-align: center;
+      }
     }
 
     &-info {
-      padding-right: 140px;
+      flex-grow: 1;
+
+      .s-item-low & {
+        display: block;
+        min-width: 0;
+      }
+    }
+
+    &-head {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      padding-top: 10px;
+      margin-top: -10px;
+      color: $gray70;
+
+      .s-item:hover & {
+        color: $redc9;
+      }
     }
 
     &-name {
       font-size: 18px;
-      color: $gray70;
       display: inline-block;
-      border-bottom: 1px solid $grayc9;
+      text-decoration: underline;
       line-height: 1;
       position: relative;
       transition: $trans;
+      color: inherit;
+
+      .s-item-low & {
+        display: inline;
+      }
 
       .s-item:hover & {
-        color: $redc9;
-        border-bottom-color: $redc9;
 
         &:hover {
-          border-bottom-color: transparent;
+          text-decoration: none;
         }
       }
     }
-
-
 
     &-icon {
       display: inline-block;
@@ -124,11 +163,20 @@
       .r-stars {
         margin-top: 2px;
       }
+
+      .s-item-low & {
+        margin-top: 15px;
+
+        .rating-voted {
+          min-width: auto;
+        }
+      }
     }
 
     &-add {
       margin-top: 20px;
       color: $gray81;
+      font-size: 14px;
 
       &.great {
         font-size: 22px;
@@ -139,6 +187,7 @@
   &-phone {
     margin-top: 13px;
     color: $gray81;
+    font-size: 14px;
 
     &.great {
       font-size: 16px;
@@ -151,9 +200,64 @@
     font-size: 12px;
     color: $gray81;
 
+    &-top {
+      position: relative;
+      z-index:1;
+    }
+
+    &.dd-wrap {
+      display: inline-block;
+
+      .dd {
+        top: -10px;
+        left: -7px;
+        width: 150px;
+        background: $redc9;
+        padding: 33px 10px 8px;
+        font-size: 12px;
+        border-radius: 3px;
+        box-sizing: border-box;
+        box-shadow: 0 0 8px 0 rgba($black, .3);
+      }
+
+      &:hover {
+        color: $white;
+
+        .icon {
+          @include sprite($icon-lclock-w);
+        }
+      }
+    }
+
+    &-item {
+      margin: 3px 0;
+
+      span {
+        width: 28px;
+        display: inline-block;
+      }
+    }
+
+    &-text {
+      border-bottom: 1px dashed;
+      line-height: 1;
+      display: inline-block;
+      transition: border $trans;
+
+      .s-clock.dd-wrap:hover & {
+        border-color: transparent;
+      }
+    }
+
     &.great {
       font-size: 14px;
       margin-top: 20px;
+
+      &:hover {
+        .icon {
+          @include sprite($icon-clock-w);
+        }
+      }
     }
   }
 
@@ -192,6 +296,7 @@
       min-width: 37px;
       display: inline-block;
       position: relative;
+      color: $gray81;
     }
 
     &-new {
@@ -206,7 +311,7 @@
       padding: 4px 2px 3px 2px;
       position: absolute;
       left: 100%;
-      margin-left: -9px;
+      margin-left: -5px;
       top: -10px;
       box-sizing: border-box;
     }
@@ -218,6 +323,10 @@
     display: inline-block;
     margin-top: 42px;
     text-decoration: underline;
+
+    .s-item-low & {
+      margin-top: 13px;
+    }
 
     &:hover {
       text-decoration: none;
@@ -241,30 +350,46 @@
   }
 
   &-btn {
-
     height: 46px;
-    display: table;
-    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     font-size: 16px;
     color: $gray81;
     border-radius: 3px;
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
     margin: 4px 0;
+    transition: background $trans;
+
+    &:hover {
+      background: $redc9;
+      color: $white;
+    }
 
     &-text {
-      display: table-cell;
-      vertical-align: middle;
       padding-left: 14px;
+      flex-grow: 1;
     }
 
     &-icon {
-      display: table-cell;
-      vertical-align: middle;
-      width: 56px;
+      width: 54px;
+      min-width: 54px;
 
       .icon {
         display: block;
         margin: auto;
+
+        .s-btn:hover & {
+          display: none;
+
+          &.hover {
+            display: block;
+          }
+        }
+
+        &.hover {
+          display: none;
+        }
       }
     }
   }
@@ -282,9 +407,6 @@
   }
 
   &-single {
-    margin-bottom: 50px;
-    border-bottom: 1px solid $graye2;
-    padding-bottom: 15px;
 
     &-title {
       margin-left: -10px;
@@ -309,11 +431,18 @@
   }
 
   &-event {
+    background: $redc9;
+
+    &:nth-of-type(2n) {
+      background: $redd0;
+    }
 
     &s {
+      margin: 15px 0;
 
       &-title {
         color: $redc9;
+        padding: 0 5px;
 
         &:before {
           content: '';
@@ -336,9 +465,12 @@
 
     &-text {
       margin: em(18, 16) 0;
+      color: $white;
     }
 
     &-link {
+      display: inline;
+      margin-right: 15px;
 
       &:hover {
         text-decoration: underline;
@@ -352,8 +484,16 @@
       display: block;
     }
 
+    &-comm {
+      font-size: 13px;
+      vertical-align: middle;
+
+      .icon {
+        margin-right: 10px;
+      }
+    }
+
     &-top {
-      background: $redc9;
       padding: 25px;
 
       .s-event-date {
@@ -370,7 +510,6 @@
     }
 
     &-low {
-      background: $redd0;
       padding: 15px 25px 15px 45px;
       position: relative;
 
@@ -378,7 +517,7 @@
         content: '';
         position: absolute;
         left: 25px;
-        top: 28px;
+        top: 24px;
         width: 5px;
         height: 5px;
         border-radius: 5px;
@@ -445,6 +584,112 @@
       }
     }
   }
+
+  &-full {
+    border-bottom: 5px solid $graydc;
+    margin: 20px 0;
+
+    &-title {
+      padding: 12px 20px;
+      background: $grayba;
+    }
+
+    &-row {
+      display: flex;
+      margin: 20px 0;
+    }
+
+    &-cel {
+      flex-grow: 1;
+      flex-basis: 50%;
+
+      &:nth-of-type(1) {
+        padding-right: 5px;
+      }
+
+      &:nth-of-type(2) {
+        padding-left: 5px;
+      }
+    }
+
+    &-item {
+      box-sizing: border-box;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      margin: 1px 0;
+
+      &:hover,
+      &.active {
+        border: 1px solid $graydc;
+      }
+    }
+  }
+
+  &f {
+
+    &-item {
+
+      &-title {
+        font-size: 16px;
+        color: $gray81;
+        text-decoration: underline;
+        display: block;
+        padding: 10px 18px;
+        font-family: $light;
+
+        .s-full-item.active & {
+          color: $redc9;
+        }
+
+        &:hover {
+
+          &:after {
+            opacity: 1;
+          }
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          right: 19px;
+          top: 50%;
+          margin-top: -4px;
+          @include sprite($ic-arr-wgray);
+          opacity: 0;
+          transition: opacity $trans, transform $trans;
+
+          .s-full-item.active & {
+            opacity: 1;
+            @include sprite($ic-arr-wred);
+            transform: rotateX(-180deg);
+          }
+        }
+      }
+
+      &-list {
+        padding: 0 17px 10px;
+      }
+
+      &-name {
+        font-size: 14px;
+        color: $gray61;
+        margin: 9px 0;
+        position: relative;
+        padding-left: 18px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 5px;
+          left: 3px;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: $redc9;
+        }
+      }
+    }
+  }
 }
 
 .se {
@@ -479,10 +724,6 @@
       }
     }
 
-    &-list {
-      margin-top: 15px;
-    }
-
     &-item {
       font-size: 18px;
       padding-left: 25px;
@@ -506,6 +747,75 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+}
+
+.c-obj {
+  margin: 50px 0;
+
+  &-title {
+    margin: em(20, 30) 0;
+
+    span {
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: -24px;
+        margin-top: -13px;
+        @include sprite($icon-marker-r);
+      }
+    }
+  }
+}
+
+.m-services {
+
+  &-wrap {
+    display: flex;
+    padding: 0 25px;
+  }
+
+  &-cel {
+    flex-grow: 1;
+    color: $white;
+    padding: 0 15px;
+    line-height: 1.2;
+  }
+
+  &-box {
+
+    &:first-of-type {
+
+      .m-services-name {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  &-name {
+    font-size: 16px;
+    margin-top: 20px;
+    font-family: $light;
+  }
+
+  &-item {
+    font-size: 12px;
+    position: relative;
+    padding-left: 18px;
+    margin: 8px 0 8px 2px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 3px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: $white;
     }
   }
 }

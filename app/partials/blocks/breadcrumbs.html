@@ -1,4 +1,4 @@
-<ul class="breadcrumbs">
+<ul class="breadcrumbs<$ breadClass $>">
   {% for breadcrumb in breadcrumbs %}
     <li>{% if loop.index != loop.length %}<a href="/">{% endif %}<$ breadcrumb $>{% if loop.index != loop.last %}</a>{% endif %}</li>
   {% endfor %}

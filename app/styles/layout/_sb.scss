@@ -41,6 +41,23 @@
   &-check {
     margin: 5px 0;
   }
+
+  &-all {
+    text-align: center;
+    font-size: 16px;
+    color: $white;
+    font-family: $light;
+    margin: 20px 0 15px;
+
+    a {
+      border-bottom: 1px dashed $white;
+      transition: border $trans;
+
+      &:hover {
+        border-color: transparent;
+      }
+    }
+  }
 }
 
 .sb {

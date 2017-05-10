@@ -7,10 +7,14 @@
     position: relative;
     z-index: 1;
     padding: 10px 9px 0;
+    margin-bottom: 100px;
+  }
+
+  &-head {
+    display: flex;
   }
 
   &-add {
-    float: right;
     width: 200px;
     padding: 13px 0;
 

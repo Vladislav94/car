@@ -51,7 +51,7 @@ gulp.task('scripts', () => {
 
 
 gulp.task('html', ['templates','styles', 'scripts'], () => {
-  return gulp.src('app/*.html')
+  return gulp.src('.tmp/*.html')
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     // .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
@@ -77,22 +77,25 @@ gulp.task('sprite', function () {
   spriteData.css.pipe(gulp.dest('app/styles/base'));
 });
 
-// gulp.task('sprite', function () {
-//   const spriteData = gulp.src('app/images/sprites/*.png')
-//     .pipe($.spritesmith({
-//       imgName: 'sprite.png',
-//       cssName: '_sprite.scss',
-//       imgPath: '../images/sprites/sprite.png',
-//       padding: 30,
-//       cssTemplate: 'handlebarsInheritance.scss.handlebars'
-//     }));
-//   spriteData.img.pipe(gulp.dest('.tmp/images/sprites'));
-//   spriteData.css.pipe(gulp.dest('app/styles/base'));
-// });
+gulp.task('images', ['sprite'], () => {
 
-gulp.task('images', () => {
-  return gulp.src('app/images/**/*')
-    .pipe($.cache($.imagemin()))
+  return gulp.src([
+      'app/images/**/*',
+      '.tmp/images/**/*',
+      '!app/images/sprites/**/*'
+    ])
+    .pipe($.plumber())
+    .pipe($.if($.if.isFile, $.cache($.imagemin({
+      progressive: true,
+      interlaced: true,
+      // don't remove IDs from SVGs, they are often used
+      // as hooks for embedding and styling
+      svgoPlugins: [{cleanupIDs: false}]
+    }))
+    .on('error', function (err) {
+      console.log(err);
+      this.end();
+    })))
     .pipe(gulp.dest('dist/images'));
 });
 
@@ -119,12 +122,16 @@ gulp.task('serve', () => {
     browserSync({
       notify: false,
       port: 9000,
+      ghostMode: false,
       server: {
         baseDir: ['.tmp', 'app'],
+        directory: true,
         routes: {
           '/bower_components': 'bower_components'
         }
-      }
+      },
+      startPath: "index.html",
+      tunnel: true
     });
 
     gulp.watch([
@@ -132,7 +139,7 @@ gulp.task('serve', () => {
       '.tmp/fonts/**/*'
     ]).on('change', reload);
 
-    gulp.watch('app/**/*.html', ['templates']);
+    gulp.watch(['app/**/**/*.html'], ['templates']);
     gulp.watch('app/images/**/*', ['sprite']);
     gulp.watch('app/styles/**/*.scss', ['styles']);
       gulp.watch('app/scripts/**/*.js', ['scripts']);
@@ -144,7 +151,13 @@ gulp.task('serve:dist', () => {
   browserSync({
     notify: false,
     port: 9000,
+    ghostMode: false,
     server: {
+      ghostMode: {
+        location: true,
+        clicks: false,
+        scroll: false
+      },
       baseDir: ['dist']
     }
   });

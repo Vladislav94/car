@@ -5,12 +5,14 @@
 @import "base/icons";
 @import "base/fonts";
 @import "base/base";
+@import "base/ua-map";
 
 // Plugins
 @import "plugins/scroll";
 @import "plugins/map";
 @import "plugins/slider";
 @import "plugins/lightbox";
+@import "plugins/modal";
 
 // layout
 @import "layout/header";
@@ -18,7 +20,6 @@
 @import "layout/sb";
 @import "layout/comments";
 @import "layout/ftext";
-@import "layout/close-obj";
 @import "layout/company-list";
 @import "layout/port-news";
 
@@ -26,3 +27,12 @@
 @import "pages/main";
 @import "pages/collector";
 @import "pages/shino";
+@import "pages/port-news";
+@import "pages/login";
+@import "pages/date";
+@import "pages/all-events";
+@import "pages/object-events";
+@import "pages/test-page";
+@import "pages/test-fuel";
+@import "pages/search";
+@import "pages/reg";

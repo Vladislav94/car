@@ -6,27 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>car</title>
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
-
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
   </head>
-  <body>
+  <body ng-app="myApp">
     <div id="wrap">
       {% include 'header.html' %}
 
       {% block content %}
       {% endblock %}
 
-      {% include 'blocks/f-text.html' %}
+      {% if ftext.show == true %}{% include 'blocks/f-text.html' %}{% endif %}
 
       {% include 'footer.html' %}
 

@@ -7,6 +7,10 @@
   }
 }
 
+%shadow {
+  box-shadow: 0 0 8px 0 rgba(#000, .3);
+}
+
 @mixin gradient($from, $to) {
   background: $from;
   background: linear-gradient(to bottom,  $from 0%, $to 100%);
@@ -28,52 +32,22 @@
 $white: #fff;
 $black: #000;
 
-
-// Red
-$rede1: #E16B59;
-$red9b: #9B3525;
-$redd2: #D25845;
-$redff: #FFAB9A;
-$redfa: #FAC4BB;
-$redd7: #D77263;
-$red80: #80433B;
-$redc9: #E16B59;
-$red88: #883623;
-$redd0: #D05A48;
-$redfd: #fdc3b6;
-$redee: #FF6049;
-
-// Green
-$green87: #87AE2E;
-$green00: #00A90C;
-$green4e: #4E723A;
-$green76: #76a25e;
-$green50: #50aa00;
-$green93: #93ae2b;
-$green23: #93af2b;
-
-
-// Blue
-$blue6e: #6e96c6;
-$blue57: #5797c9;
-
-// Yellow
-$yele7: #E79D21;
-$yeld6: #d69f16;
-$yellff: #ffe400;
-
-// Orange
-$oranbc: #bc7840;
-
 // Gray
 $grayf5: #f5f5f5;
 $graye2: #e2e2e2;
+$graye0: #e0e0e0;
 $graydc: #dcdcdc;
+$graydd: #ddd;
 $grayce: #cecece;
 $grayca: #cacaca;
+$grayaa: #aaa;
 $grayc9: #c9c9c9;
 $grayc0: #C0C0C0;
+$grayb0: #b0b0b0;
+$graybb: #bbb;
+$graya6: #a6a6a6;
 $grayba: #bababa;
+$gray87: #878787;
 $gray81: #818181;
 $grayb5: #b5b5b5;
 $grayae: #aeaeae;
@@ -91,7 +65,61 @@ $gray29: #292929;
 $gray1c: #1c1c1c;
 $gray1a: #1a1a1a;
 
+// Red
+$rede1: #E16B59;
+$red9b: #9B3525;
+$redd2: #D25845;
+$redff: #FFAB9A;
+$redfa: #FAC4BB;
+$redd7: #D77263;
+$red80: #80433B;
+$redc9: #E16B59;
+$red88: #883623;
+$redd0: #D05A48;
+$redfd: #fdc3b6;
+$redee: #FF6049;
+$redfd: #fdc3b6;
+$redff: #ffcfc5;
+$redb9: #D05A48;
+$redffe: #ffeae5;
+$rede5: #e59c8c;
+$redea: #eaab9c;
+$redd6: #d68572;
+$redac: #ac513d;
 
+// Green
+$green87: #87AE2E;
+$green00: #00A90C;
+$green4e: #4E723A;
+$green76: #76a25e;
+$green50: #50aa00;
+$green93: #93ae2b;
+$green23: #93af2b;
+$green8a: #8a8d7d;
+$green96: #96be6c;
+$green5a: #5a733a;
+
+
+// Blue
+$blue6e: #6e96c6;
+$blue57: #5797c9;
+$blue8c: #8c9ea9;
+$blue1c: #1CB0F9;
+$blue4f: #4f669f;
+$blue4d: #4d709a;
+
+// Yellow
+$yele7: #E79D21;
+$yeld6: #d69f16;
+$yellff: #ffe400;
+
+// Orange
+$oranbc: #bc7840;
+$orandd: #dd9333;
+$oranf6: #f68634;
+
+// Brown
+$brownae: #ae9c86;
 
 // trans
 $trans: .2s linear;
@@ -100,7 +128,9 @@ $trans: .2s linear;
 $reg: 'ProximaNova-Regular';
 $italic: 'ProximaNova-Italic';
 $lightI: 'ProximaNova-LightI';
+$light: 'ProximaNova-Light';
 $cbold: 'ProximaNova-CBold';
+$sbold: 'ProximaNova-SBold';
 $bold: 'ProximaNova-Bold';
 $sBoldI: 'ProximaNova-SBoldIt';
 $thinI: 'ProximaNova-ThinIt';

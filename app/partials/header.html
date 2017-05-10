@@ -31,7 +31,7 @@
             ] %}
             <li class="header-list__item">
               <a href="/" class="header-list__link">
-                <div class="media-middle header-list-l">
+                <div class="header-list-l">
                   <span class="header-list__icon" style="background-image: url(images/icons/icon-<$headList[0]$>.png)"></span>
                 </div>
 
@@ -51,47 +51,52 @@
 
       <a href="/" class="header-logo fl"><img src="images/logo.png" alt=""></a>
 
-      {% set selectOpts = {
-        title: 'Киев',
-        selectClass: ' header-select select-red',
-        list: ['Киев 1', 'Киев 2', 'Киев 3', 'Киев 3', 'Киев 4', 'Киев 5', 'Киев 6']
-      } %}
-      {% include 'blocks/select.html' %}
+        {% set selectOpts = {
+          title: 'Киев',
+          selectClass: ' header-select select-red',
+          list: ['Киев 1', 'Киев 2', 'Киев 3', 'Киев 3', 'Киев 4', 'Киев 5', 'Киев 6']
+        } %}
+        {% include 'blocks/select.html' %}
 
-      {% if auth == true %}
-      <form action="auth" class="header-auth__form fl">
-        <a href="/" class="header-auth header-reg">Регистрация</a>
-        <a href="/" class="header-auth header-enter">Войти</a>
-      </form>
-      {% else %}
-      <div class="header-user fl dd-wrap">
-        <figure class="user-fig dd-show">
-          <span class="user-l">
-            <span class="user-mess">2</span>
-            <span class="avatar-box avatar-box__l">
-              <img src="images/avatars/item1.jpg" alt="">
-            </span>
-          </span>
-          <figcaption class="user-name">MPS_ne_edet</figcaption>
-        </figure>
-
-        <div class="user-dd dd">
-
-
-          <ul class="user-list">
-            {% for userL in ['Избранное', 'Настройки', 'Бонусы'] %}
-            <li class="user-list__item">
-              <a href="/" class="user-list__link"><$ userL $></a>
-            </li>
-            {% endfor %}
-          </ul>
+        {% if regHead != false %}
+        {% if auth == true %}
+        <div class="header-auth__box fl">
+          <a href="/" class="header-auth header-reg">Регистрация</a>
+          <a href="/" class="header-auth header-enter">Войти</a>
         </div>
-      </div>
+        {% else %}
+        <div class="header-user fl dd-wrap">
+          <figure class="user-fig dd-show">
+            <span class="user-l">
+              <span class="user-mess" data-tooltip="Новые сообщения">2</span>
+              <span class="avatar-box avatar-box__l" style="background-image: url(images/avatars/item1.jpg)">
+              </span>
+            </span>
+            <figcaption class="user-name">MPS_ne_edet</figcaption>
+          </figure>
+
+          <div class="user-dd dd">
+
+
+            <ul class="user-list">
+              {% for userL in ['Избранное', 'Настройки', 'Бонусы'] %}
+              <li class="user-list__item">
+                <a href="/" class="user-list__link"><$ userL $></a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        {% endif %}
       {% endif %}
     </div>
     <div class="header-r fr">
-      <a href="/" class="header-app"><img src="images/apps/apple.png" alt=""></a>
-      <a href="/" class="header-app"><img src="images/apps/google.png" alt=""></a>
+      {% if regHead != false %}
+      <a href="/" class="header-app"><img src="images/apps/apple.svg" class="svg" alt=""></a>
+      <a href="/" class="header-app"><img src="images/apps/google.svg" class="svg" alt=""></a>
+      {% else %}
+        <a href="/" class="header-auth header-enter">Войти</a>
+      {% endif %}
     </div>
   </section>
 </header>

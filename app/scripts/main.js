@@ -4,18 +4,23 @@ $(document).ready(function() {
   (function() {
 
     // dropdown
-    let $ddWrap = $('.dd-wrap');
 
-    $ddWrap.on('click', '.dd-show', function() {
+    $('body').on('click', '.dd-show', function(e) {
+      e.preventDefault();
+
       let $this = $(this),
           $par = $this.closest('.dd-wrap'),
           $dd = $par.find('.dd');
 
-      $('.dd-open').not($par).removeClass('dd-open');
+      if($par.hasClass('disabled')) return;
+
+      $par.find('.scroll').mCustomScrollbar();
+
+      $('.dd-open').not($('.dd-open[data-out="false"]')).not($par).removeClass('dd-open');
       $par.toggleClass('dd-open');
     });
 
-    $ddWrap.on('click', '.select-item', function(e) {
+    $('body').on('click', '.select-item', function(e) {
       var $thisText = $(this).html(),
           $thisWrap = $(this).closest('.dd-wrap'),
           $ddBtn = $thisWrap.find('.dd-show');
@@ -27,28 +32,35 @@ $(document).ready(function() {
     });
 
     $('body').on('click', function(e) {
-      isTarget(e ,'.dd-wrap', function() {
-        $('.dd-open').removeClass('dd-open');
+      isTarget(e ,'.dd-wrap', function($this) {
+        $('.dd-open').not($('.dd-open[data-out="false"]')).removeClass('dd-open');
       });
     });
 
     function isTarget(ev, classN, callback) {
 
       if ($(ev.target).closest(classN).length != 1) {
-        callback();
+        callback($(ev.target).closest(classN));
       }
     }
 
     // Scroll
     $('.scroll').mCustomScrollbar();
-
-    // Slider
-    $('.slider').slick({
-
-    })
-
+    $('.scroll-out').mCustomScrollbar({'scrollbarPosition': 'outside'});
     // $.scrollSpeed(100, 300, 'easeOutCubic');
 
+    // Slider
+    $('.slider').slick()
+
+    $('.nav-slider').each(function() {
+      var $that = $(this),
+          $sliderFor = $that.find('.slider-for'),
+          $sliderNav = $that.find('.slider-nav');
+
+      $sliderFor.slick({asNavFor: $sliderNav});
+      $sliderNav.slick({asNavFor: $sliderFor});
+
+    });
 
     // lightBox init
     $('.swipebox').swipebox( {
@@ -60,5 +72,10 @@ $(document).ready(function() {
         $('body').removeClass('lb-open');
       }
     } );
+
+    $('body').on('click', '.modal-open', function() {
+      var modal = $(this).attr('href').replace(/#/,'');
+      $(modal).arcticmodal();
+    });
   })();
 });

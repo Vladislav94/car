@@ -1,18 +1,16 @@
 {% set auth = false %}
-{% set bgClass = '' %}
+{% set ftext = {bg: '', show: true} %}
 {% extends 'layout.html' %}
 {% block content %}
 <div id="map"></div>
-<div class="t-strip">
+<section class="t-strip c-list-wrap">
 
   <div class="container">
-    <div class="c-list-wrap">
-  <div class="l-title c-list-title">Лучшие компании Украины по версии WBA</div>
+      <div class="l-title c-list-title">Лучшие компании Украины по версии WBA</div>
 
       <div class="c-list-body">
         {% include 'blocks/company-list.html' %}
       </div>
-    </div>
 
     <div class="pop-wrap">
       <div class="l-title pop-wrap__title">Популярные запросы</div>
@@ -20,46 +18,225 @@
       <div class="pop-wrap__list">
         {% for item in [['Полировка полок', '121'], ['Замена масла КПП', '77'], ['Вулканизация', '385'], ['Тонировка', '51'], ['Ремонт турбин', '9'], ['Тонировка', '51'], ['Ремонт турбин', '9'], ['Полировка полок', '121'], ['Замена масла КПП', '77'], ['Вулканизация', '385'], ['Замена масла КПП', '77'], ['Вулканизация', '385'], ['Тонировка', '51'], ['Ремонт турбин', '9']] %}
         <div class="pop-wrap__item">
-          <a href="/" class="btn btn-white pop-wrap__btn"><span class="pop-wrap__text"><$ item[0] $></span> <span class="pop-wrap__count"><$ item[1] $></span></a>
+          <a href="/" class="btn btn-glight pop-wrap__btn"><span class="pop-wrap__text"><$ item[0] $></span> <span class="pop-wrap__count"><$ item[1] $></span></a>
         </div>
         {% endfor %}
       </div>
     </div>
   </div>
+</section>
 
+<section class="ua-comp">
   <div class="container">
-    <div class="c-fuel">
+    <div class="l-title ua-comp-title">На портале представлены 31 764 компании Украины</div>
+    <div class="ua-comp-body">
+    <div class="ua-comp-left">
+      {% set uaList = [
+        {
+          icon: 'icon-bservice',
+          text: 'СТО',
+          count: '1204'
+        },{
+          icon: 'ic-azs-gg',
+          text: 'АЗС',
+          count: '763'
+        },{
+          icon: 'icon-ybag',
+          text: 'Автомагазины',
+          count: '641'
+        },{
+          icon: 'ic-aw-gor',
+          text: 'Автомойки',
+          count: '2701'
+        },{
+          icon: 'icon-mtire',
+          text: 'Шиномонтаж',
+          count: '1975'
+        },{
+          icon: 'icon-brepairer',
+          text: 'Частный мастер',
+          count: '4072'
+        },{
+          icon: 'icon-fcar',
+          text: 'Автосалон',
+          count: '247'
+        },{
+          icon: 'icon-gdetail',
+          text: 'Детейлинг',
+          count: '12034'
+        }
+      ] %}
 
-      <div class="с-fuel-head">
-        {% set selectOpts = {
-          title: 'Киев',
-          selectClass: ' select-wgray c-fuel-select',
-          list: ['Киев', 'Киев', 'Киев', 'Киев', 'Киев', 'Киев', 'Киев']
-        } %}
-        {% include 'blocks/select.html' %}
-
-        <div class="h-title c-fuel-title"><i class="icon icon-flask"></i><span>Проверка качества топлива</span></div>
+      <ul class="ua-comp-list">
+        {% for item in uaList %}
+        <li class="ua-comp-item">
+          <a href="/" class="ua-comp-link">
+            <span class="ua-comp-icon">
+              <i class="icon <$ item.icon $>"></i>
+            </span>
+            <p class="ua-comp-name"><$ item.text $></p>
+            <span class="ua-comp-count"><$ item.count $></span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="ua-comp-map">
+      <div class="svg-wrap">
+        <img src="images/Ukraine.svg" alt="Ukraine" class="svg ua-map" id="ua-map">
+        <span class="tooltip"></span>
       </div>
+    </div>
+  </div>
+  </div>
+</section>
 
-      <article class="fuel-artic">
-        <div class="fuel-artic__left">
-          <div class="fuel-artic__img" style="background-image: url(images/fuel-img/item1.jpg)">
+<section class="n-comp">
+  <div class="container">
+    <div class="h-title n-comp-title"><i class="icon icon-new"></i><span>Новые компании на портале</span></div>
 
+    <ul class="n-comp-list">
+      {% set items = [
+        {
+          name: 'VIANOR EXPRESS',
+          star: 4,
+          starVoted: 1324,
+          img: ['item1', '+7']
+        },{
+          name: 'VIANOR EXPRESS international work blablabla',
+          events: '',
+          star: 5,
+          starVoted: 106,
+          img: ['stub', '+3']
+        },{
+          name: 'RTF',
+          events: '22',
+          star: 3,
+          starVoted: 471,
+          img: ['item3', '+7']
+        },{
+          name: 'Шины и диски',
+          events: '',
+          star: 5,
+          starVoted: 249,
+          img: ['stub', '+11']
+        }
+      ] %}
+
+      {% for collItem in items %}
+
+      {% set starSettings = {
+        voted: collItem.starVoted,
+        active: collItem.star,
+        wrapClass: ' rating-low s-item-rating',
+        starClass: ' rating-star__g'
+      }
+      %}
+      <li class="n-comp-item">
+        {% include 'blocks/s-item-low.html' %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="d-events">
+  <div class="container d-events-inner">
+    <div class="d-events-head">
+      <div class="h-title white d-events-title"><i class="icon icon-date-w"></i><span>События Украины</span></div>
+      <div class="d-events-all"><a href="/" class="btn btn-white">Все события</a></div>
+    </div>
+    {% set starSettings = {
+      voted: '',
+      active: 4,
+      wrapClass: ' rating-low d-event-stars',
+      starClass: ' rating-star__y'
+    }
+    %}
+    <div class="d-events-box" data-reverse="false">
+      <a href="/" class="d-events-other">Ещё 37 событий</a>
+      <div class="d-events-row" data-dir="left">
+        <div class="d-events-cel">
+          <div class="d-event">
+            <a href="/" class="d-event-link">9-ый Международный салон грузовых и коммерческих автомобилей TIR 2016</a>
+            <time class="d-event-date">11-17 декабря,</time>
+            <div class="d-event-foot">
+              <span class="d-event-add">Киев, Дворец спорта</span>
+            </div>
           </div>
         </div>
-
-        <div class="fuel-artic__body">
-          <div class="fuel-artic__head">
-            <time class="fuel-artic__date">19.01.2016</time>
-            <a href="/" class="fuel-artic__vid"></a>
+        <div class="d-events-cel">
+          <div class="d-event">
+            <a href="/" class="d-event-link">«Драйв шоу Skoda»</a>
+            <time class="d-event-date">11-17 декабря,</time>
+            <div class="d-event-foot">
+              <span class="d-event-add">Кировоград, Автосалон “Прага-моторс”</span>
+              {% include 'blocks/stars.html' %}
+            </div>
           </div>
-          <a href="/" class="fuel-artic__title">98-й бензин. Тест 17-и АЗС Харькова.</a>
-          <p class="fuel-artic__text">Исключитель но путем сбора проб инициативной группой автомобилистов над шего проекта и заказа проведения соответствующих исследований. Заказа и проведения соответствующих исследований группой автомобилистов нашего проекта и заказа проведения заказа проведения соот ветствующих и сследциативной группой автомобилистов.</p>
-          <a href="/" class="fuel-artic__link"></a>
         </div>
-      </article>
+      </div>
+      <div class="d-events-row"  data-dir="right">
+        <div class="d-events-cel">
+          <div class="d-event">
+            <a href="/" class="d-event-link">Скидка на шиномонтажные работы 50% для автомобилей белого цвета.</a>
+            <time class="d-event-date">13 декабря,</time>
+            <div class="d-event-foot">
+              <span class="d-event-add">Харьков, Белая гвардия</span>
+              {% include 'blocks/stars.html' %}
+            </div>
+          </div>
+        </div>
+        <div class="d-events-cel">
+          <div class="d-event">
+            <a href="/" class="d-event-link">9-ый Международный салон грузовых и коммерческих автомобилей TIR 2016</a>
+            <time class="d-event-date">11-17 декабря,</time>
+            <p class="d-event-add">
+            <div class="d-event-foot">
+              <span class="d-event-add">Киев, Дворец спорта</span>
+              {% include 'blocks/stars.html' %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-events-foot">
+      <div class="d-foot-date" style="width: 26%"><span>15</span> апреля</div>
+      <div class="d-foot-date" style="width: 26%"><span>20</span> апреля</div>
+      <div class="d-foot-date" style="width: 26%"><span>29</span> апреля</div>
+      <div class="d-foot-date"><span>5</span> мая</div>
+    </div>
+  </div>
+</section>
 
-      {% set cities = [{
+<section class="container">
+  <div class="c-fuel">
+
+    <div class="с-fuel-head">
+      {% set selectOpts = {
+        title: 'Киев',
+        selectClass: ' select-wgray c-fuel-select',
+        list: ['Киев', 'Киев', 'Киев', 'Киев', 'Киев', 'Киев', 'Киев']
+      } %}
+      {% include 'blocks/select.html' %}
+
+      <div class="h-title c-fuel-title"><i class="icon icon-flask"></i><span>Проверка качества топлива</span></div>
+    </div>
+    
+    {% set fuelArtic = {
+      class: '',
+      img: 'item1',
+      text: [
+        'Исключитель но путем сбора проб инициативной группой автомобилистов над шего проекта и заказа проведения соответствующих исследований. Заказа и проведения соответствующих исследований группой автомобилистов нашего проекта и заказа проведения заказа проведения соот ветствующих и сследциативной группой автомобилистов.'
+      ],
+      icon: {
+        has: false
+      }
+    } %}
+    {% include 'blocks/fuel-artic.html' %}
+
+    {% set cities = [
+      {
         name: 'Киев',
         empty: 0,
         list: [
@@ -106,7 +283,7 @@
           },
           {
             icon: 'gg',
-            iconText: '95',
+            iconText: '95+',
             title: 'тест 95+ бензина',
             text: 'Протестированно 17 АЗС',
             date: '19.01.2016'
@@ -116,7 +293,7 @@
             iconText: 'дт',
             title: 'тест 95+ бензина',
             text: 'Протестированно 17 АЗС',
-            date: ''
+            date: '19.01.2016'
           }
         ]
       },
@@ -153,39 +330,68 @@
             date: '8.02.2016'
           }
         ]
-      }] %}
+      }
+    ] %}
 
-      <div class="cf-cities">
-        {% for city in cities %}
-        <div class="cf-city-box">
-          <div class="cf-city-name"><a href="/" class="m-link"><$ city.name $></a></div>
+    <div class="cf-cities">
+      {% for city in cities %}
+      <div class="cf-city-box">
+        <div class="cf-city-name"><a href="/" class="m-link"><$ city.name $></a></div>
 
-          <ul class="cf-city-list">
-            {% for item in city.list %}
-            <li class="cf-city-item">
-              <a href="/" class="cf-city-link">
-                <div class="cf-city-icon">
-                  <i class="icon icon-azs-<$ item.icon $>"><$ item.iconText $></i>
-                </div>
-                <div class="cf-city-body">
-                  <div class="cf-city-name"><$ item.title $></div>
-                  <p class="cf-city-text"><$ item.text $></p>
-                </div>
-                <time class="cf-city-date"><$ item.date $></time>
-              </a>
-            </li>
-            {% endfor %}
-            {% for empty in range(0,city.empty) %}
-            <li class="cf-city-item empty">
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
-        {% endfor %}
+        <ul class="cf-city-list">
+          {% for item in city.list %}
+          <li class="cf-city-item">
+            <a href="/" class="cf-city-link">
+              <div class="cf-city-icon">
+                <i class="icon icon-azs-<$ item.icon $>"><$ item.iconText $></i>
+              </div>
+              <div class="cf-city-body">
+                <div class="cf-city-title"><$ item.title $></div>
+                <p class="cf-city-text"><$ item.text $></p>
+              </div>
+              <time class="cf-city-date"><$ item.date $></time>
+            </a>
+          </li>
+          {% endfor %}
+          {% for empty in range(0,city.empty) %}
+          <li class="cf-city-item empty">
+          </li>
+          {% endfor %}
+        </ul>
       </div>
+      {% endfor %}
     </div>
   </div>
+</section>
 
-  {% include 'blocks/port-news.html' %}
-</div>
+<section class="container">
+  {% include 'blocks/cf-info.html' %}
+</section>
+<!-- Portal News  -->
+<section class="port-news">
+  <div class="container">
+
+    <div class="h-title port-news__title"><i class="icon icon-news"></i><span>Новости портала</span></div>
+
+    <div class="port-news__list">
+    {% set news = [
+      {
+        img: '5',
+        title: 'Это важно знать'
+      },
+      {
+        img: '7',
+        title: 'Купить авто: продажа авто б/у в Украине на авторынке'
+      },
+      {
+        img: '8',
+        title: 'Свежие автомобильные новости мира и Украины. Обзор автомобилей'
+      }
+    ] %}
+    {% include 'blocks/port-news.html' %}
+    </div>
+
+    <a href="/" class="btn btn-gray port-news__more">Больше новостей</a>
+  </div>
+</section>
 {% endblock %}

@@ -41,10 +41,12 @@
   &-inp {
     background: $graya5;
     color: $gray33;
+    margin: 0;
 
     .inp-field {
       @include placeholder($gray33);
       padding-right: 40px;
+      padding: 9px 13px;
     }
   }
 

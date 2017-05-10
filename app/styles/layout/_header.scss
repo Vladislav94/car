@@ -213,7 +213,7 @@
     }
   }
 
-  &-auth__form {
+  &-auth__box {
     @extend %clearfix;
     margin-left: 95px;
   }
@@ -263,17 +263,18 @@
 
   &-app {
     display: inline-block;
-    border-radius: 5px;
-    transition: $trans;
     margin: 11px 0 7px;
+    width: 95px;
+    height: 27px;
 
-    &:hover {
-      background-color: $red9b;
+    .svg {
 
-    }
+      &:hover {
 
-    img {
-      display: block;
+        path {
+          fill: $red9b;
+        }
+      }
     }
   }
 

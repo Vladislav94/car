@@ -2,6 +2,43 @@
 .icon {
   display: inline-block;
   vertical-align: middle;
+
+  &[class*=icon-azs] {
+    font-size: 10px;
+    font-family: $bold;
+    text-align: center;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 11px;
+    box-sizing: border-box;
+  }
+
+  &-azs {
+
+    &-gb {
+      color: $brownae;
+    }
+
+    &-gd {
+      color: $green8a;
+    }
+
+    &-go {
+      color: $orandd;
+    }
+
+    &-gg {
+      color: $green23;
+    }
+
+    &-gr {
+      color: $blue8c;
+    }
+
+    &-gt {
+      color: $green96;
+    }
+  }
 }
 
 @include sprites($spritesheet-sprites);

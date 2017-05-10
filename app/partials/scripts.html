@@ -1,6 +1,4 @@
-<!-- build:js scripts/map-api.js -->
-<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-<!-- endbuild -->
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
@@ -8,12 +6,34 @@
 <script src="/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="/bower_components/slick-carousel/slick/slick.min.js"></script>
 <!-- endbower -->
+<script src="scripts/modal.js"></script>
 <script src="scripts/map.js"></script>
 <script src="scripts/tooltip.js"></script>
+<script src="scripts/accordion.js"></script>
 <script src="scripts/jquery.swipebox.min.js"></script>
 <script src="scripts/scrollsp.js"></script>
+<script src="scripts/svg.js"></script>
+<script src="scripts/tabs.js"></script>
+<script src="scripts/date-events.js"></script>
 <!-- endbuild -->
 
+<!-- build:js scripts/angular.js -->
+<script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="/bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>
+<script src="scripts/angular/app.js"></script>
+<!-- Controllers -->
+<script src="scripts/angular/controllers/form.js"></script>
+<script src="scripts/angular/controllers/select.js"></script>
+<script src="scripts/angular/controllers/upload.js"></script>
+<!-- Controllers end -->
+
+<!-- Directives -->
+<script src="scripts/angular/directives/upload.js"></script>
+<!-- Directives end -->
+
+<!-- bower:js -->
+<!-- endbower -->
+<!-- endbuild -->
 
 <!-- build:js scripts/main.js -->
 <script src="scripts/main.js"></script>

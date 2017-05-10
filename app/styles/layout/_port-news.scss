@@ -11,6 +11,7 @@
 
     &__list {
       margin: 25px 0;
+      border-bottom: 1px solid $white;
     }
 
     &__item {
@@ -18,16 +19,15 @@
       flex-direction: row;
       flex-flow: row;
       color: $gray6;
-      border-top: 1px solid $white;
       padding: 20px 0 10px;
       transition: background $trans;
 
-      &:hover {
-        background-color: $grayf5;
+      & + .port-news__item {
+        border-top: 1px solid $white;
       }
 
-      &:last-child {
-        border-bottom: 1px solid $white;
+      &:hover {
+        background-color: $grayf5;
       }
     }
 
@@ -70,6 +70,7 @@
       color: $black;
       text-decoration: underline;
       float: right;
+      margin-top: -22px;
 
       &:hover {
         text-decoration: none;
