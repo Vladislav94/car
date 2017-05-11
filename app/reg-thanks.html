@@ -1,0 +1,20 @@
+{% set auth = true %}
+{% set hideFText = true %}
+{% set ftext = {bg: '', show: 'false'} %}
+{% set regHead = false %}
+{% extends 'layout.html' %}
+{% block content %}
+<div class="p-reg-user t-strip" id="page-reg">
+  <div class="container">
+    <div class="p-reg-head">
+      <h1 class="s-title">
+        <div class="s-title-text">Регистрация пользователя</div>
+      </h1>
+    </div>
+
+    <div class="reg-user-content">
+      <ng-include src="'view/user/reg4.html'"></ng-include>
+    </div>
+  </div>
+</div>
+{% endblock %}

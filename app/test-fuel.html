@@ -1,0 +1,132 @@
+{% set auth = false %}
+{% set ftext = {bg: 'gray', show: true} %}
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="test-article__page">
+  <section class="container">
+    {% set breadClass = ' bread-arrow' %}
+    {% set breadcrumbs = ['Главная', 'Тест топлива', 'Киев', 'Тест 95-го 12.04.2017'] %}
+    {% include 'blocks/breadcrumbs.html' %}
+    <div class="content-wrap t-fuel-content">
+      <div class="content">
+        <h1 class="m-title red t-fuel-title">Тестирование топлива, Киев.</h1>
+        <p class="t-fuel-sub">Протестированно 17 АЗС</p>
+
+        <article class="m-article">
+          <img src="images/t-fuel/item1.jpg" alt="">
+          <h2>Skoda Бернард Майер в интервью британскому изданию</h2>
+
+          <p>Все данные о качестве топлива на AUTOporter получены исключительно путем сбора проб инициативной группой автомобилистов нашего проекта и заказа проведения соответствующих исследований в независимой лаборатории.</p>
+          <p>Получить такую в сложном вопросе качеств интернета прецедент Народного контроля за качеством товаров и услуг. </p>
+
+          <ul>
+            <li>Руководитель Skoda Бернард Майер</li>
+            <li>AutoExpress поделился информацией про кроссовер</li>
+            <li>Skoda Yeti</li>
+          </ul>
+
+          <p>Руководитель Skoda Бернард Майер в интервью британскому изданию AutoExpress поделился информацией про кроссовер Skoda Yeti второго поколения. Новая Шкода Йети поступит в продажу с 2018 года. То есть, скорее всего, официальная премьера модели состоится в сентябре нынешнего года на Франкфуртском автошоу.</p>
+
+          <div class="nav-slider">
+            <div class="single-slider slider-for" data-slick='{"slidesToShow": 1, "infinite": true}'>
+              {% for item in range(0,6) %}
+              <div class="slide" style="background-image: url(images/t-fuel/item1.jpg)">
+              </div>
+              {% endfor %}
+              <div class="slide">
+                <iframe src="https://www.youtube.com/embed/fV7J5vbEh7E" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="img-carousel__wrap">
+              <div class="img-carousel carousel-nav slider-nav" data-slick='{"slidesToShow": 4, "infinite": true}'>
+                {% for item in range(0,7) %}
+                <div class="slide">
+                  <div class="img-box box150" style="background-image: url(images/tire-fitting/item<$ loop.index $>.jpg)"></div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          <h2>Получить такую в сложном вопросе качеств интернета прецедент Народного контроля за качеством товаров и услуг.</h2>
+          <p>Руководитель Skoda Бернард Майер в интервью британскому изданию AutoExpress поделился информацией про кроссовер Skoda Yeti второго поколения. Новая Шкода Йети поступит в продажу с 2018 года. То есть, скорее всего, официальная премьера модели состоится в сентябре нынешнего года на Франкфуртском автошоу.</p>
+          <p>Речь идет о плюшевых медведях в жилетке с логотипом Scania, являющихся фирменным сувениром марки. Автопроизводитель продал 7 531 мишек, которые были реализованы на специальных мероприятиях и выставках, а также через интернет-магазин Scania. Абсолютно все медведи подлежат отзыву.</p>
+
+          <img src="images/t-fuel/item1.jpg" alt="">
+
+          <h2>Skoda Бернард Майер в интервью британскому изданию</h2>
+          <p>Все данные о качестве топлива на AUTOporter получены исключительно путем сбора проб инициативной группой автомобилистов нашего проекта и заказа проведения соответствующих исследований в независимой лаборатории.</p>
+          <p>Получить такую в сложном вопросе качеств интернета прецедент Народного контроля за качеством товаров и услуг.</p>
+          <p>Руководитель Skoda Бернард Майер в интервью британскому изданию AutoExpress поделился информацией про кроссовер Skoda Yeti второго поколения. Новая Шкода Йети поступит в продажу с 2018 года. То есть, скорее всего, официальная премьера модели состоится в сентябре нынешнего года на Франкфуртском автошоу.</p>
+          <p>Речь идет о плюшевых медведях в жилетке.</p>
+
+        </article>
+      </div>
+
+      <div class="sb sb-r">
+
+        {% set selectOpts = {
+          title: 'Киев',
+          selectClass: ' select-red t-fuel-select',
+          list: ['Киев 1', 'Киев 2', 'Киев 3', 'Киев 3', 'Киев 4', 'Киев 5', 'Киев 6']
+        } %}
+        {% include 'blocks/select.html' %}
+
+        <div class="t-artic-box">
+          {% for item in range(1,4) %}
+          {% for elem in [{
+              icon: {
+                name: 'gb',
+                text: 'ДТ'
+              },
+              name: 'тест 95+ бензина',
+              text: 'Протестированно 17 АЗС',
+              date: '19.01.2016'
+            },{
+              icon: {
+                name: 'gd',
+                text: '98'
+              },
+              name: 'тест 98 бензина',
+              text: 'Протестированно 15 АЗС',
+              date: '31.01.2016'
+            },
+            {
+              icon: {
+                name: 'gr',
+                text: '92'
+              },
+              name: 'тест 92 бензина',
+              text: 'Протестированно 17 АЗС',
+              date: '8.02.2016'
+            },{
+              icon: {
+                name: 'gd',
+                text: '98'
+              },
+              name: 'тест 98 бензина',
+              text: 'Протестированно 15 АЗС',
+              date: '31.01.2016'
+          }] %}
+          {% set sbArtic = {
+            icon: {
+              name: elem.icon.name,
+              text: elem.icon.text
+            },
+            name: elem.name,
+            text: elem.text,
+            date: elem.date
+          } %}
+          {% include 'blocks/sb-artic.html' %}
+          {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    {% include 'blocks/comments.html' %}
+  </section>
+</div>
+
+{% endblock %}

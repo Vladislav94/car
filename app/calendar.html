@@ -1,0 +1,45 @@
+{% set auth = true %}
+{% set ftext = {bg: 'gray', show: true} %}
+{% extends 'layout.html' %}
+{% block content %}
+<div class="t-strip p-date">
+
+  <div class="container">
+    <div class="p-date-head">
+      <h1 class="s-title">
+        <div class="s-title-l">
+          <span class="s-title-ic">
+            <i class="icon-date icon"></i>
+          </span>
+        </div>
+
+        <div class="s-title-text">Календарь событий 2017</div>
+      </h1>
+
+      {% set selectOpts = {
+        title: 'Вся Украина',
+        selectClass: ' select-wgray p-date-select',
+        list: ['Вся Украина', 'Киев', 'Закарпаття', 'Львів', 'Крим', 'Одеса', 'Житомир']
+      } %}
+      {% include 'blocks/select.html' %}
+    </div>
+
+    <div class="p-date-content">
+      <ul class="p-date-years">
+        <li class="p-date-year"><a href="/">2016</a></li>
+        <li class="p-date-year active"><a href="/">2017</a></li>
+        <li class="p-date-year"><a href="/">2018</a></li>
+      </ul>
+
+      <ul class="p-date-list">
+        {% set dateHead = ['Январь 2017', 'Февраль 2017', 'Март 2017', 'Апрель 2017', 'Май 2017', 'Июнь 2017', 'Июль 2017', 'Август 2017', 'Сентябрь 2017', 'Октябрь 2017', 'Ноябрь 2017', 'Декабрь 2017'] %}
+        {% for item in dateHead %}
+        <li class="p-date-item">
+          {% include 'blocks/date-box.html' %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

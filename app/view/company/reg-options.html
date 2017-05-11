@@ -1,0 +1,51 @@
+<div class="container c-reg-options">
+
+  <div class="add-addrs">
+
+    <div class="c-add-logo" ng-controller="AppController" nv-file-drop="" uploader="uploader">
+      <input type="file" nv-file-select="" uploader="uploader" multiple="" id="upload-avatar">
+      <div class="reg-stitle">Логотип:</div>
+      <div class="avatar-box main-avatar reg-avatar">
+        <a href="#" class="avatar-del" ng-click="uploader.queue[0].remove()"></a>
+        <label for="upload-avatar" class="avatar-add"></label>
+        <div ng-if="uploader.queue.length >= 1" class="l-avatar-box">
+          <div ng-thumb="{ file: uploader.queue[0]._file}" class="l-avatar-img"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="c-reg-title">Добавление адресов.</div>
+    <div class="add-addr-text">Добавьте Ваш первый адрес и отметьте его на карте:</div>
+
+    <ul class="add-addr-list">
+      <li class="add-addr-item">
+        <div class="add-addr-name">Адрес 1</div>
+        <div class="add-addr-body">
+          <div class="add-addr-l">
+            <div class="inp-box">
+              <div class="inp-wrap">
+                <input type="text" class="inp-field" placeholder="Название объекта">
+              </div>
+            </div>
+            <div class="inp-box">
+              <div class="inp-wrap">
+                <input type="text" class="inp-field" placeholder="Адрес">
+              </div>
+            </div>
+            <div class="inp-box add-addr-phone">
+              <div class="inp-wrap">
+                <input type="text" class="inp-field" placeholder="+38 ХХХХХХХХХ">
+              </div>
+            </div>
+          </div>
+          <div class="add-addr-r">
+            {% set selectClass = ' select-wgray inp-box' %}
+            {% include 'angular/select.html' %}
+          </div>
+        </div>
+      </li>
+
+      <a href="#" class="add-addr-btn"><span class="add-addr-icon icon"></span>Добавить ещё</a>
+    </ul>
+  </div>
+</div>

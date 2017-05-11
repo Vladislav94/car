@@ -1,0 +1,75 @@
+.t {
+
+  &-fuel {
+
+    &-content {
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    &-title {
+      margin: 10px 0 5px;
+      padding: 0 10px;
+    }
+
+    &-select {
+      margin: 15px 0;
+    }
+
+    &-sub {
+      font-size: 18px;
+      padding: 0 10px;
+      color: $gray6;
+    }
+  }
+
+
+}
+
+
+.m {
+
+  &-article {
+    font-size: 15px;
+    color: $gray6;
+    line-height: 1.5;
+
+    & > * {
+      padding: 0 10px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      padding: 0;
+      margin: 30px 0;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin: em(20,20) 0;
+    }
+
+    p {
+      margin: em(12, 15) 0;
+    }
+
+    li {
+      margin: 6px 0;
+      position: relative;
+      padding-left: 18px;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 5px;
+        top: 8px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: $gray6;
+      }
+    }
+  }
+}

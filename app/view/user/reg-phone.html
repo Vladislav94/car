@@ -1,0 +1,12 @@
+<ng-form action="step-three" ng-init="formWrap.data = {}" name="userRegThree" mathod="post" ng-controller="regFormPhone as stepPhone" class="reg-form-c reg-confirm">
+  <div class="reg-title">Подтверждение регистрации!</div>
+  <p class="reg-text">На Ваш номер телефона было отправлено SMS с кодом подтверждения.</p>
+  <div class="inp-wrap reg-inp tick-inp">
+    <input type="text" name="code" class="inp-field" ng-model="formWrap.data.code" placeholder="Код подтверждения">
+  </div>
+  <p class="form-error" ng-show="formWrap.errors.hasOwnProperty('code')" ng-bind="formWrap.errors.code"></p>
+
+  <div class="reg-footer">
+    <button class="btn btn-red btn-low reg-next" ng-click="formWrap.nextReqStep('thanks')" ng-disabled="">Далее</button>
+  </div>
+</ng-form>

@@ -1,0 +1,20 @@
+<article class="fuel-artic<$ fuelArtic.class $>">
+  <div class="fuel-artic__left">
+    <div class="fuel-artic__img" style="background-image: url(images/fuel-img/<$ fuelArtic.img $>.jpg)">
+
+    </div>
+  </div>
+
+  <div class="fuel-artic__body">
+    {% if fuelArtic.icon.has == true %}<i class="fuel-artic__icon icon icon-azs-<$ fuelArtic.icon.name $>" data-tooltip="Топлево"><$ fuelArtic.icon.text $></i>{% endif %}
+    <div class="fuel-artic__head">
+      <time class="fuel-artic__date">19.01.2016</time>
+      <a href="/" class="fuel-artic__vid"></a>
+    </div>
+    <a href="/" class="fuel-artic__title">98-й бензин. Тест 17-и АЗС Харькова.</a>
+    {% for item in fuelArtic.text %}
+    <p class="fuel-artic__text"><$ item $></p>
+    {% endfor %}
+    <a href="/" class="fuel-artic__link"></a>
+  </div>
+</article>

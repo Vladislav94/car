@@ -1,0 +1,161 @@
+{% set auth = false %}
+{% set ftext = {bg: 'gray', show: true} %}
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="test-single__page">
+  <section class="container">
+    {% set breadClass = ' bread-arrow' %}
+    {% set breadcrumbs = ['Главная', 'Тест топлива', 'Киев', 'Тест 95-го 12.04.2017'] %}
+    {% include 'blocks/breadcrumbs.html' %}
+
+    <h1 class="m-title red t-single-title">Тестирование топлива, Киев.</h1>
+    <div class="content-wrap">
+      <div class="content">
+        {% set fuelArtic = {
+          class: ' t-single-artic',
+          img: 'item3',
+          text: [
+            'Исключитель но путем сбора проб инициативной группой автомобилистов над шего проекта и заказа проведения соответствующих исследований.'
+          ],
+          icon: {
+            has: true,
+            text: '98',
+            name: 'gg'
+          }
+        } %}
+        {% include 'blocks/fuel-artic.html' %}
+
+        {% set testList = [
+          {
+            date: '30 февраля',
+            icon: {
+              name: 'gb',
+              text: 'ДТ'
+            },
+            title: 'Долгожданное тестирование дизельного топлива! На этот раз мы посетили 22 заправки в Киеве.'
+          },{
+            date: '31 января',
+            icon: {
+              name: 'go',
+              text: '100'
+            },
+            title: 'Тест “допинга для спортсменов”'
+          },{
+            date: '17 января',
+            icon: {
+              name: 'gb',
+              text: 'ДТ'
+            },
+            title: 'Долгожданное тестирование дизельного топлива! '
+          },{
+            date: '22 декабря',
+            icon: {
+              name: 'gr',
+              text: '92'
+            },
+            title: 'Скромный тест, скромного бензина'
+          },{
+            date: '17 января',
+            icon: {
+              name: 'gb',
+              text: 'ДТ'
+            },
+            title: 'Чем заправить свой КАМАЗ?'
+          },{
+            date: '22 декабря',
+            icon: {
+              name: 'gt',
+              text: '95'
+            },
+            title: 'Самый качественный ширпотреб в городе.'
+          }
+        ] %}
+        <ul class="t-single-list">
+        {% for testItem in testList %}
+          <li class="t-single-item">
+            <div class="ts-list-icon"><i class="icon icon-azs-<$ testItem.icon.name $>"><$ testItem.icon.text $></i></div>
+            <div class="ts-list-box">
+              <time class="ts-list-date"><$ testItem.date $></time>
+              <a href="/" class="ts-list-title"><$ testItem.title $></a>
+              <p class="ts-list-text"><$ testItem.text $></p>
+            </div>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+
+      <div class="sb sb-r">
+        <div class="t-artic-head">Последние тестирования в других городах</div>
+        {% for lastItem in [{
+          city: 'Харьков',
+          elems: [{
+            icon: {
+              name: 'gb',
+              text: 'ДТ'
+            },
+            name: 'тест 95+ бензина',
+            text: 'Протестированно 17 АЗС',
+            date: '19.01.2016'
+          },{
+            icon: {
+              name: 'gd',
+              text: '98'
+            },
+            name: 'тест 98 бензина',
+            text: 'Протестированно 15 АЗС',
+            date: '31.01.2016'
+          }]
+        },{
+          city: 'Днепр',
+          elems: [{
+            icon: {
+              name: 'gr',
+              text: '92'
+            },
+            name: 'тест 92 бензина',
+            text: 'Протестированно 17 АЗС',
+            date: '8.02.2016'
+          }]
+        },{
+          city: 'Одесса',
+          elems: [{
+            icon: {
+              name: 'gd',
+              text: '98'
+            },
+            name: 'тест 98 бензина',
+            text: 'Протестированно 15 АЗС',
+            date: '31.01.2016'
+          },{
+            icon: {
+              name: 'gb',
+              text: 'ДТ'
+            },
+            name: 'тест 95+ бензина',
+            text: 'Протестированно 17 АЗС',
+            date: '19.01.2016'
+          }]
+        }] %}
+        <div class="t-artic-box">
+          <a href="/" class="t-artic-city"><$ lastItem.city $></a>
+          {% for elem in lastItem.elems %}
+          {% set sbArtic = {
+            icon: {
+              name: elem.icon.name,
+              text: elem.icon.text
+            },
+            name: elem.name,
+            text: elem.text,
+            date: elem.date
+          } %}
+          {% include 'blocks/sb-artic.html' %}
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
+
+{% endblock %}

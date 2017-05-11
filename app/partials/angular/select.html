@@ -1,0 +1,8 @@
+<div class="select dd-wrap <$ selectClass $>" ng-controller="selectCtrl as select">
+  <div class="select-show dd-show">{{select.selectData[0].name}}</div>
+  <div class="select-dd dd scroll">
+    <ul class="select-list">
+      <li class="select-item" ng-class="$index == 0 ? 'active' : ''" ng-repeat="selectItem in select.selectData" data-id="{{selectItem.id}}">{{selectItem.name}}</li>
+    </ul>
+  </div>
+</div>

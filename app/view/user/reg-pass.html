@@ -1,0 +1,16 @@
+<ng-form action="step-two" name="userRegTwo" mathod="post" ng-controller="regFormPass as stepPass" class="reg-form-c reg-pass">
+  <div class="reg-title">Придумайте пароль</div>
+  <div class="inp-box">
+    <div class="inp-wrap reg-inp tick-inp" ng-class="{'success': formWrap.password1.length >= 8}">
+      <input type="text" name="password1" class="inp-field" ng-init="formWrap.password1 = ''" ng-model="formWrap.password1" placeholder="Минимум 8 знаков">
+    </div>
+  </div>
+  <div class="inp-box">
+    <div class="inp-wrap reg-inp tick-inp" ng-class="{'success': (formWrap.password1 == formWrap.password2) && formWrap.password1.length >= 8, 'error': formWrap.errors.hasOwnProperty('password2')}">
+      <input type="password" name="password2" class="inp-field" ng-init="formWrap.password2 = ''" ng-model="formWrap.password2" placeholder="Повторите пароль">
+    </div>
+  </div>
+  <div class="reg-footer">
+    <button class="btn btn-red btn-low reg-pass-btn" ng-click="formWrap.nextStep(formWrap.phoneDis ? 'email' : 'phone')" ng-disabled="formWrap.password1.length < 8 || formWrap.password1 != formWrap.password2">Зарегистрироваться</button>
+  </div>
+</ng-form>

@@ -1,0 +1,120 @@
+{% set auth = false %}
+{% set ftext = {bg: 'gray', show: true} %}
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="oe-single-wrap">
+  <section class="container">
+    {% set breadClass = ' bread-arrow' %}
+    {% set breadcrumbs = ['Главная', 'События Украины', 'Киев', 'Автомагазин', '“Все по 150 гривен!”'] %}
+    {% include 'blocks/breadcrumbs.html' %}
+
+    <div class="content-wrap oe-single-body">
+      <div class="content">
+        <div class="s-events">
+          <h1 class="m-title red">Все события, “Все по 150 гривен” (3)</h1>
+        </div>
+
+        <figure class="oe-banner">
+          <figcaption class="oe-banner-top" style="background-image: url(images/events-img/item1.jpg)">
+            <div class="oe-days">
+              <span class="oe-days-text">До начала события</span>
+              <span class="oe-days-count">26</span>
+              <span class="oe-days-text">дней</span>
+            </div>
+          </figcaption>
+
+          <div class="oe-banner-foot">
+            <div class="oe-banner-date">
+              <div class="oe-date-date">23</div>
+              <div class="oe-date-body">
+                <span class="oe-date-text">начало</span>
+                <div class="oe-date-month">февраля</div>
+              </div>
+            </div>
+            <spam class="oe-date-divider"></spam>
+            <div class="oe-banner-date">
+              <div class="oe-date-date">8</div>
+              <div class="oe-date-body">
+                <span class="oe-date-text">окончение</span>
+                <div class="oe-date-month">марта</div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <article class="m-article">
+          <h2>Skoda Бернард Майер в интервью британскому изданию</h2>
+
+          <p>Все данные о качестве топлива на AUTOporter получены исключительно путем сбора проб инициативной группой автомобилистов нашего проекта и заказа проведения соответствующих исследований в независимой лаборатории.</p>
+          <p>Получить такую в сложном вопросе качеств интернета прецедент Народного контроля за качеством товаров и услуг. </p>
+
+          <ul>
+            <li>Руководитель Skoda Бернард Майер</li>
+            <li>AutoExpress поделился информацией про кроссовер</li>
+            <li>Skoda Yeti</li>
+          </ul>
+
+          <p>Руководитель Skoda Бернард Майер в интервью британскому изданию AutoExpress поделился информацией про кроссовер Skoda Yeti второго поколения. Новая Шкода Йети поступит в продажу с 2018 года. То есть, скорее всего, официальная премьера модели состоится в сентябре нынешнего года на Франкфуртском автошоу.</p>
+        </article>
+
+      </div>
+
+      <div class="sb sb-r">
+        <a href="#" class="s-btn">
+          <span class="s-btn-text">Проложить маршрут</span>
+          <span class="s-btn-icon"><span class="icon-rout icon"></span></span>
+        </a>
+
+        <div class="m-info-box">
+          <div class="m-info-map" id="map"></div>
+          <div class="m-info-name">Автомагазин</div>
+          <div class="m-info-sub">“Все по 150 гривен”</div>
+          <div class="s-item-add"><span class="s-item-icon"><i class="icon-marker-g icon"></i></span> г. Киев, ул. Генераторная, 9</div>
+          <div class="s-phone"><span class="s-item-icon"><i class="icon-phone icon"></i></span> (067) 574 77 77</div>
+          <div class="s-clock"><span class="s-item-icon"><i class="icon-clock icon"></i></span> Работает: 09:00 - 19:00 (Пн-Вс)</div>
+          <div class="m-info-foot">
+            {% set starSettings = {
+              voted: 1324,
+              active: 4,
+              wrapClass: ' rating-low s-item-rating',
+              starClass: ' rating-star__g'
+            }%}
+            {% include 'blocks/stars.html' %}
+            <span class="m-info-comm">317<span class="s-comm-new" data-tooltip="Новые коментарии">2</span></span>
+          </div>
+
+          <div class="m-info-more"><a href="/" class="m-link">Подробнее</a></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container o-events-wrap">
+      {% for topNews in [{
+        text: 'Наша задача создать первый в истории украинского',
+        comm: '41'
+      },{
+        text: 'Фестиваль ретро-техники в Киеве: пять сотен уникальных автомобилей',
+        comm: '7'
+      },{
+        text: 'Бесплатный шиномонтаж всем женщина за рулём',
+        comm: '0'
+      }] %}
+      <article class="s-event-low o-event-low active">
+        <time class="s-event-date">С 10 января по 10 февраля</time>
+        <div class="s-event-title">
+          <a href="/" class="s-event-link"><$ topNews.text $></a>
+          {% if topNews.comm != 0 %}
+          <span class="s-event-comm"><i class="icon ic-comments-low" data-tooltip="Коментарии"></i><$ topNews.comm $></span>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    {% include 'blocks/comments.html' %}
+  </section>
+</div>
+
+{% endblock %}

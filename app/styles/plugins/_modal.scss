@@ -1,0 +1,72 @@
+.arcticmodal-overlay,
+.arcticmodal-container { position: fixed; left: 0; top: 0; right: 0; bottom: 0; z-index: 1000; }
+.arcticmodal-container { overflow: auto; margin: 0; padding: 0; border: 0; border-collapse: collapse; }
+*:first-child+html .arcticmodal-container { height: 100% }
+.arcticmodal-container_i { height: 100%; margin: 0 auto; }
+.arcticmodal-container_i2 { padding: 24px; margin: 0; border: 0; vertical-align: middle; }
+.arcticmodal-error { padding: 20px; border-radius: 10px; background: #000; color: #fff; }
+.arcticmodal-loading { width: 80px; height: 80px; border-radius: 10px; background: #000 url(loading.gif) no-repeat 50% 50%; }
+
+
+.modal {
+  background: $redc9;
+  width: 970px;
+  border-radius: 3px;
+  position: relative;
+  @extend %shadow;
+
+  &-close {
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    font-size: 12px;
+    color: $white;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &-head {
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    box-shadow: 0 0 8px 0 rgba($black, .3);
+  }
+
+  &-body {
+    padding: 20px 0;
+  }
+
+  &-title {
+    font-size: 26px;
+    color: $white;
+    font-family: $light;
+  }
+
+  &-scroll {
+    max-height: 400px;
+
+    .mCSB_scrollTools_vertical {
+      right: 5px;
+      width: 10px;
+      top: -10px;
+      bottom: -10px;
+    }
+
+    .mCSB_draggerRail {
+      background: $red9b;
+      width: 1px;
+    }
+
+    .mCSB_dragger {
+      background: $red9b;
+      border-radius: 4px;
+    }
+  }
+
+  &-wrap {
+  }
+}

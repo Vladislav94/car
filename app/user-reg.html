@@ -1,0 +1,21 @@
+{% set auth = true %}
+{% set hideFText = true %}
+{% set ftext = {bg: '', show: 'false'} %}
+{% set regHead = false %}
+{% extends 'layout.html' %}
+{% block content %}
+<div class="p-reg-user t-strip" id="page-reg">
+  <div class="container">
+    <div class="p-reg-head">
+      <h1 class="s-title">
+        <div class="s-title-text">Регистрация пользователя</div>
+      </h1>
+    </div>
+
+    <div class="reg-user-content" ng-controller="changeForm as formWrap">
+      <ng-include ng-init="formWrap.formStep = 'first'" src="'view/user/reg-'+formWrap.formStep+'.html'"></ng-include>
+      <!-- <ng-include src="'view/user/reg-profile.html'"></ng-include> -->
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+<form action="step-two" name="" mathod="post" ng-controller="regFormPass as stepPass" class="reg-form-c c-reg-mail">
+  <div class="reg-title">Укажите почтовый ящик, который Вы хотите <br>использовать для регистрации</div>
+  <div class="inp-box">
+    <div class="inp-wrap reg-inp tick-inp" ng-class="">
+      <input type="email" name="email" class="inp-field" ng-model="formWrap.email" placeholder="e-mail">
+    </div>
+  </div>
+  <div class="reg-footer">
+    <button class="btn btn-red btn-low reg-next" ng-click="formWrap.nextStep('email-send')">Далее</button>
+  </div>
+</form>

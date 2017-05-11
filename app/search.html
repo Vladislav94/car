@@ -1,0 +1,192 @@
+{% set auth = false %}
+{% set ftext = {bg: 'gray', show: true} %}
+{% extends 'layout.html' %}
+{% block content %}
+<div id="map"></div>
+
+<div class="t-strip search-wrap">
+  <section class="container coll-section">
+    <div class="content-wrap">
+      <aside class="sb">
+        <div class="m-filter sb-search-top">
+          <div class="m-filter-coinc"><span>927</span> совпадений</div>
+
+          <div class="inp-wrap search-input">
+            <input type="text" class="inp-field" placeholder="Диагностика">
+            <i class="icon icon-lsearch"></i>
+          </div>
+
+          <ul class="sb-search-list">
+            {% for item in [['АЗС', '74'], ['Шиномонтаж', '92'], ['Автомагазин', '471'], ['Мойка', '309'], ['События', '66']] %}
+            <li class="sb-search-item"><span><$ item[0] $></span><span><$ item[1] $></span></li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="n-know-block">
+          <div class="n-know-title">Это важно знать</div>
+          <p class="n-know-text">Все данные о качестве топлива на AUTOporter получены исключително путем сбора.</p>
+          <div class="n-know-text">Автомоби получены исключи тельно путем истории украинского интенета прецедент Народного контроля за качеством товаров и услуг.</div>
+          <a href="/" class="n-know-link">AUTOporter</a>
+        </div>
+      </aside>
+
+      <div class="content">
+        <div class="coll-head">
+          <h1 class="s-title">
+            <div class="s-title-l">
+              <span class="s-title-ic">
+                <i class="icon-gsearch icon"></i>
+              </span>
+            </div>
+
+            <div class="s-title-text">Результат поиска - диагностика</div>
+          </h1>
+        </div>
+
+        <div class="search-result">
+          {% set items = [
+            {
+              name: '“Дядя Вадик”',
+              events: '2',
+              star: 4,
+              starVoted: 1324,
+              comments: ['317', '2'],
+              img: ['item1', '+17']
+            },{
+              name: 'Две атмосферы',
+              events: '',
+              star: 5,
+              starVoted: 106,
+              comments: ['7', ''],
+              img: ['item2', '+3']
+            },{
+              name: 'RTF',
+              events: '22',
+              star: 3,
+              starVoted: 471,
+              comments: ['317', ''],
+              img: ['item3', '+7']
+            },{
+              name: 'Шины и диски',
+              events: '',
+              star: 5,
+              starVoted: 249,
+              comments: ['24', ''],
+              img: ['item4', '+11']
+            },{
+              name: 'Шины и диски',
+              events: '',
+              star: 5,
+              starVoted: 249,
+              comments: ['24', ''],
+              img: ['item5', '']
+            },{
+              name: '“Дядя Вадик”',
+              events: '',
+              star: 4,
+              starVoted: 1324,
+              comments: ['317', ''],
+              img: ['stub', '']
+            },{
+              name: 'Две атмосферы',
+              events: '',
+              star: 5,
+              starVoted: 106,
+              comments: ['7', ''],
+              img: ['item1', '+15']
+            },{
+              name: 'RTF',
+              events: '22',
+              star: 3,
+              starVoted: 471,
+              comments: ['317', ''],
+              img: ['item3', '+2']
+            },{
+              name: 'Шины и диски',
+              events: '',
+              star: 5,
+              starVoted: 249,
+              comments: ['24', ''],
+              img: ['item4', '']
+            },{
+              name: 'Шины и диски',
+              events: '',
+              star: 5,
+              starVoted: 249,
+              comments: ['24', ''],
+              img: ['item2', '+1']
+            }
+          ] %}
+          {% for collItem in items %}
+
+          {% set starSettings = {
+            voted: collItem.starVoted,
+            active: collItem.star,
+            wrapClass: ' rating-low s-item-rating',
+            starClass: ' rating-star__g'
+          }%}
+
+          {% if loop.index == 3 %}
+          {% for eventIt in [
+            ['20 января - 27 января', 'Сотрудник Daimler рассказал сколько потратил на Мерседес E-класса за 25 лет', 'г. Киев, ул. Горная, 9', 'Автомагазин “Все”', '14', '5'],
+            ['27 января', 'Мерседес E-класса за 25 лет', 'г. Киев, ул. Васильковская, 84', 'Автомагазин “Запчасти для иномарок”', '14', '1']
+            ] %}
+          <figure class="l-event search-item">
+            <figcaption class="l-event-body">
+              <time class="l-event-date"><$ eventIt[0] $></time>
+              <a href="/" class="l-event-title"><$ eventIt[1] $></a>
+              <div class="l-event-add"><i class="icon icon-emarker"></i><$ eventIt[2] $>, <a href="/" class="m-link"><$ eventIt[3] $></a></div>
+              <a href="/" class="m-link l-event-more">Подробнее</a>
+              <span class="l-event-com">
+                <i class="s-comm-icon ic-comments-low icon"></i>
+                <span class="s-comm-count"><$ eventIt[4] $><span class="s-comm-new" data-tooltip="Новые коментарии">2</span></span>
+              </span>
+            </figcaption>
+
+            <div class="l-event-r">
+              <div class="l-event-img">
+                <div class="img-inner">
+                  <img src="images/events-img/item<$ eventIt[5] $>.png" alt="">
+                </div>
+              </div>
+            </div>
+          </figure>
+          {% endfor %}
+          {% endif %}
+
+          <figure class="s-item search-item">
+            <figcaption class="s-item-body">
+              <div class="s-item-info">
+                <div class="s-item-head">
+                  <a href="/s-single.html" class="s-item-name"><$ collItem.name  $>{% if collItem.events > 0 %}<span class="s-item-events" data-tooltip="Новые события"><$ collItem.events $></span>{% endif %}</a>
+                </div>
+                <div class="s-item-add"><span class="s-item-icon"><i class="icon-marker-g icon"></i></span> г. Киев, ул. Генераторная, 9</div>
+                <div class="s-phone"><span class="s-item-icon"><i class="icon-phone icon"></i></span> (067) 574 77 77,  (050) 574 77 78</div>
+
+                <div class="s-clock"><span class="s-item-icon"><i class="icon-clock icon"></i></span> Работает: 09:00 - 19:00 (Пн-Вс)</div>
+              </div>
+
+              <div class="s-body-right">
+                {% include 'blocks/stars.html' %}
+                <div class="s-comm">
+                  <i class="s-comm-icon ic-comments-low icon"></i>
+                  <span class="s-comm-count"><$ collItem['comments'][0] $>{% if collItem['comments'][1] > 0 %}<span class="s-comm-new" data-tooltip="Новые коментарии"><$ collItem['comments'][1] $></span>{% endif %}</span>
+                </div>
+                <a href="/s-single.html" class="s-more">Подробнее</a>
+              </div>
+            </figcaption>
+            <div class="s-item-img">
+              <a href="/s-single.html" class="img-box box200" style="background-image: url(images/tire-fitting/<$ collItem.img[0] $>.{% if collItem.img[0] == 'stub' %}png{% else %}jpg{% endif %})">
+                {% if collItem.img[1] > 0 %}<span><$ collItem.img[1] $></span>{% endif %}
+              </a>
+            </div>
+          </figure>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% endblock %}

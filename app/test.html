@@ -1,0 +1,118 @@
+{% set auth = true %}
+{% set hideFText = true %}
+{% set ftext = {bg: 'gray', show: true} %}
+{% extends 'layout.html' %}
+{% block content %}
+<div class="test-page">
+
+  <div class="container">
+    {% set breadClass = ' bread-arrow' %}
+    {% set breadcrumbs = ['Главная', 'Тест топлива'] %}
+    {% include 'blocks/breadcrumbs.html' %}
+
+    <div class="t-page-head">
+      <h1 class="m-title red t-page-title">Тестирование топлива</h1>
+      {% set selectOpts = {
+        title: 'Все города',
+        selectClass: ' select-wgray t-page-select',
+        list: ['Все города', 'Киев', 'Киев', 'Киев', 'Киев', 'Киев', 'Киев']
+      } %}
+      {% include 'blocks/select.html' %}
+    </div>
+    <div class="t-page-content">
+      {% set fuelArtic = {
+        class: ' t-page-artic',
+        img: 'item2',
+        text: [
+          'Исключитель но путем сбора проб инициативной группой автомобилистов над шего проекта и заказа проведения соответствующих исследований. Заказа и проведения соответствующих исследований группой автомобилистов нашего проекта и заказа проведения заказа проведения соот ветствующих и сследциативной группой автомобилистов.'
+        ],
+        icon: {
+          has: true,
+          text: '98',
+          name: 'gd'
+        }
+      } %}
+      {% include 'blocks/fuel-artic.html' %}
+    </div>
+
+    {% set testList = [
+      {
+        date: '30 февраля',
+        icon: {
+          name: 'gb',
+          text: 'ДТ'
+        },
+        title: 'Долгожданное тестирование дизельного топлива! ',
+        text: 'Тест дизельного топлива',
+        city: 'Запорожье'
+      },{
+        date: '31 января',
+        icon: {
+          name: 'go',
+          text: '100'
+        },
+        title: 'Тест “допинга для спортсменов”',
+        text: 'Тест 100-го бензина',
+        city: 'Ивано-Франковск'
+      },{
+        date: '17 января',
+        icon: {
+          name: 'gb',
+          text: 'ДТ'
+        },
+        title: 'Долгожданное тестирование дизельного топлива! ',
+        text: 'Тест дизельного топлива',
+        city: 'Киев'
+      },{
+        date: '22 декабря',
+        icon: {
+          name: 'gr',
+          text: '92'
+        },
+        title: 'Скромный тест, скромного бензина',
+        text: 'Тест 92-го бензина',
+        city: 'Харьков'
+      },{
+        date: '17 января',
+        icon: {
+          name: 'gb',
+          text: 'ДТ'
+        },
+        title: 'Чем заправить свой КАМАЗ?',
+        text: 'Тест дизельного топлива',
+        city: 'Запорожье'
+      },{
+        date: '22 декабря',
+        icon: {
+          name: 'gt',
+          text: '95'
+        },
+        title: 'Самый качественный ширпотреб в городе.',
+        text: 'Тест 95-го бензина',
+        city: 'Харьков'
+      }
+    ] %}
+    <ul class="t-page-list">
+    {% for testItem in testList %}
+      <li class="t-list-item">
+        <div class="t-list-l">
+          <time class="t-list-date"><$ testItem.date $></time>
+          <div class="t-list-box">
+            <div class="t-list-icon"><i class="icon icon-azs-<$ testItem.icon.name $>"><$ testItem.icon.text $></i></div>
+            <div class="t-list-body">
+              <a href="/" class="t-list-title"><$ testItem.title $></a>
+              <p class="t-list-text"><$ testItem.text $></p>
+            </div>
+          </div>
+        </div>
+        <div class="t-list-r">
+          <div class="t-list-city"><$ testItem.city $></div>
+        </div>
+      </li>
+    {% endfor %}
+    </ul>
+
+    {% include 'blocks/cf-info.html' %}
+  </div>
+</div>
+{% endblock %}

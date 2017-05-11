@@ -1,0 +1,25 @@
+{% set auth = true %}
+{% set hideFText = true %}
+{% set ftext = {bg: '', show: 'false'} %}
+{% set regHead = false %}
+{% extends 'layout.html' %}
+{% block content %}
+<div class="p-reg-check t-strip" id="page-reg">
+  <div class="container">
+    <div class="p-reg-head">
+      <h1 class="s-title">
+        <div class="s-title-text">Регистрация</div>
+      </h1>
+    </div>
+
+    <div class="r-check-body">
+      <div class="r-check-title">Зарегестрироваться как:</div>
+
+      <div class="r-check-btns">
+        <a href="/user-reg.html" class="btn btn-glight btn-large r-check-btn">Пользователь</a>
+        <a href="/comp-reg.html" class="btn btn-glight btn-large r-check-btn">Компания</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

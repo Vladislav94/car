@@ -1,0 +1,183 @@
+.p-date {
+
+  &-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  &-select {
+    width: 234px;
+  }
+
+  &-content {
+    margin: 50px 0 100px;
+  }
+
+  &-years {
+    text-align: center;
+  }
+
+  &-year {
+    font-size: 30px;
+    display: inline-block;
+    color: $graye2;
+    margin: 0 36px;
+
+    a {
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &.active {
+      color: $redc9;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-list {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 15px 0;
+  }
+
+  &-item {
+    width: 300px;
+    border-left: 1px solid $graye2;
+    border-right: 1px solid $graye2;
+    box-sizing: border-box;
+    margin: 45px 53px 20px 0;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    .date-box-title {
+      margin-top: -30px;
+    }
+  }
+}
+
+.date {
+
+  &-box {
+    text-align: center;
+    color: $graybb;
+    padding: 0 9px;
+
+    &-title {
+      font-size: 18px;
+
+      .date-orange & {
+        font-size: 24px;
+        color: $white;
+        text-align: left;
+        margin: 0 -9px;
+      }
+    }
+
+    &-heads {
+      font-size: 12px;
+      display: flex;
+      margin-top: 20px;
+
+      .date-orange & {
+        font-size: 14px;
+        font-family: $sbold;
+      }
+    }
+
+    &-head {
+      flex-grow: 1;
+    }
+
+    &-list {
+      display: flex;
+      flex-flow: row wrap;
+      margin-top: 10px;
+
+      .date-orange & {
+        border-left: 1px solid rgba($white, .2);
+        border-right: 1px solid rgba($white, .2);
+      }
+    }
+
+    &-day {
+      width: 14.2857143%;
+      height: 40px;
+      font-size: 18px;
+      box-sizing: border-box;
+      line-height: 40px;
+      border-radius: 3px;
+      overflow: hidden;
+
+      &.active {
+        background: $redc9;
+        text-decoration: underline;
+        color: $white;
+
+        a {
+          color: $white;
+          background: none;
+        }
+      }
+
+      .date-orange & {
+        font-size: 20px;
+        color: $redea;
+        line-height: 42px;
+
+        &.active {
+          background: $white;
+          text-decoration: none;
+          color: $redc9;
+
+          a {
+            color: $redc9;
+            text-decoration: none;
+          }
+        }
+      }
+
+      &.other-month {
+        color: $redac;
+
+        a {
+          color: inherit;
+        }
+      }
+    }
+
+    &-link {
+      color: $redc9;
+      text-decoration: underline;
+      display: block;
+      transition: background $trans;
+      box-sizing: border-box;
+
+      &:hover {
+        background: $redffe;
+      }
+
+      .date-orange & {
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+          background: rgba($white, .2);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &-orange {
+    color: $redea;
+  }
+}

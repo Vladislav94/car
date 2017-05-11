@@ -1,0 +1,61 @@
+<ng-form action="step-one" name="userRegOne" mathod="post" ng-controller="regFormOne as stepOne">
+  <div class="u-reg step1">
+    <div class="reg-cel">
+      <div class="inp-box">
+        <label for="/" class="inp-label">Ваш никнейм:</label>
+        <div class="inp-wrap">
+          <input type="text" class="inp-field" placeholder="никнейм" ng-model="formWrap.data.nickname">
+        </div>
+      </div>
+      <p class="form-error box-error" ng-show="formWrap.errors.hasOwnProperty('nickname')" ng-bind="formWrap.errors.nickname"></p>
+      <div class="inp-box m10">
+        <label for="/" class="inp-label">Ваш моб. тел.:</label>
+        <div class="inp-wrap" ng-class="{'error': formWrap.errors.hasOwnProperty('phone'), 'disabled': formWrap.phoneDis}">
+          <input type="text" name="phone" class="inp-field" ng-init="formWrap.data.phone = ''" ng-model="formWrap.data.phone" ng-disabled="formWrap.phoneDis" placeholder="+38 ХХХХХХХХХ">
+        </div>
+      </div>
+      <p class="form-error box-error" ng-show="formWrap.errors.hasOwnProperty('phone')" ng-bind="formWrap.errors.phone"></p>
+      <div class="dd-wrap reg-other" data-out="false">
+        <p class="reg-text reg-offset reg-other-btn">
+          <a href="#" class="dd-show" ng-click="formWrap.phoneDis = !formWrap.phoneDis">Выбрать другой метод регистрации</a>
+        </p>
+
+        <div class="dd">
+          <div class="inp-box m10">
+            <label for="/" class="inp-label">Ваш E-mail:</label>
+            <div class="inp-wrap" ng-class="{'error': formWrap.errors.hasOwnProperty('email'), 'disabled': !formWrap.phoneDis}">
+              <input type="text" class="inp-field" name="input" ng-init="formWrap.data.email = ''" ng-model="formWrap.data.email" placeholder="e-mail">
+            </div>
+          </div>
+          <p class="form-error box-error" ng-show="formWrap.errors.hasOwnProperty('email')" ng-bind="formWrap.errors.email"></p>
+          <p class="reg-offset reg-text">Или:</p>
+          <div class="inp-box">
+            <label for="/" class="inp-label">Соц. сеть:</label>
+            <div class="reg-socs">
+              <a href="/" class="reg-soc fb"><i class="icon icon-fb"></i></a>
+              <a href="/" class="reg-soc vk"><i class="icon icon-vk"></i></a>
+              <a href="/" class="reg-soc ok"><i class="icon icon-ok"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reg-cel reg-app-box">
+      <p class="reg-text">Регистрация по номеру мобильного телефона, это самый простой и эффективный метод регистрации, позволяющий получить все преимущества на сайте.</p>
+
+      <ul class="reg-app-list">
+        <li class="reg-app-item">1. Безопасность аккаунта</li>
+        <li class="reg-app-item">2. Установте приложение и смотрите отзывы ваших друзей.</li>
+      </ul>
+
+      <div class="reg-apps">
+        <a href="/" class="reg-app"><img src="images/apps/apple.svg" class="svg" alt="apple-app"></a>
+        <a href="/" class="reg-app"><img src="images/apps/google.svg" class="svg" alt="google-app"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="reg-footer reg-footer-one">
+    <button class="btn btn-red btn-low reg-next" ng-click="formWrap.nextReqStep('pass')">Далее</button>
+  </div>
+</ng-form>

@@ -1,0 +1,130 @@
+{% set auth = false %}
+{% set ftext = {bg: 'gray', show: true} %}
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="o-events-wrap">
+  <section class="container s-section">
+    {% set breadClass = ' bread-arrow' %}
+    {% set breadcrumbs = ['Главная', 'События Украины', 'Киев', 'Автомагазин', '“Все по 150 гривен!”'] %}
+    {% include 'blocks/breadcrumbs.html' %}
+
+    <div class="content-wrap o-events-body">
+      <div class="content">
+        <div class="s-events">
+          <h1 class="s-events-title m-title">Все события, “Все по 150 гривен” (3)</h1>
+
+            {% for topNews in [{
+              text: 'Наша задача создать первый в истории украинского',
+              comm: '41'
+            },{
+              text: 'Распродажа зимней резины, скидки до 70%',
+              comm: '7'
+            },{
+              text: 'Наша задача',
+              comm: '0'
+            }] %}
+
+            <article class="s-event s-event-low">
+              <time class="s-event-date">С 10 января по 10 февраля</time>
+              <div class="s-event-title">
+                <a href="/" class="s-event-link"><$ topNews.text $></a>
+                {% if topNews.comm != 0 %}
+                <span class="s-event-comm"><i class="icon ic-wcomments" data-tooltip="Коментарии"></i><$ topNews.comm $></span>
+                {% endif %}
+              </div>
+            </article>
+            {% endfor %}
+
+            <div class="o-events-wrap">
+              {% for topNews in [{
+                text: 'Наша задача создать первый в истории украинского',
+                comm: '41'
+              },{
+                text: 'Фестиваль ретро-техники в Киеве: пять сотен уникальных автомобилей',
+                comm: '7'
+              },{
+                text: 'Бесплатный шиномонтаж всем женщина за рулём',
+                comm: '0'
+              }] %}
+              <article class="s-event-low o-event-low active">
+                <time class="s-event-date">С 10 января по 10 февраля</time>
+                <div class="s-event-title">
+                  <a href="/" class="s-event-link"><$ topNews.text $></a>
+                  {% if topNews.comm != 0 %}
+                  <span class="s-event-comm"><i class="icon ic-comments-low" data-tooltip="Коментарии"></i><$ topNews.comm $></span>
+                  {% endif %}
+                </div>
+              </article>
+              {% endfor %}
+            </div>
+
+          <div class="o-events-divider"><span>Не активные</span></div>
+
+          <div class="o-events-wrap">
+            {% for item in range(1,3) %}
+            {% for topNews in [{
+              text: 'Наша задача создать первый в истории украинского',
+              comm: '22',
+              date: 'С 10 января по 10 февраля'
+            },{
+              text: 'Фестиваль ретро-техники в Киеве: пять сотен уникальных автомобилей',
+              comm: '3',
+              date: '22 февраля - 28 февраля'
+            },{
+              text: 'Бесплатный шиномонтаж всем женщина за рулём',
+              comm: '128',
+              date: '8 марта'
+            }] %}
+            <article class="s-event-low o-event-low">
+              <time class="s-event-date"><$ topNews.date $></time>
+              <div class="s-event-title">
+                <a href="/" class="s-event-link"><$ topNews.text $></a>
+                {% if topNews.comm != 0 %}
+                <span class="s-event-comm"><i class="icon ic-comments-low" data-tooltip="Коментарии"></i><$ topNews.comm $></span>
+                {% endif %}
+              </div>
+            </article>
+            {% endfor %}
+            {% endfor %}
+          </div>
+        </div>
+        {% set pagesClass = ' o-events-pages' %}
+        {% include 'blocks/pages-list.html' %}
+      </div>
+
+      <div class="sb sb-r">
+        <a href="#" class="s-btn">
+          <span class="s-btn-text">Проложить маршрут</span>
+          <span class="s-btn-icon"><span class="icon-rout icon"></span></span>
+        </a>
+
+        <div class="m-info-box">
+          <div class="m-info-map" id="map"></div>
+          <div class="m-info-name">Автомагазин</div>
+          <div class="m-info-sub">“Все по 150 гривен”</div>
+          <div class="s-item-add"><span class="s-item-icon"><i class="icon-marker-g icon"></i></span> г. Киев, ул. Генераторная, 9</div>
+          <div class="s-phone"><span class="s-item-icon"><i class="icon-phone icon"></i></span> (067) 574 77 77</div>
+          <div class="s-clock"><span class="s-item-icon"><i class="icon-clock icon"></i></span> Работает: 09:00 - 19:00 (Пн-Вс)</div>
+          <div class="m-info-foot">
+            {% set starSettings = {
+              voted: 1324,
+              active: 4,
+              wrapClass: ' rating-low s-item-rating',
+              starClass: ' rating-star__g'
+            }%}
+            {% include 'blocks/stars.html' %}
+            <span class="m-info-comm">317<span class="s-comm-new" data-tooltip="Новые коментарии">2</span></span>
+          </div>
+
+          <div class="m-info-more"><a href="/" class="m-link">Подробнее</a></div>
+        </div>
+
+      </div>
+    </div>
+
+    {% include 'blocks/comments.html' %}
+  </section>
+</div>
+
+{% endblock %}

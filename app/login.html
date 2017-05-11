@@ -1,0 +1,29 @@
+{% set auth = true %}
+{% set hideFText = true %}
+{% set ftext = {bg: '', show: 'false'} %}
+{% extends 'layout.html' %}
+{% block content %}
+<div class="p-auth" id="page-login">
+
+  <div class="container">
+    <img src="images/icons/log-img.png" alt="" class="p-auth-img">
+
+    <p class="p-auth-text">Для входа на сайт, введите регистрационные данные или зарегистрируйтесь.</p>
+
+    <form action="login" class="p-auth-form">
+      <p class="form-error p-auth-err">Неверное имя пользователя или пароль. Проверьте правильность введенных данных.</p>
+
+      <div class="p-auth-inner">
+        <div class="inp-wrap"><input type="text" class="inp-field" placeholder="Логин"></div>
+        <div class="inp-wrap"><input type="password" class="inp-field" placeholder="Пароль"></div>
+        <button class="btn btn-gmid p-auth-enter">Войти</button>
+      </div>
+    </form>
+
+    <div class="p-auth-foot">
+      <a href="/" class="m-link p-auth-link p-auth-pass">Напомнить пароль?</a>
+      <a href="/" class="p-auth-link p-auth-reg">Зарегистрироваться</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

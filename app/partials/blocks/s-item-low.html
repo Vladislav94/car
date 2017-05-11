@@ -1,0 +1,16 @@
+<figure class="s-item s-item-low">
+  <figcaption class="s-item-body">
+    <div class="s-item-info">
+      <div class="s-item-head"><a href="/s-single.html" class="s-item-name"><$ collItem.name  $></a></div>
+      <div class="s-item-add"><span class="s-item-icon"><i class="icon-marker-g icon"></i></span> г. Киев, ул. Генераторная, 9</div>
+      <div class="s-phone"><span class="s-item-icon"><i class="icon-phone icon"></i></span> (067) 574 77 77,  (050) 574 77 78</div>
+      <a href="/s-single.html" class="s-more">Подробнее</a>
+    </div>
+  </figcaption>
+  <div class="s-item-img">
+    <a href="/s-single.html" class="img-box box140" style="background-image: url(images/tire-fitting/<$ collItem.img[0] $>.{% if collItem.img[0] == 'stub' %}png{% else %}jpg{% endif %})">
+      {% if collItem.img[1] > 0 %}<span><$ collItem.img[1] $></span>{% endif %}
+    </a>
+    {% include 'blocks/stars.html' %}
+  </div>
+</figure>

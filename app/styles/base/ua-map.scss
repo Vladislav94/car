@@ -1,0 +1,126 @@
+#ua-map {
+
+  .ua-region {
+    fill: $blue1c;
+    fill-opacity: 1;
+    stroke: $white;
+    stroke-opacity: 1;
+    stroke-width: 0.5;
+    transition: opacity $trans;
+
+    &:hover {
+      opacity: .9;
+    }
+
+    &.has-marker {
+
+      &:hover {
+        opacity: .7;
+      }
+    }
+  }
+
+  .marker {
+    pointer-events: none;
+
+    &#UA-marker1 {
+      transform: scale(.38) translate(210px, 100px);
+    }
+
+    &#UA-marker2 {
+      transform: scale(.38) translate(55px, 470px);
+    }
+
+    &#UA-marker3 {
+      transform: scale(.38) translate(130px, 300px);
+    }
+
+    &#UA-marker4 {
+      transform: scale(.38) translate(190px, 450px);
+    }
+
+    &#UA-marker5 {
+      transform: scale(.38) translate(280px, 350px);
+    }
+
+    &#UA-marker6 {
+      transform: scale(.38) translate(370px, 120px);
+    }
+
+    &#UA-marker7 {
+      transform: scale(.38) translate(310px, 490px);
+    }
+
+    &#UA-marker8 {
+      transform: scale(.38) translate(400px, 340px);
+    }
+
+    &#UA-marker9 {
+      transform: scale(.38) translate(530px, 180px);
+    }
+
+    &#UA-marker10 {
+      transform: scale(.38) translate(550px, 410px);
+    }
+
+    &#UA-marker11 {
+      transform: scale(0.50) translate(535px, 185px);
+    }
+
+    &#UA-marker12 {
+      transform: scale(0.38) translate(785px, 380px);
+    }
+
+    &#UA-marker13 {
+      transform: scale(0.38) translate(855px, 495px);
+    }
+
+    &#UA-marker14 {
+      transform: scale(0.38) translate(835px, 645px);
+    }
+
+    &#UA-marker15 {
+      transform: scale(0.38) translate(705px, 675px);
+    }
+
+    &#UA-marker16 {
+      transform: scale(0.38) translate(840px, 95px);
+    }
+
+    &#UA-marker17 {
+      transform: scale(0.38) translate(1010px, 320px);
+    }
+
+    &#UA-marker18 {
+      transform: scale(0.38) translate(1105px, 475px);
+    }
+
+    &#UA-marker19 {
+      transform: scale(0.38) translate(995px, 700px);
+    }
+
+    &#UA-marker20 {
+      transform: scale(0.38) translate(1035px, 895px);
+    }
+
+    &#UA-marker21 {
+      transform: scale(0.38) translate(1000px, 120px);
+    }
+
+    &#UA-marker22 {
+      transform: scale(0.38) translate(1255px, 340px);
+    }
+
+    &#UA-marker23 {
+      transform: scale(0.38) translate(1470px, 435px);
+    }
+
+    &#UA-marker24 {
+      transform: scale(0.38) translate(1355px, 545px);
+    }
+
+    &#UA-marker25 {
+      transform: scale(0.38) translate(1185px, 645px);
+    }
+  }
+}

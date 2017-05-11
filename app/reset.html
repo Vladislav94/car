@@ -1,0 +1,24 @@
+{% set auth = true %}
+{% set hideFText = true %}
+{% set ftext = {bg: '', show: 'false'} %}
+{% extends 'layout.html' %}
+{% block content %}
+<div class="p-auth" id="page-reset">
+
+  <div class="container">
+    <img src="images/icons/reset-img.png" alt="" class="p-reset-img">
+
+    <p class="p-auth-text">Для востановления доступа на портал, введите Ваш e-mail или номер телефона,<br> который вы использовали при регистрации:</p>
+    <p class="form-error p-auth-err">Неверное имя пользователя или пароль. Проверьте правильность введенных данных.</p>
+
+    <form action="login" class="p-auth-form">
+      <div class="p-auth-inner">
+        <div class="inp-wrap"><input type="text" class="inp-field" placeholder="Логин"></div>
+        <p class="p-auth-ftext">или</p>
+        <div class="inp-wrap"><input type="password" class="inp-field" placeholder="Пароль"></div>
+        <button class="btn btn-gmid p-auth-enter">Войти</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

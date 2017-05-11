@@ -1,0 +1,41 @@
+<ng-form action="profile" name="profileForm" mathod="post" ng-controller="formProfile as profile" class="reg-settings">
+  <div class="reg-gtitle">Давайте настроим Ваш профайл</div>
+  <div class="u-reg">
+    <div class="reg-cel" ng-controller="AppController" nv-file-drop="" uploader="uploader">
+      <input type="file" nv-file-select="" uploader="uploader" multiple="" id="upload-avatar">
+      <div class="reg-stitle">Ваш аватар:</div>
+      <div class="avatar-box main-avatar reg-avatar">
+        <a href="#" class="avatar-del" ng-click="uploader.queue[0].remove()"></a>
+        <label for="upload-avatar" class="avatar-add"></label>
+        <div ng-if="uploader.queue.length >= 1" class="l-avatar-box">
+          <div ng-thumb="{ file: uploader.queue[0]._file}" class="l-avatar-img"></div>
+        </div>
+      </div>
+    </div>
+    <div class="reg-cel">
+      <div class="reg-stitle">Дополнительные поля:</div>
+      <div class="inp-box">
+        <label for="/" class="inp-label" ng-show="profile.data.field == 'email'">Ваш Телефон:</label>
+        <label for="/" class="inp-label" ng-show="profile.data.field == 'phone'">Ваш E-mail:</label>
+        <div class="inp-wrap"><input type="text" class="inp-field"></div>
+      </div>
+      <div class="inp-box">
+        <label for="/" class="inp-label">ФИО:</label>
+        <div class="inp-wrap"><input type="text" class="inp-field"></div>
+      </div>
+      <div class="inp-box">
+        <label for="/" class="inp-label">Ваш авто:</label>
+        <div class="select-group reg-group" ng-controller="loadMark as mark">
+          {% set selectClass = ' select-wgray' %}
+          {% include 'angular/select.html' %}
+          {% set selectClass = ' select-wgray disabled' %}
+          {% include 'angular/select.html' %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reg-footer">
+    <button class="btn btn-red btn-lowreg-next" ng-click="uploader.queue.upload()">Далее</button>
+  </div>
+</ng-form>

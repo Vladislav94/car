@@ -1,0 +1,483 @@
+#page-reg {
+  min-height: 695px;
+  box-sizing: border-box;
+  margin-bottom: 80px;
+}
+
+.p {
+
+  &-reg {
+
+    &-check {
+
+    }
+
+    &-head {
+      height: 100px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.r {
+
+  &-check {
+
+    &-body {
+      margin: 45px 0;
+    }
+
+    &-title {
+      font-size: 22px;
+      color: $gray81;
+      text-align: center;
+    }
+
+    &-btns {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 35px 0;
+    }
+
+    &-btn {
+      margin: 0 10px;
+      width: 350px;
+      border-radius: 0;
+      font-size: 20px;
+    }
+  }
+}
+
+.reg {
+
+  &-settings {
+    margin-top: 40px;
+
+    .reg-stitle {
+      margin-bottom: 30px;
+    }
+  }
+
+  &-user {
+
+    &-content {
+      margin: 30px 0;
+    }
+  }
+
+  &-confirm {
+
+    .reg-inp {
+      margin-top: 35px;
+    }
+  }
+
+  &-cel {
+    flex-grow: 1;
+    flex-basis: 50%;
+    padding: 0 31px;
+  }
+
+  &-socs {
+    display: flex;
+    margin: -5px 0;
+  }
+
+  &-soc {
+    display: flex;
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    transition: border-radius .1s linear;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      border-radius: 50%;
+    }
+
+    &.fb {
+      background: $blue4f;
+    }
+
+    &.vk {
+      background: $blue4d;
+    }
+
+    &.ok {
+      background: $oranf6;
+    }
+  }
+
+  &-footer {
+    margin-top: 65px;
+
+    &-one {
+      margin-top: 35px;
+    }
+  }
+
+  &-title {
+    font-size: 18px;
+    color: $gray81;
+    margin: em(15, 18) 0;
+    text-align: center;
+  }
+
+  &-gtitle {
+    font-size: 20px;
+    color: $gray81;
+    margin: em(15, 20) 0;
+    text-align: center;
+  }
+
+  &-avatar {
+    margin: 45px auto;
+  }
+
+  &-stitle {
+    color: $gray9;
+    font-size: 16px;
+    margin: em(15, 16) 0;
+    text-align: center;
+  }
+
+  &-inp {
+    max-width: 350px;
+  }
+
+  &-pass {
+
+    .reg-title {
+      margin: em(28, 18) 0;
+    }
+
+    &-btn {
+      margin-top: 65px;
+    }
+  }
+
+  &-form-c {
+    text-align: center;
+
+    .reg-inp {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &-text {
+    font-size: 14px;
+    color: $gray9;
+    line-height: 1.5;
+    margin: em(15, 14) 0;
+  }
+
+  &-next {
+    width: 140px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  &-app {
+
+    &-list {
+      font-size: 14px;
+      color: $gray6;
+      margin-top: 30px;
+    }
+
+    &-item {
+      margin: em(10, 14) 0;
+    }
+  }
+
+  &-other {
+    position: static;
+
+    &-btn {
+      // margin: -5px 0 -7px;
+
+      .dd-show {
+        border-bottom: 1px dashed $gray9;
+        transition: border $trans;
+        line-height: 1.2;
+
+        &:hover {
+          border-bottom-color: transparent;
+        }
+      }
+    }
+
+    .dd {
+      position: static;
+    }
+  }
+
+  &-offset {
+    margin-left: 100px;
+  }
+
+  &-apps {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  &-app {
+    display: block;
+    margin: 0 4px;
+    width: 136px;
+    height: 39px;
+
+    .svg {
+
+      path {
+        fill: $redc9;
+      }
+
+      &:hover {
+        path {
+          fill: $redee;
+        }
+      }
+    }
+  }
+
+  &-thanks {
+    margin-top: 55px;
+
+    &-text {
+      color: $gray6;
+      font-size: 22px;
+      text-align: center;
+
+      .icon {
+        display: block;
+        margin: 25px auto;
+      }
+    }
+  }
+
+  &-mail {
+
+    &-wrap {
+      margin-top: 65px;
+    }
+
+    &-img {
+      margin: 0 auto 50px auto;
+      display: block;
+    }
+  }
+}
+
+.u {
+
+  &-reg {
+    display: flex;
+    margin: 0 -9px;
+
+    &.step1 {
+      margin-top: 35px;
+    }
+  }
+}
+
+.c-reg {
+
+  &-mail {
+    margin-top: 55px;
+
+    .inp-box {
+      margin-top: 45px;
+    }
+
+    .reg-footer {
+      margin-top: 45px;
+    }
+  }
+
+  &-name {
+    text-align: center;
+    width: 670px;
+    margin: 45px auto;
+
+    .reg-footer {
+      margin-top: 40px;
+    }
+  }
+
+  &-title {
+    font-size: 24px;
+    color: $gray6;
+    text-align: center;
+    margin: em(15,24) 0;
+  }
+
+  &-text {
+    font-size: 18px;
+    color: $gray9;
+    line-height: 1.5;
+    margin: em(15, 18) 0;
+    text-align: center;
+  }
+
+  &-options {
+    text-align: left;
+
+    .c-reg-title {
+      text-align: left;
+    }
+  }
+}
+
+.c-inp-name {
+  margin: 35px 0;
+}
+
+.c-practice {
+  width: 600px;
+  margin: auto;
+
+  &-text {
+    font-size: 16px;
+    color: $gray9;
+    line-height: 1.5;
+    margin: em(15, 16) 0;
+    text-align: center;
+  }
+
+  &-checks {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &-check {
+    flex-basis: 25%;
+    text-align: left;
+    margin: 15px 0;
+
+    .checkbox-label {
+      font-size: 16px;
+      text-decoration: none;
+
+      &:before {
+        width: 12px;
+        height: 12px;
+        margin-right: 10px;
+      }
+
+      &:after {
+        left: 2px;
+        top: 5px;
+      }
+    }
+  }
+}
+
+.c-add-logo {
+  float: right;
+  margin-bottom: -10px;
+
+  .reg-stitle {
+    display: inline-block;
+    vertical-align: top;
+    margin: 7px 0;
+  }
+
+  .avatar-box {
+    display: inline-block;
+    margin: 25px 0 0;
+  }
+}
+
+.add {
+
+  &-addr {
+
+    &s {
+      padding: 0 11px;
+      margin-top: 50px;
+
+      .c-reg-title {
+        margin: 10px 0;
+      }
+    }
+
+    &-list {
+      margin: 30px 0;
+    }
+
+    &-name {
+      font-size: 20px;
+      color: $redc9;
+      margin-bottom: 8px;
+    }
+
+    &-text {
+      font-size: 18px;
+      color: $gray6;
+      margin: em(12, 18) 0;
+    }
+
+    &-body {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    &-l {
+      min-width: 700px;
+      margin-right: 20px;
+    }
+
+    &-r {
+      flex: 1;
+      width: 100%;
+    }
+
+    &-phone {
+      width: 150px;
+    }
+
+    &-btn {
+      font-size: 14px;
+      color: $gray9;
+      border-bottom: 1px dashed;
+      transition: color $trans;
+      position: relative;
+      margin-left: 22px;
+
+      &:hover {
+        color: $redc9;
+
+        .add-addr-icon {
+          background-color: $redc9;
+        }
+      }
+    }
+
+    &-icon {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: $grayba;
+      position: absolute;
+      right: 100%;
+      margin-right: 7px;
+      top: 2px;
+      display: flex;
+      transition: background $trans;
+
+      &:before {
+        content: '';
+        @include sprite($add-low);
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+}

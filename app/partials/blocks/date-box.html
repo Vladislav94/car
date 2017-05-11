@@ -1,0 +1,29 @@
+<div class="date-box<$ dateClass $>">
+  <div class="date-box-title"><$ item $></div>
+
+  <div class="date-box-heads">
+    {% for item in ['пн','вт','ср','чт','пт','сб','вс'] %}
+    <div class="date-box-head"><$ item $></div>
+    {% endfor %}
+  </div>
+  {% set activeRand = range(15, 27) | random %}
+  {% set itemsL = -1 %}
+  <ul class="date-box-list">
+    {% for item in range(1,[2,3,4] | random) %}
+    {% set itemsL = itemsL+1 %}
+    <li class="date-box-day other-month">{% if otherDays %}<$ item+27 $>{% endif %}</li>
+    {% endfor %}
+
+    {% for item in range(1,28+ [1,2,3,4] | random) %}
+    {% set itemsL = itemsL+1 %}
+    {% set rand = [1,2] | random %}
+    <li class="date-box-day{% if loop.index == activeRand %} active{% endif %}">{% if rand == 1 %}<a href="/" class="date-box-link"><$ item $></a>{% else %}<$ item $>{% endif %}</li>
+
+    {% endfor %}
+
+    {% for item in range(1,35-itemsL) %}
+    {% set rand = [1,2] | random %}
+    <li class="date-box-day other-month">{% if otherDays %}<$ item $>{% endif %}</li>
+    {% endfor %}
+  </ul>
+</div>

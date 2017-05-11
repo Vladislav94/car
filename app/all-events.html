@@ -1,0 +1,308 @@
+{% set auth = true %}
+{% set ftext = {bg: 'gray', show: true} %}
+{% extends 'layout.html' %}
+{% block content %}
+<div id="map"></div>
+<div class="t-strip p-events">
+
+  <div class="container">
+    <div class="p-date-head">
+      <h1 class="s-title">
+        <div class="s-title-l">
+          <span class="s-title-ic">
+            <i class="icon-date icon"></i>
+          </span>
+        </div>
+        <div class="s-title-text">Все события, Украина. <span>17 марта</span></div>
+      </h1>
+      <div class="dd-wrap datepicker-wrap">
+        <div class="dd-show datepicker-icon">
+          <i class="icon icon-date-w"></i>
+        </div>
+
+        <div class="dd datepicker-body">
+          <div class="slider datepicker-slider">
+            {% set dateHead = ['Январь 2017', 'Февраль 2017', 'Март 2017'] %}
+            {% set dateClass = ' date-orange' %}
+            {% set otherDays = true %}
+            {% for item in dateHead %}
+            <div class="datepicker-slide">
+              {% include 'blocks/date-box.html' %}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-events-content">
+      <div class="p-events-day">
+        <div class="p-events-head">
+          <div class="pe-date">
+            <div class="pe-head-date">3</div>
+            <div class="pe-head-body">
+              <span class="pe-head-now">сегодня</span>
+              <p class="pe-head-month">февраля</p>
+            </div>
+          </div>
+
+          <div class="select-group pe-group">
+            {% set selectOpts = {
+              title: 'Вся Украина',
+              selectClass: ' select-worange p-events-region',
+              list: ['Вся Украина', 'Киев', 'Закарпаття', 'Львів', 'Крим', 'Одеса', 'Житомир']
+            } %}
+            {% include 'blocks/select.html' %}
+            {% set selectOpts = {
+            title: 'Вся Украина',
+            selectClass: ' select-worange p-events-objects',
+            list: ['Все объекты', 'Киев', 'Закарпаття', 'Львів', 'Крим', 'Одеса', 'Житомир']
+            } %}
+            {% include 'blocks/select.html' %}
+          </div>
+        </div>
+
+        <div class="p-events-body">
+          <figure class="l-event p-events-event">
+            <figcaption class="l-event-body">
+              <a href="/" class="l-event-title">Каждую пятницу - “Черная пятница!”</a>
+              <div class="l-event-add"><i class="icon icon-emarker"></i>г. Киев, ул. Генераторная, 9, <a href="/" class="m-link">Автомагазин “Все по 150 гривен!”</a></div>
+              <a href="/" class="m-link l-event-more">Подробнее</a>
+              <span class="l-event-com">
+                <i class="s-comm-icon ic-comments-low icon"></i>
+                <span class="s-comm-count">317<span class="s-comm-new" data-tooltip="Новые коментарии">2</span></span>
+              </span>
+            </figcaption>
+
+            <div class="l-event-r">
+              <time class="l-event-date">17 марта</time>
+              <div class="l-event-img">
+                <div class="img-inner">
+                  <img src="images/events-img/item1.png" alt="">
+                </div>
+              </div>
+            </div>
+          </figure>
+          <figure class="l-event p-events-event">
+            <figcaption class="l-event-body">
+              <a href="/" class="l-event-title">Сотрудник Daimler рассказал сколько потратил на Мерседес E-класса за 25 лет</a>
+              <div class="l-event-add"><i class="icon icon-emarker"></i>г. Киев, ул. Горная, 9, <a href="/" class="m-link">Автомагазин “Все”</a></div>
+              <a href="/" class="m-link l-event-more">Подробнее</a>
+              <span class="l-event-com">
+                <i class="s-comm-icon ic-comments-low icon"></i>
+                <span class="s-comm-count">317<span class="s-comm-new" data-tooltip="Новые коментарии">2</span></span>
+              </span>
+            </figcaption>
+
+            <div class="l-event-r">
+              <time class="l-event-date">10 марта - 27 марта</time>
+              <div class="l-event-img">
+                <div class="img-inner">
+                  <img src="images/events-img/item2.png" alt="">
+                </div>
+              </div>
+            </div>
+          </figure>
+          <figure class="l-event p-events-event">
+            <figcaption class="l-event-body">
+              <a href="/" class="l-event-title">В ближайшее время столичные власти намерены объявить тендер на закупку пяти таких парковок.</a>
+              <div class="l-event-add"><i class="icon icon-emarker"></i>г. Киев, ул. Горная, 9, <a href="/" class="m-link">Национальный выставочный центр Украины</a></div>
+              <a href="/" class="m-link l-event-more">Подробнее</a>
+              <span class="l-event-com">
+                <i class="s-comm-icon ic-comments-low icon"></i>
+                <span class="s-comm-count">317<span class="s-comm-new" data-tooltip="Новые коментарии">2</span></span>
+              </span>
+            </figcaption>
+
+            <div class="l-event-r">
+              <time class="l-event-date">26 января - 29 января</time>
+              <div class="l-event-img">
+                <div class="img-inner">
+                </div>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </div>
+      <div class="p-events-none">4 - 12 февраля без событий</div>
+      <div class="p-events-day">
+          <div class="p-events-head">
+            <div class="pe-date">
+              <div class="pe-head-date">13</div>
+              <div class="pe-head-body">
+                <p class="pe-head-month">февраля</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-events-body">
+            <figure class="l-event p-events-event">
+              <figcaption class="l-event-body">
+                <a href="/" class="l-event-title">Каждую пятницу - “Черная пятница!”</a>
+                <div class="l-event-add"><i class="icon icon-emarker"></i>г. Киев, ул. Генераторная, 9, <a href="/" class="m-link">Автомагазин “Все по 150 гривен!”</a></div>
+                <a href="/" class="m-link l-event-more">Подробнее</a>
+                <span class="l-event-com">
+                  <i class="s-comm-icon ic-comments-low icon"></i>
+                  <span class="s-comm-count">317</span>
+                </span>
+              </figcaption>
+
+              <div class="l-event-r">
+                <time class="l-event-date">27 января</time>
+                <div class="l-event-img">
+                  <div class="img-inner">
+                    <img src="images/events-img/item3.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </figure>
+            <figure class="l-event p-events-event">
+              <figcaption class="l-event-body">
+                <a href="/" class="l-event-title">Сотрудник Daimler рассказал сколько потратил на Мерседес E-класса за 25 лет</a>
+                <div class="l-event-add"><i class="icon icon-emarker"></i>г. Киев, ул. Горная, 9, <a href="/" class="m-link">Автомагазин “Все”</a></div>
+                <a href="/" class="m-link l-event-more">Подробнее</a>
+                <span class="l-event-com">
+                  <i class="s-comm-icon ic-comments-low icon"></i>
+                  <span class="s-comm-count">317</span>
+                </span>
+              </figcaption>
+
+              <div class="l-event-r">
+                <time class="l-event-date">20 января - 27 января</time>
+                <div class="l-event-img">
+                  <div class="img-inner">
+                    <img src="images/events-img/item4.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </figure>
+          </div>
+        </div>
+      <div class="p-events-day">
+        <div class="p-events-head">
+          <div class="pe-date">
+            <div class="pe-head-date">14</div>
+            <div class="pe-head-body">
+              <p class="pe-head-month">февраля</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-events-body">
+          <figure class="l-event p-events-event">
+            <figcaption class="l-event-body">
+              <a href="/" class="l-event-title">Каждую пятницу - “Черная пятница!”</a>
+              <div class="l-event-add"><i class="icon icon-emarker"></i>г. Киев, ул. Генераторная, 9, <a href="/" class="m-link">Автомагазин “Все по 150 гривен!”</a></div>
+              <a href="/" class="m-link l-event-more">Подробнее</a>
+              <span class="l-event-com">
+                <i class="s-comm-icon ic-comments-low icon"></i>
+                <span class="s-comm-count">317<span class="s-comm-new" data-tooltip="Новые коментарии">2</span></span>
+              </span>
+            </figcaption>
+
+            <div class="l-event-r">
+              <time class="l-event-date">17 марта</time>
+              <div class="l-event-img">
+                <div class="img-inner">
+                  <img src="images/events-img/item1.png" alt="">
+                </div>
+              </div>
+            </div>
+          </figure>
+          <figure class="l-event p-events-event">
+            <figcaption class="l-event-body">
+              <a href="/" class="l-event-title">Сотрудник Daimler рассказал сколько потратил на Мерседес E-класса за 25 лет</a>
+              <div class="l-event-add"><i class="icon icon-emarker"></i>г. Киев, ул. Горная, 9, <a href="/" class="m-link">Автомагазин “Все”</a></div>
+              <a href="/" class="m-link l-event-more">Подробнее</a>
+              <span class="l-event-com">
+                <i class="s-comm-icon ic-comments-low icon"></i>
+                <span class="s-comm-count">317<span class="s-comm-new" data-tooltip="Новые коментарии">2</span></span>
+              </span>
+            </figcaption>
+
+            <div class="l-event-r">
+              <time class="l-event-date">10 марта - 27 марта</time>
+              <div class="l-event-img">
+                <div class="img-inner">
+                  <img src="images/events-img/item2.png" alt="">
+                </div>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </div>
+
+      <ul class="j-list">
+        {% for item in [{
+          count: '15',
+          events: '4 события'
+        },{
+          count: '16',
+          events: '3 события'
+        },{
+          count: '17',
+          events: 'Нет событий'
+        },{
+          count: '18',
+          events: 'Нет событий'
+        },{
+          count: '19',
+          events: 'Нет событий'
+        },{
+          count: '20',
+          events: 'Нет событий'
+        },{
+          count: '21',
+          events: 'Нет событий'
+        },{
+          count: '22',
+          events: '4 события'
+        },{
+          count: '23',
+          events: '4 события'
+        },{
+          count: '24',
+          events: '4 события'
+        },{
+          count: '25',
+          events: '2 события'
+        },{
+          count: '26',
+          events: '2 события'
+        },{
+          count: '27',
+          events: '2 события'
+        },{
+          count: '28',
+          events: '15 событий'
+        },{
+          count: '1',
+          events: '14 событий'
+        },{
+          count: '2',
+          events: 'Нет событий'
+        },{
+          count: '3',
+          events: 'Нет событий'
+        },{
+          count: '4',
+          events: 'Нет событий'
+        },{
+          count: '5',
+          events: 'Нет событий'
+        },{
+          count: '6',
+          events: 'Нет событий'
+        }] %}
+        <li class="j-list-item {% if item.count == 25 %}focus-on{% endif %}{% if item.count == 24 %}focus-prev{% endif %}">
+          <span class="j-list-date">
+            <span class="j-list-count"><$ item.count $></span>
+            <span class="j-list-month">{% if loop.index < 15 %}февраля{% else %}марта{% endif %}</span>
+          </span>
+          <div class="j-list-events"><$ item.events $></div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

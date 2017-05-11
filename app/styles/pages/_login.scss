@@ -1,0 +1,66 @@
+.p-auth {
+  text-align: center;
+  display: flex;
+  height: 570px;
+  align-items: center;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+
+  &-img {
+    display: block;
+    margin: 30px auto;
+  }
+
+  &-text {
+    font-size: 20px;
+    color: $gray6;
+    line-height: 1.3;
+    margin: em(15, 20) 0;
+  }
+
+  &-inner {
+    width: 200px;
+    margin: 35px auto;
+  }
+
+  &-enter {
+    border-radius: 0;
+    padding: 6px 10px 5px;
+    width: 100%;
+  }
+
+  &-foot {
+    margin: 15px 0;
+  }
+
+  &-err {
+    margin: -9px 0 -22px 0;
+  }
+
+  &-link {
+    font-size: 16px;
+    text-decoration: underline;
+    margin: 0 10px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &-reg {
+    color: $green5a;
+  }
+
+  &-ftext {
+    font-size: 14px;
+    color: $gray9;
+    margin: -3px 0;
+  }
+}
+
+.p-reset {
+
+  &-img {
+    margin-bottom: 40px;
+  }
+}

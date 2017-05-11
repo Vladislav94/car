@@ -1,0 +1,24 @@
+<form class="c-reg-name">
+  <h1 class="c-reg-title">Ура! Всё получилось!</h1>
+  <p class="c-reg-text">Теперь давайте построим Ваш аккаунт.</p>
+
+  <div class="inp-wrap c-inp-name">
+    <input type="text" class="inp-field" placeholder="Название компании">
+  </div>
+
+  <div class="c-practice">
+    <p class="c-practice-text">Чем занимается Ваша компания:</p>
+
+    <div class="c-practice-checks">
+      {% for item in ['СТО', 'АЗС', 'Автосалон', 'Автомагазины', 'Шиномонтаж', 'Автомойки', 'Детейлинг', 'Частный мастер'] %}
+      <div class="checkbox-wrap gray c-practice-check">
+        <input type="checkbox" id="1">
+        <label for="1" class="checkbox-label"><$ item $></label>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="reg-footer">
+    <button class="btn btn-red btn-low reg-next" ng-click="formWrap.nextStep('options')">Далее</button>
+  </div>
+</form>

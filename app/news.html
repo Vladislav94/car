@@ -1,0 +1,69 @@
+{% set auth = false %}
+{% set ftext = {bg: '', show: true} %}
+{% extends 'layout.html' %}
+{% block content %}
+<div class="port-news-page">
+
+  <div class="container">
+    {% set breadClass = ' bread-arrow' %}
+    {% set breadcrumbs = ['Главная', 'Новости портала'] %}
+    {% include 'blocks/breadcrumbs.html' %}
+  </div>
+
+  <section class="container pn-main">
+
+    <div class="h-title red pn-main-title"><i class="icon icon-rnews"></i><span>Новости портала</span></div>
+
+    <figure class="pn-main-inner">
+      <div class="pn-main-img">
+        <a href="/" class="img-box box200" style="background-image: url(images/tire-fitting/item9.jpg)"></a>
+      </div>
+      <figcaption class="pn-main-content">
+        <time class="pn-main-date">22 февраля .2017</time>
+        <a href="/" class="pn-main-head">Новинка Mercedes-Maybach G650: внедорожник для арабских шейхов</a>
+
+        <p class="pn-main-text">Все данные о качестве топлива на AUTOporter получены исключительно путем сбора проб инициативной группой автомобилистов нашего проекта и заказа проведения соответствующих исследований в независимой лаборатории.</p>
+        <p class="pn-main-text">“Публикуя эти данные на сайте, мы не претендуем на 100 процентную репрезентативность, в сложном вопросе качества украинского топлива не может даже государство”</p>
+
+        <ul>
+          <li>- наша задача создать</li>
+          <li>- первый в истории украинского интернета</li>
+          <li>- контроля за качеством товаров и услуг.</li>
+        </ul>
+
+        <p class="pn-main-text">Предполагается, что утечка снимков новинки стала результатом «журналистской диверсии», ведь в таких случаях всегда действует эмбарго на публикацию фото и видео до дня. А именно – лимитированный Maybach 62S Landaulet. Все данные о качестве топлива на AUTOporter получены исключительно путем сбора проб инициативной группой автомобилистов нашего проекта и заказа проведения соответствующих исследований в независимой лаборатории. Публикуя эти данные на сайте, мы не претендуем на 100 процентную репрезентативность в сложном вопросе качества украинского топлива не может даже государство.</p>
+        <p class="pn-main-text">А именно – лимитированный Maybach 62S Landaulet. Все автомобилистов нашего проекта и заказа проведения соответствующих исследований в независимой лаборатории. </p>
+        <a href="/" class="port-news__link pn-main-link ">подробнее</a>
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- Portal News  -->
+  <section class="port-news pn-news">
+    <div class="container">
+
+      <div class="port-news__list">
+      {% set news = [
+        {
+          img: '5',
+          title: 'Это важно знать'
+        },
+        {
+          img: '7',
+          title: 'Купить авто: продажа авто б/у в Украине на авторынке'
+        },
+        {
+          img: '8',
+          title: 'Свежие автомобильные новости мира и Украины. Обзор автомобилей'
+        }
+      ] %}
+      {% for item in range(1,3) %}
+      {% include 'blocks/port-news.html' %}
+      {% endfor %}
+      </div>
+
+      {% include 'blocks/pages-list.html' %}
+    </div>
+  </section>
+</div>
+{% endblock %}
